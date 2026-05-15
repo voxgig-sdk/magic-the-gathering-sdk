@@ -1,0 +1,22 @@
+# BasicSetFlow
+
+main: kit: flow: BasicSetFlow:
+{
+  entity: "set",
+  kind: "basic",
+  name: "BasicSetFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "set_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSetFlow"
+}

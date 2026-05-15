@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://api.magicthegathering.io/"
+      }
+      description: "Access Magic: The Gathering card and set information through HTTPS endpoints. SDKs available for easier consumption."
+      servers: [
+        {
+          description: "Production API Server"
+          url: "https://api.magicthegathering.io/v1"
+        }
+      ]
+      title: "Magic: The Gathering API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

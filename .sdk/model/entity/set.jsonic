@@ -1,0 +1,96 @@
+# Entity: set
+
+main: kit: entity: set: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "block"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "booster"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "border"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "online_only"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "release_date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "type"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "set"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "block"
+                orig: "block"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "name"
+                orig: "name"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/sets"
+          parts: [
+            "sets"
+          ]
+          select: {
+            exist: [
+              "block"
+              "name"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

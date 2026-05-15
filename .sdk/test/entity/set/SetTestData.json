@@ -1,0 +1,50 @@
+{
+  "existing": {
+    "set": {
+      "SET00": {
+        "block": "s50",
+        "booster": [],
+        "border": "s52",
+        "code": "s53",
+        "name": "s54",
+        "online_only": false,
+        "release_date": "s56",
+        "type": "s57"
+      },
+      "SET01": {
+        "block": "sa0",
+        "booster": [],
+        "border": "sa2",
+        "code": "sa3",
+        "name": "sa4",
+        "online_only": false,
+        "release_date": "sa6",
+        "type": "sa7"
+      },
+      "SET02": {
+        "block": "sf0",
+        "booster": [],
+        "border": "sf2",
+        "code": "sf3",
+        "name": "sf4",
+        "online_only": false,
+        "release_date": "sf6",
+        "type": "sf7"
+      }
+    }
+  },
+  "new": {
+    "set": {
+      "set_ref01": {
+        "block": "s140",
+        "booster": [],
+        "border": "s142",
+        "code": "s143",
+        "name": "s144",
+        "online_only": false,
+        "release_date": "s146",
+        "type": "s147"
+      }
+    }
+  }
+}

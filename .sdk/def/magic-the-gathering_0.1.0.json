@@ -1,0 +1,442 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Magic: The Gathering API",
+    "description": "Access Magic: The Gathering card and set information through HTTPS endpoints. SDKs available for easier consumption.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://api.magicthegathering.io/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.magicthegathering.io/v1",
+      "description": "Production API Server"
+    }
+  ],
+  "paths": {
+    "/cards": {
+      "get": {
+        "summary": "Get all cards",
+        "description": "Retrieve a list of Magic: The Gathering cards with optional filtering parameters",
+        "operationId": "getCards",
+        "tags": [
+          "Cards"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filter cards by name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "set",
+            "in": "query",
+            "description": "Filter cards by set code",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "colors",
+            "in": "query",
+            "description": "Filter cards by color (e.g., red, blue, green, white, black)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cmc",
+            "in": "query",
+            "description": "Filter cards by converted mana cost",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Filter cards by type (e.g., creature, instant, sorcery)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "rarity",
+            "in": "query",
+            "description": "Filter cards by rarity (e.g., common, uncommon, rare, mythic)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Number of results per page (max 100)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "maximum": 100
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with list of cards",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "cards": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Card"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid parameters"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/cards/{id}": {
+      "get": {
+        "summary": "Get a specific card by ID",
+        "description": "Retrieve detailed information about a specific Magic: The Gathering card by its unique identifier",
+        "operationId": "getCardById",
+        "tags": [
+          "Cards"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier for the card",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with card details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "card": {
+                      "$ref": "#/components/schemas/Card"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Card not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/sets": {
+      "get": {
+        "summary": "Get all sets",
+        "description": "Retrieve a list of Magic: The Gathering sets with optional filtering parameters",
+        "operationId": "getSets",
+        "tags": [
+          "Sets"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filter sets by name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "block",
+            "in": "query",
+            "description": "Filter sets by block name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with list of sets",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sets": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Set"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid parameters"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Card": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the card"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the card"
+          },
+          "manaCost": {
+            "type": "string",
+            "description": "Mana cost of the card"
+          },
+          "cmc": {
+            "type": "number",
+            "description": "Converted mana cost"
+          },
+          "colors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of card colors"
+          },
+          "colorIdentity": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Color identity of the card"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type line of the card"
+          },
+          "supertypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Supertypes of the card"
+          },
+          "types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Types of the card"
+          },
+          "subtypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Subtypes of the card"
+          },
+          "rarity": {
+            "type": "string",
+            "description": "Rarity of the card"
+          },
+          "set": {
+            "type": "string",
+            "description": "Set code the card belongs to"
+          },
+          "setName": {
+            "type": "string",
+            "description": "Name of the set"
+          },
+          "text": {
+            "type": "string",
+            "description": "Rules text of the card"
+          },
+          "flavor": {
+            "type": "string",
+            "description": "Flavor text of the card"
+          },
+          "artist": {
+            "type": "string",
+            "description": "Artist who illustrated the card"
+          },
+          "number": {
+            "type": "string",
+            "description": "Collector number of the card"
+          },
+          "power": {
+            "type": "string",
+            "description": "Power of the card (for creatures)"
+          },
+          "toughness": {
+            "type": "string",
+            "description": "Toughness of the card (for creatures)"
+          },
+          "loyalty": {
+            "type": "string",
+            "description": "Loyalty of the card (for planeswalkers)"
+          },
+          "imageUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the card image"
+          },
+          "multiverseid": {
+            "type": "string",
+            "description": "Multiverse ID of the card"
+          },
+          "printings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of set codes where this card was printed"
+          },
+          "originalText": {
+            "type": "string",
+            "description": "Original text of the card"
+          },
+          "originalType": {
+            "type": "string",
+            "description": "Original type of the card"
+          },
+          "legalities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "format": {
+                  "type": "string"
+                },
+                "legality": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Legality status in various formats"
+          },
+          "rulings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "text": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Official rulings for the card"
+          }
+        }
+      },
+      "Set": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Unique set code"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the set"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of the set (e.g., core, expansion)"
+          },
+          "border": {
+            "type": "string",
+            "description": "Border style of cards in the set"
+          },
+          "releaseDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Release date of the set"
+          },
+          "block": {
+            "type": "string",
+            "description": "Block the set belongs to"
+          },
+          "onlineOnly": {
+            "type": "boolean",
+            "description": "Whether the set is online-only"
+          },
+          "booster": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Booster pack configuration"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Cards",
+      "description": "Operations related to Magic: The Gathering cards"
+    },
+    {
+      "name": "Sets",
+      "description": "Operations related to Magic: The Gathering sets"
+    }
+  ]
+}
