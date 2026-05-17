@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/magic-the-gathering-sdk"
-	"github.com/voxgig-sdk/magic-the-gathering-sdk/core"
+	sdk "github.com/voxgig-sdk/magic-the-gathering-sdk/go"
+	"github.com/voxgig-sdk/magic-the-gathering-sdk/go/core"
 )
 
 func TestSetDirect(t *testing.T) {

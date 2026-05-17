@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/magic-the-gathering-sdk/core"
+	"github.com/voxgig-sdk/magic-the-gathering-sdk/go/core"
 )
 
 type LogFeature struct {

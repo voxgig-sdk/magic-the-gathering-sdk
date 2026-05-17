@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/magic-the-gathering-sdk/core"
+	"github.com/voxgig-sdk/magic-the-gathering-sdk/go/core"
 )
 
 type BaseFeature struct {

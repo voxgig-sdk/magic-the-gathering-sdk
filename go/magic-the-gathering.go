@@ -1,10 +1,10 @@
 package voxgigmagicthegatheringsdk
 
 import (
-	"github.com/voxgig-sdk/magic-the-gathering-sdk/core"
-	"github.com/voxgig-sdk/magic-the-gathering-sdk/entity"
-	"github.com/voxgig-sdk/magic-the-gathering-sdk/feature"
-	_ "github.com/voxgig-sdk/magic-the-gathering-sdk/utility"
+	"github.com/voxgig-sdk/magic-the-gathering-sdk/go/core"
+	"github.com/voxgig-sdk/magic-the-gathering-sdk/go/entity"
+	"github.com/voxgig-sdk/magic-the-gathering-sdk/go/feature"
+	_ "github.com/voxgig-sdk/magic-the-gathering-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

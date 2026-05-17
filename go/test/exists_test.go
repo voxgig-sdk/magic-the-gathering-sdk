@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/magic-the-gathering-sdk"
+	sdk "github.com/voxgig-sdk/magic-the-gathering-sdk/go"
 )
 
 func TestExists(t *testing.T) {
