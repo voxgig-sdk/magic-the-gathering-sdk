@@ -68,14 +68,12 @@ function set_direct_setup($mockres)
     $env = Runner::env_override([
         "MAGICTHEGATHERING_TEST_SET_ENTID" => [],
         "MAGICTHEGATHERING_TEST_LIVE" => "FALSE",
-        "MAGICTHEGATHERING_APIKEY" => "NONE",
     ]);
 
     $live = $env["MAGICTHEGATHERING_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["MAGICTHEGATHERING_APIKEY"],
         ];
         $client = new MagicTheGatheringSDK($merged_opts);
         return [

@@ -16,7 +16,18 @@
           }
         ],
         "title": "Magic: The Gathering API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Query Magic: The Gathering card and set data over a no-auth HTTPS API",
+        "homepage": "https://magicthegathering.io/",
+        "docs_url": "https://docs.magicthegathering.io/",
+        "license_short": "License not specified on the API site; card names, artwork and game text are property of Wizards of the Coast.",
+        "license_md": "- The API itself does not publish an explicit licence on its docs site.\n- Magic: The Gathering card names, artwork, mana symbols and other game elements are trademarks and copyrights of Wizards of the Coast.\n- Verify acceptable use with Wizards of the Coast's [Fan Content Policy](https://company.wizards.com/en/legal/fancontentpolicy) before redistributing card data or imagery.",
+        "about_md": "The [Magic: The Gathering API](https://magicthegathering.io/) is a community-run REST service that exposes card and set data for the Magic: The Gathering trading card game. All requests are served over HTTPS from `https://api.magicthegathering.io/v1/`.\n\nWhat you get from the API:\n\n- `/cards` — searchable card catalogue with filters for name, colors, type, rarity, set, artist, power/toughness, and more (up to 100 results per page).\n- `/sets` — Magic sets with metadata such as code, release date, border type and block; `/sets/{id}/booster` simulates booster pack generation.\n- `/types`, `/subtypes`, `/supertypes`, `/formats` — classification lists and supported game formats (Commander, Standard, Legacy, etc.).\n- Card objects include mana cost, colors, type, rarity, artist, rulings, foreign names, printings and legality across formats.\n\nOperational notes: no authentication is required. Applications are throttled to 5000 requests per hour, after which the API returns `403 Forbidden` with the message `Rate Limit Exceeded`; `Ratelimit-Limit` and `Ratelimit-Remaining` response headers expose the current quota. CORS is reported as disabled, so browser clients may need a proxy.",
+        "entity_desc": {
+          "card": "An individual Magic: The Gathering card with attributes such as name, mana cost, colors, type, rarity, artist, rulings, foreign names, printings and format legality; served from `/v1/cards` (and `/v1/cards/{id}`).",
+          "set": "A Magic expansion or release with code, name, release date, border type and block, served from `/v1/sets` (and `/v1/sets/{code}`), with `/v1/sets/{code}/booster` for simulated booster packs."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -24,7 +35,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "card": {
