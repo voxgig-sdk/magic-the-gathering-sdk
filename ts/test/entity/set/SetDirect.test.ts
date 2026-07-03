@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'MAGICTHEGATHERING_TEST_SET_ENTID': {},
     'MAGICTHEGATHERING_TEST_LIVE': 'FALSE',
+    'MAGICTHEGATHERING_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.MAGICTHEGATHERING_TEST_LIVE
 
   if (live) {
     const client = new MagicTheGatheringSDK({
+      apikey: env.MAGICTHEGATHERING_APIKEY,
     })
 
     let idmap: any = env['MAGICTHEGATHERING_TEST_SET_ENTID']

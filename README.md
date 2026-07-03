@@ -1,21 +1,8 @@
 # MagicTheGathering SDK
 
-Query Magic: The Gathering card and set data over a no-auth HTTPS API
+Magic: The Gathering API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Magic: The Gathering API
-
-The [Magic: The Gathering API](https://magicthegathering.io/) is a community-run REST service that exposes card and set data for the Magic: The Gathering trading card game. All requests are served over HTTPS from `https://api.magicthegathering.io/v1/`.
-
-What you get from the API:
-
-- `/cards` — searchable card catalogue with filters for name, colors, type, rarity, set, artist, power/toughness, and more (up to 100 results per page).
-- `/sets` — Magic sets with metadata such as code, release date, border type and block; `/sets/{id}/booster` simulates booster pack generation.
-- `/types`, `/subtypes`, `/supertypes`, `/formats` — classification lists and supported game formats (Commander, Standard, Legacy, etc.).
-- Card objects include mana cost, colors, type, rarity, artist, rulings, foreign names, printings and legality across formats.
-
-Operational notes: no authentication is required. Applications are throttled to 5000 requests per hour, after which the API returns `403 Forbidden` with the message `Rate Limit Exceeded`; `Ratelimit-Limit` and `Ratelimit-Remaining` response headers expose the current quota. CORS is reported as disabled, so browser clients may need a proxy.
 
 ## Try it
 
@@ -49,29 +36,31 @@ gem install magic-the-gathering-sdk
 luarocks install magic-the-gathering-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { MagicTheGatheringSDK } from 'magic-the-gathering'
 
-const client = new MagicTheGatheringSDK({})
+const client = new MagicTheGatheringSDK({
+  apikey: process.env.MAGIC-THE-GATHERING_APIKEY,
+})
 
 // List all cards
 const cards = await client.Card().list()
+console.log(cards.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -101,8 +90,8 @@ The API exposes 2 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Card** | An individual Magic: The Gathering card with attributes such as name, mana cost, colors, type, rarity, artist, rulings, foreign names, printings and format legality; served from `/v1/cards` (and `/v1/cards/{id}`). | `/cards` |
-| **Set** | A Magic expansion or release with code, name, release date, border type and block, served from `/v1/sets` (and `/v1/sets/{code}`), with `/v1/sets/{code}/booster` for simulated booster packs. | `/sets` |
+| **Card** |  | `/cards` |
+| **Set** |  | `/sets` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -112,17 +101,20 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from magicthegathering_sdk import MagicTheGatheringSDK
 
-client = MagicTheGatheringSDK({})
+client = MagicTheGatheringSDK({
+    "apikey": os.environ.get("MAGIC-THE-GATHERING_APIKEY"),
+})
 
 # List all cards
-cards, err = client.Card(None).list(None, None)
+cards, err = client.Card().list()
+print(cards)
 
 # Load a specific card
-card, err = client.Card(None).load(
-    {"id": "example_id"}, None
-)
+card, err = client.Card().load({"id": "example_id"})
+print(card)
 ```
 
 ### PHP
@@ -131,15 +123,17 @@ card, err = client.Card(None).load(
 <?php
 require_once 'magicthegathering_sdk.php';
 
-$client = new MagicTheGatheringSDK([]);
+$client = new MagicTheGatheringSDK([
+    "apikey" => getenv("MAGIC-THE-GATHERING_APIKEY"),
+]);
 
 // List all cards
-[$cards, $err] = $client->Card(null)->list(null, null);
+[$cards, $err] = $client->Card()->list();
+print_r($cards);
 
 // Load a specific card
-[$card, $err] = $client->Card(null)->load(
-    ["id" => "example_id"], null
-);
+[$card, $err] = $client->Card()->load(["id" => "example_id"]);
+print_r($card);
 ```
 
 ### Golang
@@ -147,10 +141,13 @@ $client = new MagicTheGatheringSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/magic-the-gathering-sdk/go"
 
-client := sdk.NewMagicTheGatheringSDK(map[string]any{})
+client := sdk.NewMagicTheGatheringSDK(map[string]any{
+    "apikey": os.Getenv("MAGIC-THE-GATHERING_APIKEY"),
+})
 
 // List all cards
 cards, err := client.Card(nil).List(nil, nil)
+fmt.Println(cards)
 ```
 
 ### Ruby
@@ -158,15 +155,17 @@ cards, err := client.Card(nil).List(nil, nil)
 ```ruby
 require_relative "MagicTheGathering_sdk"
 
-client = MagicTheGatheringSDK.new({})
+client = MagicTheGatheringSDK.new({
+  "apikey" => ENV["MAGIC-THE-GATHERING_APIKEY"],
+})
 
 # List all cards
-cards, err = client.Card(nil).list(nil, nil)
+cards, err = client.Card().list
+puts cards
 
 # Load a specific card
-card, err = client.Card(nil).load(
-  { "id" => "example_id" }, nil
-)
+card, err = client.Card().load({ "id" => "example_id" })
+puts card
 ```
 
 ### Lua
@@ -174,15 +173,17 @@ card, err = client.Card(nil).load(
 ```lua
 local sdk = require("magic-the-gathering_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("MAGIC-THE-GATHERING_APIKEY"),
+})
 
 -- List all cards
-local cards, err = client:Card(nil):list(nil, nil)
+local cards, err = client:Card():list()
+print(cards)
 
 -- Load a specific card
-local card, err = client:Card(nil):load(
-  { id = "example_id" }, nil
-)
+local card, err = client:Card():load({ id = "example_id" })
+print(card)
 ```
 
 ## Unit testing in offline mode
@@ -201,25 +202,21 @@ const result = await client.Card().load({ id: 'test01' })
 ### Python
 
 ```python
-client = MagicTheGatheringSDK.test(None, None)
-result, err = client.Card(None).load(
-    {"id": "test01"}, None
-)
+client = MagicTheGatheringSDK.test()
+result, err = client.Card().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = MagicTheGatheringSDK::test(null, null);
-[$result, $err] = $client->Card(null)->load(
-    ["id" => "test01"], null
-);
+$client = MagicTheGatheringSDK::test();
+[$result, $err] = $client->Card()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Card(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -228,19 +225,15 @@ result, err := client.Card(nil).Load(
 ### Ruby
 
 ```ruby
-client = MagicTheGatheringSDK.test(nil, nil)
-result, err = client.Card(nil).load(
-  { "id" => "test01" }, nil
-)
+client = MagicTheGatheringSDK.test
+result, err = client.Card().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Card(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Card():load({ id = "test01" })
 ```
 
 ## How it works
@@ -344,15 +337,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Magic: The Gathering API
-
-- Upstream: [https://magicthegathering.io/](https://magicthegathering.io/)
-- API docs: [https://docs.magicthegathering.io/](https://docs.magicthegathering.io/)
-
-- The API itself does not publish an explicit licence on its docs site.
-- Magic: The Gathering card names, artwork, mana symbols and other game elements are trademarks and copyrights of Wizards of the Coast.
-- Verify acceptable use with Wizards of the Coast's [Fan Content Policy](https://company.wizards.com/en/legal/fancontentpolicy) before redistributing card data or imagery.
 
 ---
 
