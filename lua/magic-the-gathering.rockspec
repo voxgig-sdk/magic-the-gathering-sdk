@@ -8,12 +8,14 @@ source = {
   dir = "magic-the-gathering-sdk/lua"
 }
 description = {
-  summary = "MagicTheGathering SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Magic: The Gathering public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/magic-the-gathering-sdk",
+  issues_url = "https://github.com/voxgig-sdk/magic-the-gathering-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "magic-the-gathering" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

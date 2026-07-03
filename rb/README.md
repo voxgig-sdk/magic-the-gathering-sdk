@@ -10,13 +10,13 @@ The Ruby SDK for the MagicTheGathering API — an entity-oriented client using i
 
 ## Install
 ```bash
-gem install magic-the-gathering-sdk
+gem install voxgig-sdk-magic-the-gathering
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "magic-the-gathering-sdk"
+gem "voxgig-sdk-magic-the-gathering"
 ```
 
 Then run:

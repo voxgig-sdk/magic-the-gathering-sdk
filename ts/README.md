@@ -10,7 +10,7 @@ The TypeScript SDK for the MagicTheGathering API — a type-safe, entity-oriente
 
 ## Install
 ```bash
-npm install magic-the-gathering
+npm install @voxgig-sdk/magic-the-gathering
 ```
 ## Tutorial: your first API call
 

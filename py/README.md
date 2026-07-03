@@ -10,7 +10,7 @@ The Python SDK for the MagicTheGathering API — an entity-oriented client follo
 
 ## Install
 ```bash
-pip install magic-the-gathering-sdk
+pip install voxgig-sdk-magic-the-gathering
 ```
 
 Or install from source:
