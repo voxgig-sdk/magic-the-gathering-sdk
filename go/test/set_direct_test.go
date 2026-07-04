@@ -93,14 +93,12 @@ func setDirectSetup(mockres any) *setDirectSetupResult {
 	env := envOverride(map[string]any{
 		"MAGICTHEGATHERING_TEST_SET_ENTID": map[string]any{},
 		"MAGICTHEGATHERING_TEST_LIVE":    "FALSE",
-		"MAGICTHEGATHERING_APIKEY":       "NONE",
 	})
 
 	live := env["MAGICTHEGATHERING_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["MAGICTHEGATHERING_APIKEY"],
 		}
 		client := sdk.NewMagicTheGatheringSDK(mergedOpts)
 

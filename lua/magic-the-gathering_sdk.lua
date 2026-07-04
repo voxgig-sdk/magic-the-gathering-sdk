@@ -244,12 +244,38 @@ end
 
 
 
+-- Idiomatic facade: client:card():list() / client:card():load({ id = ... })
+function MagicTheGatheringSDK:card(data)
+  local EntityMod = require("entity.card_entity")
+  if data == nil then
+    if self._card == nil then
+      self._card = EntityMod.new(self, nil)
+    end
+    return self._card
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:card() instead.
 function MagicTheGatheringSDK:Card(data)
   local EntityMod = require("entity.card_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:set():list() / client:set():load({ id = ... })
+function MagicTheGatheringSDK:set(data)
+  local EntityMod = require("entity.set_entity")
+  if data == nil then
+    if self._set == nil then
+      self._set = EntityMod.new(self, nil)
+    end
+    return self._set
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:set() instead.
 function MagicTheGatheringSDK:Set(data)
   local EntityMod = require("entity.set_entity")
   return EntityMod.new(self, data)

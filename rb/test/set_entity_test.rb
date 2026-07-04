@@ -43,8 +43,7 @@ class SetEntityTest < Minitest::Test
     set_ref01_ent = client.Set(nil)
     set_ref01_match = {}
 
-    set_ref01_list_result, err = set_ref01_ent.list(set_ref01_match, nil)
-    assert_nil err
+    set_ref01_list_result = set_ref01_ent.list(set_ref01_match, nil)
     assert set_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def set_basic_setup(extra)
     "MAGICTHEGATHERING_TEST_SET_ENTID" => idmap,
     "MAGICTHEGATHERING_TEST_LIVE" => "FALSE",
     "MAGICTHEGATHERING_TEST_EXPLAIN" => "FALSE",
-    "MAGICTHEGATHERING_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def set_basic_setup(extra)
   if env["MAGICTHEGATHERING_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["MAGICTHEGATHERING_APIKEY"],
       },
       extra || {},
     ])

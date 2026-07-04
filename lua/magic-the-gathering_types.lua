@@ -1,0 +1,57 @@
+-- Typed models for the MagicTheGathering SDK (LuaLS annotations).
+--
+-- GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
+-- params (op.<name>.points[].args.params[]). Field/param types come from the
+-- canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
+-- @voxgig/apidef VALID_CANON). Annotations only — no runtime effect. Do not
+-- edit by hand.
+
+---@class Card
+---@field artist? string
+---@field card? table
+---@field cmc? number
+---@field color? table
+---@field color_identity? table
+---@field flavor? string
+---@field id? string
+---@field image_url? string
+---@field legality? table
+---@field loyalty? string
+---@field mana_cost? string
+---@field multiverseid? string
+---@field name? string
+---@field number? string
+---@field original_text? string
+---@field original_type? string
+---@field power? string
+---@field printing? table
+---@field rarity? string
+---@field ruling? table
+---@field set? string
+---@field set_name? string
+---@field subtype? table
+---@field supertype? table
+---@field text? string
+---@field toughness? string
+---@field type? string
+
+---@class CardLoadMatch
+---@field id string
+
+---@class CardListMatch
+
+---@class Set
+---@field block? string
+---@field booster? table
+---@field border? string
+---@field code? string
+---@field name? string
+---@field online_only? boolean
+---@field release_date? string
+---@field type? string
+
+---@class SetListMatch
+
+local M = {}
+
+return M

@@ -20,9 +20,6 @@ class MagicTheGatheringConfig
             ],
             "options" => [
                 "base" => "https://api.magicthegathering.io/v1",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
@@ -343,6 +340,7 @@ class MagicTheGatheringConfig
                         'orig' => 'id',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                   ],

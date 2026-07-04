@@ -245,11 +245,17 @@ func (sdk *MagicTheGatheringSDK) Direct(fetchargs map[string]any) (map[string]an
 }
 
 
+// Card returns a Card entity bound to this client.
+// Idiomatic usage: client.Card(nil).List(nil, nil) or
+// client.Card(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *MagicTheGatheringSDK) Card(data map[string]any) MagicTheGatheringEntity {
 	return NewCardEntityFunc(sdk, data)
 }
 
 
+// Set returns a Set entity bound to this client.
+// Idiomatic usage: client.Set(nil).List(nil, nil) or
+// client.Set(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *MagicTheGatheringSDK) Set(data map[string]any) MagicTheGatheringEntity {
 	return NewSetEntityFunc(sdk, data)
 }

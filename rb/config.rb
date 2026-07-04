@@ -15,9 +15,6 @@ module MagicTheGatheringConfig
       },
       "options" => {
         "base" => "https://api.magicthegathering.io/v1",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },
@@ -338,6 +335,7 @@ module MagicTheGatheringConfig
                         "orig" => "id",
                         "reqd" => true,
                         "type" => "`$STRING`",
+                        "index$" => 0,
                       },
                     ],
                   },
