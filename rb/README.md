@@ -28,16 +28,14 @@ require_relative "MagicTheGathering_sdk"
 client = MagicTheGatheringSDK.new
 ```
 
-### 2. List cards
+### 2. List card records
 
 ```ruby
 begin
-  result = client.card.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Card records — iterate directly.
+  cards = client.Card.list
+  cards.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -48,8 +46,9 @@ end
 
 ```ruby
 begin
-  result = client.card.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare Card record (raises on error).
+  card = client.Card.load({ "id" => "example_id" })
+  puts card
 rescue => err
   warn "load failed: #{err}"
 end
@@ -96,13 +95,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = MagicTheGatheringSDK.test
+client = MagicTheGatheringSDK.test({
+  "entity" => { "card" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.card.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+card = client.Card.load({ "id" => "test01" })
+puts card
 ```
 
 ### Use a custom fetch function
@@ -278,7 +281,7 @@ API path: `/sets`
 
 ### Card
 
-Create an instance: `const card = client.card`
+Create an instance: `card = client.Card`
 
 #### Operations
 
@@ -321,20 +324,22 @@ Create an instance: `const card = client.card`
 
 #### Example: Load
 
-```ts
-const card = await client.card.load({ id: 'card_id' })
+```ruby
+# load returns the bare Card record (raises on error).
+card = client.Card.load({ "id" => "card_id" })
 ```
 
 #### Example: List
 
-```ts
-const cards = await client.card.list()
+```ruby
+# list returns an Array of Card records (raises on error).
+cards = client.Card.list
 ```
 
 
 ### Set
 
-Create an instance: `const set = client.set`
+Create an instance: `set = client.Set`
 
 #### Operations
 
@@ -357,8 +362,9 @@ Create an instance: `const set = client.set`
 
 #### Example: List
 
-```ts
-const sets = await client.set.list()
+```ruby
+# list returns an Array of Set records (raises on error).
+sets = client.Set.list
 ```
 
 
@@ -433,7 +439,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-card = client.card
+card = client.Card
 card.load({ "id" => "example_id" })
 
 # card.data_get now returns the loaded card data

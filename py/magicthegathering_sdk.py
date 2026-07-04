@@ -220,41 +220,21 @@ class MagicTheGatheringSDK:
         }
 
 
-    @property
-    def card(self):
-        """Idiomatic facade: client.card.list() / client.card.load({"id": ...})."""
-        from entity.card_entity import CardEntity
-        cached = getattr(self, "_card", None)
-        if cached is None:
-            cached = CardEntity(self, None)
-            self._card = cached
-        return cached
-
-    def Card(self, data=None):
-        # Deprecated: use client.card instead.
+    def Card(self, data=None) -> "CardEntity":
+        """Entity factory: client.Card().list({}) / client.Card().load({"id": ...})."""
         from entity.card_entity import CardEntity
         return CardEntity(self, data)
 
 
-    @property
-    def set(self):
-        """Idiomatic facade: client.set.list() / client.set.load({"id": ...})."""
-        from entity.set_entity import SetEntity
-        cached = getattr(self, "_set", None)
-        if cached is None:
-            cached = SetEntity(self, None)
-            self._set = cached
-        return cached
-
-    def Set(self, data=None):
-        # Deprecated: use client.set instead.
+    def Set(self, data=None) -> "SetEntity":
+        """Entity factory: client.Set().list({}) / client.Set().load({"id": ...})."""
         from entity.set_entity import SetEntity
         return SetEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "MagicTheGatheringSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -274,3 +254,10 @@ class MagicTheGatheringSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.card_entity import CardEntity
+    from entity.set_entity import SetEntity

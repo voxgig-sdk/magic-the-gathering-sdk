@@ -121,7 +121,7 @@ Alias for `MagicTheGatheringSDK.test()`.
 ## CardEntity
 
 ```ts
-const card = client.card
+const card = client.Card()
 ```
 
 ### Fields
@@ -163,7 +163,7 @@ const card = client.card
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.card.list()
+const results = await client.Card().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -171,7 +171,7 @@ const results = await client.card.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.card.load({ id: 'card_id' })
+const result = await client.Card().load({ id: 'card_id' })
 ```
 
 ### Common Methods
@@ -205,7 +205,7 @@ Return a copy of the entity options.
 ## SetEntity
 
 ```ts
-const set = client.set
+const set = client.Set()
 ```
 
 ### Fields
@@ -228,7 +228,7 @@ const set = client.set
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.set.list()
+const results = await client.Set().list()
 ```
 
 ### Common Methods

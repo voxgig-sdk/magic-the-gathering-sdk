@@ -233,10 +233,10 @@ class MagicTheGatheringSDK
 
     private $_card = null;
 
-    // Idiomatic facade: $client->card()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Card() (PHP method
-    // names are case-insensitive).
-    public function card($data = null)
+    // Canonical facade: $client->Card()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->card()
+    // resolves here too.
+    public function Card($data = null)
     {
         require_once __DIR__ . '/entity/card_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class MagicTheGatheringSDK
 
     private $_set = null;
 
-    // Idiomatic facade: $client->set()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Set() (PHP method
-    // names are case-insensitive).
-    public function set($data = null)
+    // Canonical facade: $client->Set()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->set()
+    // resolves here too.
+    public function Set($data = null)
     {
         require_once __DIR__ . '/entity/set_entity.php';
         if ($data === null) {

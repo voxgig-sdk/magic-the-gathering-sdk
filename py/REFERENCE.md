@@ -84,7 +84,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## CardEntity
 
 ```python
-card = client.card
+card = client.Card()
 ```
 
 ### Fields
@@ -126,7 +126,9 @@ card = client.card
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.card.list({})
+results = client.Card().list({})
+for card in results:
+    print(card)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -134,7 +136,7 @@ results = client.card.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.card.load({"id": "card_id"})
+result = client.Card().load({"id": "card_id"})
 ```
 
 ### Common Methods
@@ -169,7 +171,7 @@ Return the entity name.
 ## SetEntity
 
 ```python
-set = client.set
+set = client.Set()
 ```
 
 ### Fields
@@ -192,7 +194,9 @@ set = client.set
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.set.list({})
+results = client.Set().list({})
+for set in results:
+    print(set)
 ```
 
 ### Common Methods

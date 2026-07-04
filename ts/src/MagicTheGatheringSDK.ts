@@ -205,28 +205,14 @@ class MagicTheGatheringSDK {
 
 
 
-  _card?: CardEntity
-
-  // Idiomatic facade: `client.card.list()` / `client.card.load({ id })`.
-  get card(): CardEntity {
-    return (this._card ??= new CardEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.card` instead. */
+  // Entity access: `client.Card().list()` / `client.Card().load({ id })`.
   Card(data?: any) {
     const self = this
     return new CardEntity(self,data)
   }
 
 
-  _set?: SetEntity
-
-  // Idiomatic facade: `client.set.list()` / `client.set.load({ id })`.
-  get set(): SetEntity {
-    return (this._set ??= new SetEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.set` instead. */
+  // Entity access: `client.Set().list()` / `client.Set().load({ id })`.
   Set(data?: any) {
     const self = this
     return new SetEntity(self,data)

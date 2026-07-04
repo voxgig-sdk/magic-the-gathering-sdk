@@ -208,26 +208,14 @@ class MagicTheGatheringSDK
   end
 
 
-  # Idiomatic facade: client.card.list / client.card.load({ "id" => ... })
-  def card
-    require_relative 'entity/card_entity'
-    @card ||= CardEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.card instead.
+  # Canonical facade: client.Card.list / client.Card.load({ "id" => ... })
   def Card(data = nil)
     require_relative 'entity/card_entity'
     CardEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.set.list / client.set.load({ "id" => ... })
-  def set
-    require_relative 'entity/set_entity'
-    @set ||= SetEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.set instead.
+  # Canonical facade: client.Set.list / client.Set.load({ "id" => ... })
   def Set(data = nil)
     require_relative 'entity/set_entity'
     SetEntity.new(self, data)

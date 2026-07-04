@@ -90,7 +90,7 @@ same parameters as `direct()`. Raises on error.
 ## CardEntity
 
 ```ruby
-card = client.card
+card = client.Card
 ```
 
 ### Fields
@@ -132,7 +132,7 @@ card = client.card
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.card.list(nil)
+results = client.Card.list(nil)
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -140,7 +140,7 @@ results = client.card.list(nil)
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.card.load({ "id" => "card_id" })
+result = client.Card.load({ "id" => "card_id" })
 ```
 
 ### Common Methods
@@ -176,7 +176,7 @@ Return the entity name.
 ## SetEntity
 
 ```ruby
-set = client.set
+set = client.Set
 ```
 
 ### Fields
@@ -199,7 +199,7 @@ set = client.set
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.set.list(nil)
+results = client.Set.list(nil)
 ```
 
 ### Common Methods

@@ -4,100 +4,99 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Card:
-    artist: Optional[str] = None
-    card: Optional[dict] = None
-    cmc: Optional[float] = None
-    color: Optional[list] = None
-    color_identity: Optional[list] = None
-    flavor: Optional[str] = None
-    id: Optional[str] = None
-    image_url: Optional[str] = None
-    legality: Optional[list] = None
-    loyalty: Optional[str] = None
-    mana_cost: Optional[str] = None
-    multiverseid: Optional[str] = None
-    name: Optional[str] = None
-    number: Optional[str] = None
-    original_text: Optional[str] = None
-    original_type: Optional[str] = None
-    power: Optional[str] = None
-    printing: Optional[list] = None
-    rarity: Optional[str] = None
-    ruling: Optional[list] = None
-    set: Optional[str] = None
-    set_name: Optional[str] = None
-    subtype: Optional[list] = None
-    supertype: Optional[list] = None
-    text: Optional[str] = None
-    toughness: Optional[str] = None
-    type: Optional[str] = None
+class Card(TypedDict, total=False):
+    artist: str
+    card: dict
+    cmc: float
+    color: list
+    color_identity: list
+    flavor: str
+    id: str
+    image_url: str
+    legality: list
+    loyalty: str
+    mana_cost: str
+    multiverseid: str
+    name: str
+    number: str
+    original_text: str
+    original_type: str
+    power: str
+    printing: list
+    rarity: str
+    ruling: list
+    set: str
+    set_name: str
+    subtype: list
+    supertype: list
+    text: str
+    toughness: str
+    type: str
 
 
-@dataclass
-class CardLoadMatch:
+class CardLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class CardListMatch:
-    artist: Optional[str] = None
-    card: Optional[dict] = None
-    cmc: Optional[float] = None
-    color: Optional[list] = None
-    color_identity: Optional[list] = None
-    flavor: Optional[str] = None
-    id: Optional[str] = None
-    image_url: Optional[str] = None
-    legality: Optional[list] = None
-    loyalty: Optional[str] = None
-    mana_cost: Optional[str] = None
-    multiverseid: Optional[str] = None
-    name: Optional[str] = None
-    number: Optional[str] = None
-    original_text: Optional[str] = None
-    original_type: Optional[str] = None
-    power: Optional[str] = None
-    printing: Optional[list] = None
-    rarity: Optional[str] = None
-    ruling: Optional[list] = None
-    set: Optional[str] = None
-    set_name: Optional[str] = None
-    subtype: Optional[list] = None
-    supertype: Optional[list] = None
-    text: Optional[str] = None
-    toughness: Optional[str] = None
-    type: Optional[str] = None
+class CardListMatch(TypedDict, total=False):
+    artist: str
+    card: dict
+    cmc: float
+    color: list
+    color_identity: list
+    flavor: str
+    id: str
+    image_url: str
+    legality: list
+    loyalty: str
+    mana_cost: str
+    multiverseid: str
+    name: str
+    number: str
+    original_text: str
+    original_type: str
+    power: str
+    printing: list
+    rarity: str
+    ruling: list
+    set: str
+    set_name: str
+    subtype: list
+    supertype: list
+    text: str
+    toughness: str
+    type: str
 
 
-@dataclass
-class Set:
-    block: Optional[str] = None
-    booster: Optional[list] = None
-    border: Optional[str] = None
-    code: Optional[str] = None
-    name: Optional[str] = None
-    online_only: Optional[bool] = None
-    release_date: Optional[str] = None
-    type: Optional[str] = None
+class Set(TypedDict, total=False):
+    block: str
+    booster: list
+    border: str
+    code: str
+    name: str
+    online_only: bool
+    release_date: str
+    type: str
 
 
-@dataclass
-class SetListMatch:
-    block: Optional[str] = None
-    booster: Optional[list] = None
-    border: Optional[str] = None
-    code: Optional[str] = None
-    name: Optional[str] = None
-    online_only: Optional[bool] = None
-    release_date: Optional[str] = None
-    type: Optional[str] = None
-
+class SetListMatch(TypedDict, total=False):
+    block: str
+    booster: list
+    border: str
+    code: str
+    name: str
+    online_only: bool
+    release_date: str
+    type: str

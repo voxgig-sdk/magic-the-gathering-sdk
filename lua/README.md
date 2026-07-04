@@ -31,26 +31,26 @@ local sdk = require("magic-the-gathering_sdk")
 local client = sdk.new()
 ```
 
-### 2. List cards
+### 2. List card records
+
+Entity operations return `(value, err)`. For `list`, `value` is the
+array of records itself — iterate it directly (there is no wrapper).
 
 ```lua
-local result, err = client:card():list()
+local cards, err = client:Card():list()
 if err then error(err) end
 
-if type(result) == "table" then
-  for _, item in ipairs(result) do
-    local d = item:data_get()
-    print(d["id"], d["name"])
-  end
+for _, item in ipairs(cards) do
+  print(item["id"], item["name"])
 end
 ```
 
 ### 3. Load a card
 
 ```lua
-local result, err = client:card():load({ id = "example_id" })
+local card, err = client:Card():load({ id = "example_id" })
 if err then error(err) end
-print(result)
+print(card)
 ```
 
 
@@ -96,8 +96,8 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:card():load({ id = "test01" })
--- result contains mock response data
+local result, err = client:Card():load({ id = "test01" })
+-- result is the loaded data; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -198,17 +198,22 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`table` with these keys:
+Entity operations return `(value, err)`. The `value` is the operation's
+data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `ok` | `boolean` | `true` if the HTTP status is 2xx. |
-| `status` | `number` | HTTP status code. |
-| `headers` | `table` | Response headers. |
-| `data` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `load` / `create` / `update` / `remove` | the entity record (a `table`) |
+| `list` | an array (`table`) of entity records |
 
-On error, `ok` is `false` and `err` contains the error value.
+Check `err` first (it is non-`nil` on failure), then use `value`:
+
+    local card, err = client:Card():load({ id = "example_id" })
+    if err then error(err) end
+    -- card is the loaded record
+
+Only `direct()` returns a response envelope — a `table` with `ok`,
+`status`, `headers`, and `data` keys.
 
 ### Entities
 
@@ -272,7 +277,7 @@ API path: `/sets`
 
 ### Card
 
-Create an instance: `const card = client.card`
+Create an instance: `local card = client:Card(nil)`
 
 #### Operations
 
@@ -315,20 +320,20 @@ Create an instance: `const card = client.card`
 
 #### Example: Load
 
-```ts
-const card = await client.card.load({ id: 'card_id' })
+```lua
+local card, err = client:Card():load({ id = "card_id" })
 ```
 
 #### Example: List
 
-```ts
-const cards = await client.card.list()
+```lua
+local cards, err = client:Card():list()
 ```
 
 
 ### Set
 
-Create an instance: `const set = client.set`
+Create an instance: `local set = client:Set(nil)`
 
 #### Operations
 
@@ -351,8 +356,8 @@ Create an instance: `const set = client.set`
 
 #### Example: List
 
-```ts
-const sets = await client.set.list()
+```lua
+local sets, err = client:Set():list()
 ```
 
 
@@ -427,7 +432,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local card = client:card()
+local card = client:Card()
 card:load({ id = "example_id" })
 
 -- card:data_get() now returns the loaded card data

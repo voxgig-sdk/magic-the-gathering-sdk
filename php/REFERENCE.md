@@ -89,7 +89,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## CardEntity
 
 ```php
-$card = $client->card();
+$card = $client->Card();
 ```
 
 ### Fields
@@ -131,7 +131,7 @@ $card = $client->card();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->card()->list([]);
+$results = $client->Card()->list([]);
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -139,7 +139,7 @@ $results = $client->card()->list([]);
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->card()->load(["id" => "card_id"]);
+$result = $client->Card()->load(["id" => "card_id"]);
 ```
 
 ### Common Methods
@@ -175,7 +175,7 @@ Return the entity name.
 ## SetEntity
 
 ```php
-$set = $client->set();
+$set = $client->Set();
 ```
 
 ### Fields
@@ -198,7 +198,7 @@ $set = $client->set();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->set()->list([]);
+$results = $client->Set()->list([]);
 ```
 
 ### Common Methods
