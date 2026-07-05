@@ -221,13 +221,13 @@ class MagicTheGatheringSDK:
 
 
     def Card(self, data=None) -> "CardEntity":
-        """Entity factory: client.Card().list({}) / client.Card().load({"id": ...})."""
+        """Entity factory: client.Card().list() / client.Card().load({"id": ...})."""
         from entity.card_entity import CardEntity
         return CardEntity(self, data)
 
 
     def Set(self, data=None) -> "SetEntity":
-        """Entity factory: client.Set().list({}) / client.Set().load({"id": ...})."""
+        """Entity factory: client.Set().list() / client.Set().load({"id": ...})."""
         from entity.set_entity import SetEntity
         return SetEntity(self, data)
 

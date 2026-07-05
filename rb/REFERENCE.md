@@ -8,7 +8,7 @@ Complete API reference for the MagicTheGathering Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'magic-the-gathering_sdk'
+require_relative 'MagicTheGathering_sdk'
 
 client = MagicTheGatheringSDK.new(options)
 ```
@@ -97,42 +97,42 @@ card = client.Card
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `artist` | ``$STRING`` | No |  |
-| `card` | ``$OBJECT`` | No |  |
-| `cmc` | ``$NUMBER`` | No |  |
-| `color` | ``$ARRAY`` | No |  |
-| `color_identity` | ``$ARRAY`` | No |  |
-| `flavor` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `legality` | ``$ARRAY`` | No |  |
-| `loyalty` | ``$STRING`` | No |  |
-| `mana_cost` | ``$STRING`` | No |  |
-| `multiverseid` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `original_text` | ``$STRING`` | No |  |
-| `original_type` | ``$STRING`` | No |  |
-| `power` | ``$STRING`` | No |  |
-| `printing` | ``$ARRAY`` | No |  |
-| `rarity` | ``$STRING`` | No |  |
-| `ruling` | ``$ARRAY`` | No |  |
-| `set` | ``$STRING`` | No |  |
-| `set_name` | ``$STRING`` | No |  |
-| `subtype` | ``$ARRAY`` | No |  |
-| `supertype` | ``$ARRAY`` | No |  |
-| `text` | ``$STRING`` | No |  |
-| `toughness` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `artist` | `String` | No |  |
+| `card` | `Hash` | No |  |
+| `cmc` | `Float` | No |  |
+| `color` | `Array` | No |  |
+| `color_identity` | `Array` | No |  |
+| `flavor` | `String` | No |  |
+| `id` | `String` | No |  |
+| `image_url` | `String` | No |  |
+| `legality` | `Array` | No |  |
+| `loyalty` | `String` | No |  |
+| `mana_cost` | `String` | No |  |
+| `multiverseid` | `String` | No |  |
+| `name` | `String` | No |  |
+| `number` | `String` | No |  |
+| `original_text` | `String` | No |  |
+| `original_type` | `String` | No |  |
+| `power` | `String` | No |  |
+| `printing` | `Array` | No |  |
+| `rarity` | `String` | No |  |
+| `ruling` | `Array` | No |  |
+| `set` | `String` | No |  |
+| `set_name` | `String` | No |  |
+| `subtype` | `Array` | No |  |
+| `supertype` | `Array` | No |  |
+| `text` | `String` | No |  |
+| `toughness` | `String` | No |  |
+| `type` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Card.list(nil)
+results = client.Card.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -183,23 +183,23 @@ set = client.Set
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `block` | ``$STRING`` | No |  |
-| `booster` | ``$ARRAY`` | No |  |
-| `border` | ``$STRING`` | No |  |
-| `code` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `online_only` | ``$BOOLEAN`` | No |  |
-| `release_date` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `block` | `String` | No |  |
+| `booster` | `Array` | No |  |
+| `border` | `String` | No |  |
+| `code` | `String` | No |  |
+| `name` | `String` | No |  |
+| `online_only` | `Boolean` | No |  |
+| `release_date` | `String` | No |  |
+| `type` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Set.list(nil)
+results = client.Set.list
 ```
 
 ### Common Methods

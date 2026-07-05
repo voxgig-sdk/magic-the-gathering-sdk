@@ -44,8 +44,7 @@ type CardLoadMatch struct {
 	Id string `json:"id"`
 }
 
-// CardListMatch mirrors the card fields as an all-optional match
-// filter (Go analog of Partial<Card>).
+// CardListMatch is the typed request payload for Card.ListTyped.
 type CardListMatch struct {
 	Artist *string `json:"artist,omitempty"`
 	Card *map[string]any `json:"card,omitempty"`
@@ -88,8 +87,7 @@ type Set struct {
 	Type *string `json:"type,omitempty"`
 }
 
-// SetListMatch mirrors the set fields as an all-optional match
-// filter (Go analog of Partial<Set>).
+// SetListMatch is the typed request payload for Set.ListTyped.
 type SetListMatch struct {
 	Block *string `json:"block,omitempty"`
 	Booster *[]any `json:"booster,omitempty"`

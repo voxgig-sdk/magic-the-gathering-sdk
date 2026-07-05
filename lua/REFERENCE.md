@@ -94,33 +94,33 @@ local card = client:Card(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `artist` | ``$STRING`` | No |  |
-| `card` | ``$OBJECT`` | No |  |
-| `cmc` | ``$NUMBER`` | No |  |
-| `color` | ``$ARRAY`` | No |  |
-| `color_identity` | ``$ARRAY`` | No |  |
-| `flavor` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `legality` | ``$ARRAY`` | No |  |
-| `loyalty` | ``$STRING`` | No |  |
-| `mana_cost` | ``$STRING`` | No |  |
-| `multiverseid` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `original_text` | ``$STRING`` | No |  |
-| `original_type` | ``$STRING`` | No |  |
-| `power` | ``$STRING`` | No |  |
-| `printing` | ``$ARRAY`` | No |  |
-| `rarity` | ``$STRING`` | No |  |
-| `ruling` | ``$ARRAY`` | No |  |
-| `set` | ``$STRING`` | No |  |
-| `set_name` | ``$STRING`` | No |  |
-| `subtype` | ``$ARRAY`` | No |  |
-| `supertype` | ``$ARRAY`` | No |  |
-| `text` | ``$STRING`` | No |  |
-| `toughness` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `artist` | `string` | No |  |
+| `card` | `table` | No |  |
+| `cmc` | `number` | No |  |
+| `color` | `table` | No |  |
+| `color_identity` | `table` | No |  |
+| `flavor` | `string` | No |  |
+| `id` | `string` | No |  |
+| `image_url` | `string` | No |  |
+| `legality` | `table` | No |  |
+| `loyalty` | `string` | No |  |
+| `mana_cost` | `string` | No |  |
+| `multiverseid` | `string` | No |  |
+| `name` | `string` | No |  |
+| `number` | `string` | No |  |
+| `original_text` | `string` | No |  |
+| `original_type` | `string` | No |  |
+| `power` | `string` | No |  |
+| `printing` | `table` | No |  |
+| `rarity` | `string` | No |  |
+| `ruling` | `table` | No |  |
+| `set` | `string` | No |  |
+| `set_name` | `string` | No |  |
+| `subtype` | `table` | No |  |
+| `supertype` | `table` | No |  |
+| `text` | `string` | No |  |
+| `toughness` | `string` | No |  |
+| `type` | `string` | No |  |
 
 ### Operations
 
@@ -180,14 +180,14 @@ local set = client:Set(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `block` | ``$STRING`` | No |  |
-| `booster` | ``$ARRAY`` | No |  |
-| `border` | ``$STRING`` | No |  |
-| `code` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `online_only` | ``$BOOLEAN`` | No |  |
-| `release_date` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `block` | `string` | No |  |
+| `booster` | `table` | No |  |
+| `border` | `string` | No |  |
+| `code` | `string` | No |  |
+| `name` | `string` | No |  |
+| `online_only` | `boolean` | No |  |
+| `release_date` | `string` | No |  |
+| `type` | `string` | No |  |
 
 ### Operations
 

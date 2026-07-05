@@ -130,7 +130,7 @@ CardLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Card#list (any subset of Card fields).
+# Request payload for Card#list.
 #
 # @!attribute [rw] artist
 #   @return [String, nil]
@@ -280,7 +280,7 @@ Set = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Set#list (any subset of Set fields).
+# Request payload for Set#list.
 #
 # @!attribute [rw] block
 #   @return [String, nil]

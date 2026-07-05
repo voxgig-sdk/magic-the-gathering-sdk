@@ -8,7 +8,7 @@ Complete API reference for the MagicTheGathering Python SDK.
 ### Constructor
 
 ```python
-from magic-the-gathering_sdk import MagicTheGatheringSDK
+from magicthegathering_sdk import MagicTheGatheringSDK
 
 client = MagicTheGatheringSDK(options)
 ```
@@ -91,42 +91,42 @@ card = client.Card()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `artist` | ``$STRING`` | No |  |
-| `card` | ``$OBJECT`` | No |  |
-| `cmc` | ``$NUMBER`` | No |  |
-| `color` | ``$ARRAY`` | No |  |
-| `color_identity` | ``$ARRAY`` | No |  |
-| `flavor` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `legality` | ``$ARRAY`` | No |  |
-| `loyalty` | ``$STRING`` | No |  |
-| `mana_cost` | ``$STRING`` | No |  |
-| `multiverseid` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `original_text` | ``$STRING`` | No |  |
-| `original_type` | ``$STRING`` | No |  |
-| `power` | ``$STRING`` | No |  |
-| `printing` | ``$ARRAY`` | No |  |
-| `rarity` | ``$STRING`` | No |  |
-| `ruling` | ``$ARRAY`` | No |  |
-| `set` | ``$STRING`` | No |  |
-| `set_name` | ``$STRING`` | No |  |
-| `subtype` | ``$ARRAY`` | No |  |
-| `supertype` | ``$ARRAY`` | No |  |
-| `text` | ``$STRING`` | No |  |
-| `toughness` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `artist` | `str` | No |  |
+| `card` | `dict` | No |  |
+| `cmc` | `float` | No |  |
+| `color` | `list` | No |  |
+| `color_identity` | `list` | No |  |
+| `flavor` | `str` | No |  |
+| `id` | `str` | No |  |
+| `image_url` | `str` | No |  |
+| `legality` | `list` | No |  |
+| `loyalty` | `str` | No |  |
+| `mana_cost` | `str` | No |  |
+| `multiverseid` | `str` | No |  |
+| `name` | `str` | No |  |
+| `number` | `str` | No |  |
+| `original_text` | `str` | No |  |
+| `original_type` | `str` | No |  |
+| `power` | `str` | No |  |
+| `printing` | `list` | No |  |
+| `rarity` | `str` | No |  |
+| `ruling` | `list` | No |  |
+| `set` | `str` | No |  |
+| `set_name` | `str` | No |  |
+| `subtype` | `list` | No |  |
+| `supertype` | `list` | No |  |
+| `text` | `str` | No |  |
+| `toughness` | `str` | No |  |
+| `type` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Card().list({})
+results = client.Card().list()
 for card in results:
     print(card)
 ```
@@ -178,23 +178,23 @@ set = client.Set()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `block` | ``$STRING`` | No |  |
-| `booster` | ``$ARRAY`` | No |  |
-| `border` | ``$STRING`` | No |  |
-| `code` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `online_only` | ``$BOOLEAN`` | No |  |
-| `release_date` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `block` | `str` | No |  |
+| `booster` | `list` | No |  |
+| `border` | `str` | No |  |
+| `code` | `str` | No |  |
+| `name` | `str` | No |  |
+| `online_only` | `bool` | No |  |
+| `release_date` | `str` | No |  |
+| `type` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Set().list({})
+results = client.Set().list()
 for set in results:
     print(set)
 ```

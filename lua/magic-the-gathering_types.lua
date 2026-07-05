@@ -39,6 +39,33 @@
 ---@field id string
 
 ---@class CardListMatch
+---@field artist? string
+---@field card? table
+---@field cmc? number
+---@field color? table
+---@field color_identity? table
+---@field flavor? string
+---@field id? string
+---@field image_url? string
+---@field legality? table
+---@field loyalty? string
+---@field mana_cost? string
+---@field multiverseid? string
+---@field name? string
+---@field number? string
+---@field original_text? string
+---@field original_type? string
+---@field power? string
+---@field printing? table
+---@field rarity? string
+---@field ruling? table
+---@field set? string
+---@field set_name? string
+---@field subtype? table
+---@field supertype? table
+---@field text? string
+---@field toughness? string
+---@field type? string
 
 ---@class Set
 ---@field block? string
@@ -51,6 +78,14 @@
 ---@field type? string
 
 ---@class SetListMatch
+---@field block? string
+---@field booster? table
+---@field border? string
+---@field code? string
+---@field name? string
+---@field online_only? boolean
+---@field release_date? string
+---@field type? string
 
 local M = {}
 

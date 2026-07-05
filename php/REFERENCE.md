@@ -8,7 +8,7 @@ Complete API reference for the MagicTheGathering PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/magic-the-gathering_sdk.php';
+require_once __DIR__ . '/magicthegathering_sdk.php';
 
 $client = new MagicTheGatheringSDK($options);
 ```
@@ -49,11 +49,11 @@ Create a new `CardEntity` instance. Pass `null` for no initial data.
 
 Create a new `SetEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): MagicTheGatheringUtility`
 
 Return a copy of the SDK utility object.
 
@@ -96,42 +96,42 @@ $card = $client->Card();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `artist` | ``$STRING`` | No |  |
-| `card` | ``$OBJECT`` | No |  |
-| `cmc` | ``$NUMBER`` | No |  |
-| `color` | ``$ARRAY`` | No |  |
-| `color_identity` | ``$ARRAY`` | No |  |
-| `flavor` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `legality` | ``$ARRAY`` | No |  |
-| `loyalty` | ``$STRING`` | No |  |
-| `mana_cost` | ``$STRING`` | No |  |
-| `multiverseid` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `original_text` | ``$STRING`` | No |  |
-| `original_type` | ``$STRING`` | No |  |
-| `power` | ``$STRING`` | No |  |
-| `printing` | ``$ARRAY`` | No |  |
-| `rarity` | ``$STRING`` | No |  |
-| `ruling` | ``$ARRAY`` | No |  |
-| `set` | ``$STRING`` | No |  |
-| `set_name` | ``$STRING`` | No |  |
-| `subtype` | ``$ARRAY`` | No |  |
-| `supertype` | ``$ARRAY`` | No |  |
-| `text` | ``$STRING`` | No |  |
-| `toughness` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `artist` | `string` | No |  |
+| `card` | `array` | No |  |
+| `cmc` | `float` | No |  |
+| `color` | `array` | No |  |
+| `color_identity` | `array` | No |  |
+| `flavor` | `string` | No |  |
+| `id` | `string` | No |  |
+| `image_url` | `string` | No |  |
+| `legality` | `array` | No |  |
+| `loyalty` | `string` | No |  |
+| `mana_cost` | `string` | No |  |
+| `multiverseid` | `string` | No |  |
+| `name` | `string` | No |  |
+| `number` | `string` | No |  |
+| `original_text` | `string` | No |  |
+| `original_type` | `string` | No |  |
+| `power` | `string` | No |  |
+| `printing` | `array` | No |  |
+| `rarity` | `string` | No |  |
+| `ruling` | `array` | No |  |
+| `set` | `string` | No |  |
+| `set_name` | `string` | No |  |
+| `subtype` | `array` | No |  |
+| `supertype` | `array` | No |  |
+| `text` | `string` | No |  |
+| `toughness` | `string` | No |  |
+| `type` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Card()->list([]);
+$results = $client->Card()->list();
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -144,19 +144,19 @@ $result = $client->Card()->load(["id" => "card_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -165,7 +165,7 @@ Set the entity match criteria.
 Create a new `CardEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -182,40 +182,40 @@ $set = $client->Set();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `block` | ``$STRING`` | No |  |
-| `booster` | ``$ARRAY`` | No |  |
-| `border` | ``$STRING`` | No |  |
-| `code` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `online_only` | ``$BOOLEAN`` | No |  |
-| `release_date` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `block` | `string` | No |  |
+| `booster` | `array` | No |  |
+| `border` | `string` | No |  |
+| `code` | `string` | No |  |
+| `name` | `string` | No |  |
+| `online_only` | `bool` | No |  |
+| `release_date` | `string` | No |  |
+| `type` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Set()->list([]);
+$results = $client->Set()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -224,7 +224,7 @@ Set the entity match criteria.
 Create a new `SetEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

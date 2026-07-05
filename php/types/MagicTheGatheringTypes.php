@@ -50,7 +50,7 @@ class CardLoadMatch
     public string $id;
 }
 
-/** Match filter for Card#list (any subset of Card fields). */
+/** Request payload for Card#list. */
 class CardListMatch
 {
     public ?string $artist = null;
@@ -95,7 +95,7 @@ class Set
     public ?string $type = null;
 }
 
-/** Match filter for Set#list (any subset of Set fields). */
+/** Request payload for Set#list. */
 class SetListMatch
 {
     public ?string $block = null;

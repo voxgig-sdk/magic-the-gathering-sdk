@@ -39,7 +39,35 @@ export interface CardLoadMatch {
   id: string
 }
 
-export type CardListMatch = Partial<Card>
+export interface CardListMatch {
+  artist?: string
+  card?: Record<string, any>
+  cmc?: number
+  color?: any[]
+  color_identity?: any[]
+  flavor?: string
+  id?: string
+  image_url?: string
+  legality?: any[]
+  loyalty?: string
+  mana_cost?: string
+  multiverseid?: string
+  name?: string
+  number?: string
+  original_text?: string
+  original_type?: string
+  power?: string
+  printing?: any[]
+  rarity?: string
+  ruling?: any[]
+  set?: string
+  set_name?: string
+  subtype?: any[]
+  supertype?: any[]
+  text?: string
+  toughness?: string
+  type?: string
+}
 
 export interface Set {
   block?: string
@@ -52,5 +80,14 @@ export interface Set {
   type?: string
 }
 
-export type SetListMatch = Partial<Set>
+export interface SetListMatch {
+  block?: string
+  booster?: any[]
+  border?: string
+  code?: string
+  name?: string
+  online_only?: boolean
+  release_date?: string
+  type?: string
+}
 
