@@ -95,6 +95,7 @@ same parameters as `Direct()`.
 
 ```go
 card := client.Card(nil)
+fmt.Println(card.GetName()) // "card"
 ```
 
 ### Fields
@@ -137,6 +138,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Card(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 #### `Load(reqmatch, ctrl map[string]any) (any, error)`
@@ -145,6 +150,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Card(nil).Load(map[string]any{"id": "card_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -175,6 +184,7 @@ Return the entity name.
 
 ```go
 set := client.Set(nil)
+fmt.Println(set.GetName()) // "set"
 ```
 
 ### Fields
@@ -198,6 +208,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Set(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
