@@ -8,6 +8,7 @@ guide: {
   entity: card: {
     path: "/cards": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cards`")|top
     }
     path: "/cards/{id}": {
       op: load: method: *GET
@@ -18,6 +19,7 @@ guide: {
   entity: set: {
     path: "/sets": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.sets`")|top
     }
   }
 

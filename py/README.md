@@ -52,7 +52,7 @@ except Exception as err:
 
 ### 3. Load a card
 
-`load()` returns the bare record (a `dict`) and raises on error.
+`load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
@@ -136,7 +136,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = MagicTheGatheringSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 card = client.Card().list()
 # card contains the mock response record
 ```
@@ -234,7 +235,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -257,32 +258,32 @@ On error, `ok` is `False` and `err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `artist` |  |
-| `card` |  |
 | `cmc` |  |
-| `color` |  |
-| `color_identity` |  |
+| `colorIdentity` |  |
+| `colors` |  |
 | `flavor` |  |
 | `id` |  |
-| `image_url` |  |
-| `legality` |  |
+| `imageUrl` |  |
+| `legalities` |  |
 | `loyalty` |  |
-| `mana_cost` |  |
+| `manaCost` |  |
 | `multiverseid` |  |
 | `name` |  |
 | `number` |  |
-| `original_text` |  |
-| `original_type` |  |
+| `originalText` |  |
+| `originalType` |  |
 | `power` |  |
-| `printing` |  |
+| `printings` |  |
 | `rarity` |  |
-| `ruling` |  |
+| `rulings` |  |
 | `set` |  |
-| `set_name` |  |
-| `subtype` |  |
-| `supertype` |  |
+| `setName` |  |
+| `subtypes` |  |
+| `supertypes` |  |
 | `text` |  |
 | `toughness` |  |
 | `type` |  |
+| `types` |  |
 
 Operations: List, Load.
 
@@ -297,8 +298,8 @@ API path: `/cards`
 | `border` |  |
 | `code` |  |
 | `name` |  |
-| `online_only` |  |
-| `release_date` |  |
+| `onlineOnly` |  |
+| `releaseDate` |  |
 | `type` |  |
 
 Operations: List.
@@ -326,32 +327,32 @@ Create an instance: `card = client.Card()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `artist` | `str` |  |
-| `card` | `dict` |  |
 | `cmc` | `float` |  |
-| `color` | `list` |  |
-| `color_identity` | `list` |  |
+| `colorIdentity` | `list` |  |
+| `colors` | `list` |  |
 | `flavor` | `str` |  |
 | `id` | `str` |  |
-| `image_url` | `str` |  |
-| `legality` | `list` |  |
+| `imageUrl` | `str` |  |
+| `legalities` | `list` |  |
 | `loyalty` | `str` |  |
-| `mana_cost` | `str` |  |
+| `manaCost` | `str` |  |
 | `multiverseid` | `str` |  |
 | `name` | `str` |  |
 | `number` | `str` |  |
-| `original_text` | `str` |  |
-| `original_type` | `str` |  |
+| `originalText` | `str` |  |
+| `originalType` | `str` |  |
 | `power` | `str` |  |
-| `printing` | `list` |  |
+| `printings` | `list` |  |
 | `rarity` | `str` |  |
-| `ruling` | `list` |  |
+| `rulings` | `list` |  |
 | `set` | `str` |  |
-| `set_name` | `str` |  |
-| `subtype` | `list` |  |
-| `supertype` | `list` |  |
+| `setName` | `str` |  |
+| `subtypes` | `list` |  |
+| `supertypes` | `list` |  |
 | `text` | `str` |  |
 | `toughness` | `str` |  |
 | `type` | `str` |  |
+| `types` | `list` |  |
 
 #### Example: Load
 
@@ -385,8 +386,8 @@ Create an instance: `set = client.Set()`
 | `border` | `str` |  |
 | `code` | `str` |  |
 | `name` | `str` |  |
-| `online_only` | `bool` |  |
-| `release_date` | `str` |  |
+| `onlineOnly` | `bool` |  |
+| `releaseDate` | `str` |  |
 | `type` | `str` |  |
 
 #### Example: List

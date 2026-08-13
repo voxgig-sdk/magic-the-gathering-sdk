@@ -16,32 +16,32 @@ declare(strict_types=1);
 class Card
 {
     public ?string $artist = null;
-    public ?array $card = null;
     public ?float $cmc = null;
-    public ?array $color = null;
-    public ?array $color_identity = null;
+    public ?array $colorIdentity = null;
+    public ?array $colors = null;
     public ?string $flavor = null;
     public ?string $id = null;
-    public ?string $image_url = null;
-    public ?array $legality = null;
+    public ?string $imageUrl = null;
+    public ?array $legalities = null;
     public ?string $loyalty = null;
-    public ?string $mana_cost = null;
+    public ?string $manaCost = null;
     public ?string $multiverseid = null;
     public ?string $name = null;
     public ?string $number = null;
-    public ?string $original_text = null;
-    public ?string $original_type = null;
+    public ?string $originalText = null;
+    public ?string $originalType = null;
     public ?string $power = null;
-    public ?array $printing = null;
+    public ?array $printings = null;
     public ?string $rarity = null;
-    public ?array $ruling = null;
+    public ?array $rulings = null;
     public ?string $set = null;
-    public ?string $set_name = null;
-    public ?array $subtype = null;
-    public ?array $supertype = null;
+    public ?string $setName = null;
+    public ?array $subtypes = null;
+    public ?array $supertypes = null;
     public ?string $text = null;
     public ?string $toughness = null;
     public ?string $type = null;
+    public ?array $types = null;
 }
 
 /** Request payload for Card#load. */
@@ -54,32 +54,32 @@ class CardLoadMatch
 class CardListMatch
 {
     public ?string $artist = null;
-    public ?array $card = null;
     public ?float $cmc = null;
-    public ?array $color = null;
-    public ?array $color_identity = null;
+    public ?array $colorIdentity = null;
+    public ?array $colors = null;
     public ?string $flavor = null;
     public ?string $id = null;
-    public ?string $image_url = null;
-    public ?array $legality = null;
+    public ?string $imageUrl = null;
+    public ?array $legalities = null;
     public ?string $loyalty = null;
-    public ?string $mana_cost = null;
+    public ?string $manaCost = null;
     public ?string $multiverseid = null;
     public ?string $name = null;
     public ?string $number = null;
-    public ?string $original_text = null;
-    public ?string $original_type = null;
+    public ?string $originalText = null;
+    public ?string $originalType = null;
     public ?string $power = null;
-    public ?array $printing = null;
+    public ?array $printings = null;
     public ?string $rarity = null;
-    public ?array $ruling = null;
+    public ?array $rulings = null;
     public ?string $set = null;
-    public ?string $set_name = null;
-    public ?array $subtype = null;
-    public ?array $supertype = null;
+    public ?string $setName = null;
+    public ?array $subtypes = null;
+    public ?array $supertypes = null;
     public ?string $text = null;
     public ?string $toughness = null;
     public ?string $type = null;
+    public ?array $types = null;
 }
 
 /** Set entity data model. */
@@ -90,8 +90,8 @@ class Set
     public ?string $border = null;
     public ?string $code = null;
     public ?string $name = null;
-    public ?bool $online_only = null;
-    public ?string $release_date = null;
+    public ?bool $onlineOnly = null;
+    public ?string $releaseDate = null;
     public ?string $type = null;
 }
 
@@ -103,8 +103,8 @@ class SetListMatch
     public ?string $border = null;
     public ?string $code = null;
     public ?string $name = null;
-    public ?bool $online_only = null;
-    public ?string $release_date = null;
+    public ?bool $onlineOnly = null;
+    public ?string $releaseDate = null;
     public ?string $type = null;
 }
 

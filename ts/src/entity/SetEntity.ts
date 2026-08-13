@@ -37,7 +37,7 @@ class SetEntity extends MagicTheGatheringEntityBase<Set> {
 
 
 
-  async list(this: any, reqmatch?: SetListMatch, ctrl?: Control): Promise<Set[]> {
+  async list(this: any, reqmatch?: SetListMatch, ctrl?: Control): Promise<SetEntity[]> {
 
     const utility = this._utility
 

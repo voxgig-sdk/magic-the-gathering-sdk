@@ -31,12 +31,12 @@ main: kit: entity: set: {
       type: "`$STRING`"
     }
     {
-      name: "online_only"
+      name: "onlineOnly"
       req: false
       type: "`$BOOLEAN`"
     }
     {
-      name: "release_date"
+      name: "releaseDate"
       req: false
       type: "`$STRING`"
     }
@@ -84,7 +84,7 @@ main: kit: entity: set: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.sets`"
           }
         }
       ]

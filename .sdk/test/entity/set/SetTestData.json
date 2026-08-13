@@ -7,8 +7,8 @@
         "border": "s52",
         "code": "s53",
         "name": "s54",
-        "online_only": false,
-        "release_date": "s56",
+        "onlineOnly": false,
+        "releaseDate": "s56",
         "type": "s57"
       },
       "SET01": {
@@ -17,8 +17,8 @@
         "border": "sa2",
         "code": "sa3",
         "name": "sa4",
-        "online_only": false,
-        "release_date": "sa6",
+        "onlineOnly": false,
+        "releaseDate": "sa6",
         "type": "sa7"
       },
       "SET02": {
@@ -27,8 +27,8 @@
         "border": "sf2",
         "code": "sf3",
         "name": "sf4",
-        "online_only": false,
-        "release_date": "sf6",
+        "onlineOnly": false,
+        "releaseDate": "sf6",
         "type": "sf7"
       }
     }
@@ -41,8 +41,8 @@
         "border": "s142",
         "code": "s143",
         "name": "s144",
-        "online_only": false,
-        "release_date": "s146",
+        "onlineOnly": false,
+        "releaseDate": "s146",
         "type": "s147"
       }
     }

@@ -23,8 +23,8 @@ module MagicTheGatheringTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("MAGICTHEGATHERING_TEST_LIVE")
-    override = getenv("MAGICTHEGATHERING_TEST_OVERRIDE")
+    live = getenv("MAGIC_THE_GATHERING_TEST_LIVE")
+    override = getenv("MAGIC_THE_GATHERING_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module MagicTheGatheringTestRunner
       end
     end
 
-    explain = getenv("MAGICTHEGATHERING_TEST_EXPLAIN")
-    m["MAGICTHEGATHERING_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("MAGIC_THE_GATHERING_TEST_EXPLAIN")
+    m["MAGIC_THE_GATHERING_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

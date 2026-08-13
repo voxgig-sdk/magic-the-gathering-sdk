@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import MagicTheGatheringSDK
-from core.error import MagicTheGatheringError
-from core.result import MagicTheGatheringResult
-from core.response import MagicTheGatheringResponse
-from core.spec import MagicTheGatheringSpec
-from feature.base_feature import MagicTheGatheringBaseFeature
+from projectname_sdk.core.error import MagicTheGatheringError
+from projectname_sdk.core.result import MagicTheGatheringResult
+from projectname_sdk.core.response import MagicTheGatheringResponse
+from projectname_sdk.core.spec import MagicTheGatheringSpec
+from projectname_sdk.feature.base_feature import MagicTheGatheringBaseFeature
 
 
 def _client():

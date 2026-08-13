@@ -7,32 +7,32 @@
 
 export interface Card {
   artist?: string
-  card?: Record<string, any>
   cmc?: number
-  color?: any[]
-  color_identity?: any[]
+  colorIdentity?: any[]
+  colors?: any[]
   flavor?: string
   id?: string
-  image_url?: string
-  legality?: any[]
+  imageUrl?: string
+  legalities?: any[]
   loyalty?: string
-  mana_cost?: string
+  manaCost?: string
   multiverseid?: string
   name?: string
   number?: string
-  original_text?: string
-  original_type?: string
+  originalText?: string
+  originalType?: string
   power?: string
-  printing?: any[]
+  printings?: any[]
   rarity?: string
-  ruling?: any[]
+  rulings?: any[]
   set?: string
-  set_name?: string
-  subtype?: any[]
-  supertype?: any[]
+  setName?: string
+  subtypes?: any[]
+  supertypes?: any[]
   text?: string
   toughness?: string
   type?: string
+  types?: any[]
 }
 
 export interface CardLoadMatch {
@@ -41,32 +41,32 @@ export interface CardLoadMatch {
 
 export interface CardListMatch {
   artist?: string
-  card?: Record<string, any>
   cmc?: number
-  color?: any[]
-  color_identity?: any[]
+  colorIdentity?: any[]
+  colors?: any[]
   flavor?: string
   id?: string
-  image_url?: string
-  legality?: any[]
+  imageUrl?: string
+  legalities?: any[]
   loyalty?: string
-  mana_cost?: string
+  manaCost?: string
   multiverseid?: string
   name?: string
   number?: string
-  original_text?: string
-  original_type?: string
+  originalText?: string
+  originalType?: string
   power?: string
-  printing?: any[]
+  printings?: any[]
   rarity?: string
-  ruling?: any[]
+  rulings?: any[]
   set?: string
-  set_name?: string
-  subtype?: any[]
-  supertype?: any[]
+  setName?: string
+  subtypes?: any[]
+  supertypes?: any[]
   text?: string
   toughness?: string
   type?: string
+  types?: any[]
 }
 
 export interface Set {
@@ -75,8 +75,8 @@ export interface Set {
   border?: string
   code?: string
   name?: string
-  online_only?: boolean
-  release_date?: string
+  onlineOnly?: boolean
+  releaseDate?: string
   type?: string
 }
 
@@ -86,8 +86,8 @@ export interface SetListMatch {
   border?: string
   code?: string
   name?: string
-  online_only?: boolean
-  release_date?: string
+  onlineOnly?: boolean
+  releaseDate?: string
   type?: string
 }
 

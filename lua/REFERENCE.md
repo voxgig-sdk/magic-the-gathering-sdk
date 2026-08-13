@@ -95,32 +95,32 @@ local card = client:Card(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `artist` | `string` | No |  |
-| `card` | `table` | No |  |
 | `cmc` | `number` | No |  |
-| `color` | `table` | No |  |
-| `color_identity` | `table` | No |  |
+| `colorIdentity` | `table` | No |  |
+| `colors` | `table` | No |  |
 | `flavor` | `string` | No |  |
 | `id` | `string` | No |  |
-| `image_url` | `string` | No |  |
-| `legality` | `table` | No |  |
+| `imageUrl` | `string` | No |  |
+| `legalities` | `table` | No |  |
 | `loyalty` | `string` | No |  |
-| `mana_cost` | `string` | No |  |
+| `manaCost` | `string` | No |  |
 | `multiverseid` | `string` | No |  |
 | `name` | `string` | No |  |
 | `number` | `string` | No |  |
-| `original_text` | `string` | No |  |
-| `original_type` | `string` | No |  |
+| `originalText` | `string` | No |  |
+| `originalType` | `string` | No |  |
 | `power` | `string` | No |  |
-| `printing` | `table` | No |  |
+| `printings` | `table` | No |  |
 | `rarity` | `string` | No |  |
-| `ruling` | `table` | No |  |
+| `rulings` | `table` | No |  |
 | `set` | `string` | No |  |
-| `set_name` | `string` | No |  |
-| `subtype` | `table` | No |  |
-| `supertype` | `table` | No |  |
+| `setName` | `string` | No |  |
+| `subtypes` | `table` | No |  |
+| `supertypes` | `table` | No |  |
 | `text` | `string` | No |  |
 | `toughness` | `string` | No |  |
 | `type` | `string` | No |  |
+| `types` | `table` | No |  |
 
 ### Operations
 
@@ -185,8 +185,8 @@ local set = client:Set(nil)
 | `border` | `string` | No |  |
 | `code` | `string` | No |  |
 | `name` | `string` | No |  |
-| `online_only` | `boolean` | No |  |
-| `release_date` | `string` | No |  |
+| `onlineOnly` | `boolean` | No |  |
+| `releaseDate` | `string` | No |  |
 | `type` | `string` | No |  |
 
 ### Operations

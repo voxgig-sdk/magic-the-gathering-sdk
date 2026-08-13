@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ MagicTheGatheringUtility.registrar = ->(u) {
   u.prepare_params = MagicTheGatheringUtilities::PrepareParams
   u.prepare_path = MagicTheGatheringUtilities::PreparePath
   u.prepare_query = MagicTheGatheringUtilities::PrepareQuery
+  u.graphql_body = MagicTheGatheringUtilities::GraphqlBody
+  u.graphql_errors = MagicTheGatheringUtilities::GraphqlErrors
   u.result_basic = MagicTheGatheringUtilities::ResultBasic
   u.result_body = MagicTheGatheringUtilities::ResultBody
   u.result_headers = MagicTheGatheringUtilities::ResultHeaders

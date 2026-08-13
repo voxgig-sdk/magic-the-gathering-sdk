@@ -8,64 +8,64 @@
 
 ---@class Card
 ---@field artist? string
----@field card? table
 ---@field cmc? number
----@field color? table
----@field color_identity? table
+---@field colorIdentity? table
+---@field colors? table
 ---@field flavor? string
 ---@field id? string
----@field image_url? string
----@field legality? table
+---@field imageUrl? string
+---@field legalities? table
 ---@field loyalty? string
----@field mana_cost? string
+---@field manaCost? string
 ---@field multiverseid? string
 ---@field name? string
 ---@field number? string
----@field original_text? string
----@field original_type? string
+---@field originalText? string
+---@field originalType? string
 ---@field power? string
----@field printing? table
+---@field printings? table
 ---@field rarity? string
----@field ruling? table
+---@field rulings? table
 ---@field set? string
----@field set_name? string
----@field subtype? table
----@field supertype? table
+---@field setName? string
+---@field subtypes? table
+---@field supertypes? table
 ---@field text? string
 ---@field toughness? string
 ---@field type? string
+---@field types? table
 
 ---@class CardLoadMatch
 ---@field id string
 
 ---@class CardListMatch
 ---@field artist? string
----@field card? table
 ---@field cmc? number
----@field color? table
----@field color_identity? table
+---@field colorIdentity? table
+---@field colors? table
 ---@field flavor? string
 ---@field id? string
----@field image_url? string
----@field legality? table
+---@field imageUrl? string
+---@field legalities? table
 ---@field loyalty? string
----@field mana_cost? string
+---@field manaCost? string
 ---@field multiverseid? string
 ---@field name? string
 ---@field number? string
----@field original_text? string
----@field original_type? string
+---@field originalText? string
+---@field originalType? string
 ---@field power? string
----@field printing? table
+---@field printings? table
 ---@field rarity? string
----@field ruling? table
+---@field rulings? table
 ---@field set? string
----@field set_name? string
----@field subtype? table
----@field supertype? table
+---@field setName? string
+---@field subtypes? table
+---@field supertypes? table
 ---@field text? string
 ---@field toughness? string
 ---@field type? string
+---@field types? table
 
 ---@class Set
 ---@field block? string
@@ -73,8 +73,8 @@
 ---@field border? string
 ---@field code? string
 ---@field name? string
----@field online_only? boolean
----@field release_date? string
+---@field onlineOnly? boolean
+---@field releaseDate? string
 ---@field type? string
 
 ---@class SetListMatch
@@ -83,8 +83,8 @@
 ---@field border? string
 ---@field code? string
 ---@field name? string
----@field online_only? boolean
----@field release_date? string
+---@field onlineOnly? boolean
+---@field releaseDate? string
 ---@field type? string
 
 local M = {}

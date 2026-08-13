@@ -114,11 +114,11 @@ def card_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "MAGICTHEGATHERING_TEST_CARD_ENTID" => {},
-    "MAGICTHEGATHERING_TEST_LIVE" => "FALSE",
+    "MAGIC_THE_GATHERING_TEST_CARD_ENTID" => {},
+    "MAGIC_THE_GATHERING_TEST_LIVE" => "FALSE",
   })
 
-  live = env["MAGICTHEGATHERING_TEST_LIVE"] == "TRUE"
+  live = env["MAGIC_THE_GATHERING_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {

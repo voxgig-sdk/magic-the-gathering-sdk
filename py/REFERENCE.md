@@ -92,32 +92,32 @@ card = client.Card()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `artist` | `str` | No |  |
-| `card` | `dict` | No |  |
 | `cmc` | `float` | No |  |
-| `color` | `list` | No |  |
-| `color_identity` | `list` | No |  |
+| `colorIdentity` | `list` | No |  |
+| `colors` | `list` | No |  |
 | `flavor` | `str` | No |  |
 | `id` | `str` | No |  |
-| `image_url` | `str` | No |  |
-| `legality` | `list` | No |  |
+| `imageUrl` | `str` | No |  |
+| `legalities` | `list` | No |  |
 | `loyalty` | `str` | No |  |
-| `mana_cost` | `str` | No |  |
+| `manaCost` | `str` | No |  |
 | `multiverseid` | `str` | No |  |
 | `name` | `str` | No |  |
 | `number` | `str` | No |  |
-| `original_text` | `str` | No |  |
-| `original_type` | `str` | No |  |
+| `originalText` | `str` | No |  |
+| `originalType` | `str` | No |  |
 | `power` | `str` | No |  |
-| `printing` | `list` | No |  |
+| `printings` | `list` | No |  |
 | `rarity` | `str` | No |  |
-| `ruling` | `list` | No |  |
+| `rulings` | `list` | No |  |
 | `set` | `str` | No |  |
-| `set_name` | `str` | No |  |
-| `subtype` | `list` | No |  |
-| `supertype` | `list` | No |  |
+| `setName` | `str` | No |  |
+| `subtypes` | `list` | No |  |
+| `supertypes` | `list` | No |  |
 | `text` | `str` | No |  |
 | `toughness` | `str` | No |  |
 | `type` | `str` | No |  |
+| `types` | `list` | No |  |
 
 ### Operations
 
@@ -183,8 +183,8 @@ set = client.Set()
 | `border` | `str` | No |  |
 | `code` | `str` | No |  |
 | `name` | `str` | No |  |
-| `online_only` | `bool` | No |  |
-| `release_date` | `str` | No |  |
+| `onlineOnly` | `bool` | No |  |
+| `releaseDate` | `str` | No |  |
 | `type` | `str` | No |  |
 
 ### Operations

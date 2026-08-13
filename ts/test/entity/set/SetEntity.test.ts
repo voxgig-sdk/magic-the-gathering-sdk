@@ -26,8 +26,8 @@ import {
 describe('SetEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when MAGICTHEGATHERING_TEST_LIVE=TRUE.
-  afterEach(liveDelay('MAGICTHEGATHERING_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when MAGIC_THE_GATHERING_TEST_LIVE=TRUE.
+  afterEach(liveDelay('MAGIC_THE_GATHERING_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = MagicTheGatheringSDK.test()
@@ -63,7 +63,7 @@ describe('SetEntity', async () => {
     const set_ref01_ent = client.Set()
     const set_ref01_match: any = {}
 
-    const set_ref01_list = await set_ref01_ent.list(set_ref01_match)
+    const set_ref01_list = (await set_ref01_ent.list(set_ref01_match)).map((e: any) => e.data())
 
 
   })

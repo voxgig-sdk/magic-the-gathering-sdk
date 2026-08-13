@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ MagicTheGatheringUtility::setRegistrar(function (MagicTheGatheringUtility $u): v
     $u->prepare_params = [MagicTheGatheringPrepareParams::class, 'call'];
     $u->prepare_path = [MagicTheGatheringPreparePath::class, 'call'];
     $u->prepare_query = [MagicTheGatheringPrepareQuery::class, 'call'];
+    $u->graphql_body = [MagicTheGatheringGraphql::class, 'body'];
+    $u->graphql_errors = [MagicTheGatheringGraphql::class, 'errors'];
     $u->result_basic = [MagicTheGatheringResultBasic::class, 'call'];
     $u->result_body = [MagicTheGatheringResultBody::class, 'call'];
     $u->result_headers = [MagicTheGatheringResultHeaders::class, 'call'];

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from magicthegathering_sdk.utility.voxgig_struct import voxgig_struct as vs
 from magicthegathering_sdk import MagicTheGatheringSDK
-from core import helpers
+from magicthegathering_sdk.core import helpers
 from test import runner
 
 
@@ -105,11 +105,11 @@ def _card_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "MAGICTHEGATHERING_TEST_CARD_ENTID": {},
-        "MAGICTHEGATHERING_TEST_LIVE": "FALSE",
+        "MAGIC_THE_GATHERING_TEST_CARD_ENTID": {},
+        "MAGIC_THE_GATHERING_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("MAGICTHEGATHERING_TEST_LIVE") == "TRUE"
+    live = env.get("MAGIC_THE_GATHERING_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

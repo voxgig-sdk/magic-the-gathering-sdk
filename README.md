@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = MagicTheGatheringSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = MagicTheGatheringSDK.test({
+  entity: {
+    card: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const cards = await client.Card().list()
-// cards is an array of bare Card records populated with mock data
+// cards is an array of Card entities, populated with mock data
+// — call cards[0].data() for the record itself
 console.log(cards)
 ```
 
@@ -110,7 +119,7 @@ import { MagicTheGatheringSDK } from '@voxgig-sdk/magic-the-gathering'
 
 const client = new MagicTheGatheringSDK()
 
-// List all cards (returns Card[])
+// List all cards (returns CardEntity[] — .data() for the record)
 const cards = await client.Card().list()
 for (const card of cards) {
   console.log(card)
@@ -192,7 +201,7 @@ $client = new MagicTheGatheringSDK();
 $cards = $client->Card()->list();
 print_r($cards);
 
-// Load a specific card (returns the bare record; throws on error)
+// Load a specific card (returns the ENTITY; call data_get() for the record; throws on error)
 $card = $client->Card()->load(["id" => "example_id"]);
 print_r($card);
 ```
@@ -223,7 +232,7 @@ client = MagicTheGatheringSDK.new
 cards = client.Card.list
 puts cards
 
-# Load a specific card (returns the bare record; raises on error)
+# Load a specific card (returns the ENTITY; call data_get for the record)
 card = client.Card.load({ "id" => "example_id" })
 puts card
 ```
@@ -360,6 +369,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://api.magicthegathering.io/](https://api.magicthegathering.io/)
 

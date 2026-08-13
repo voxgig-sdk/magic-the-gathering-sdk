@@ -103,32 +103,32 @@ fmt.Println(card.GetName()) // "card"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `artist` | `string` | No |  |
-| `card` | `map[string]any` | No |  |
 | `cmc` | `float64` | No |  |
-| `color` | `[]any` | No |  |
-| `color_identity` | `[]any` | No |  |
+| `colorIdentity` | `[]any` | No |  |
+| `colors` | `[]any` | No |  |
 | `flavor` | `string` | No |  |
 | `id` | `string` | No |  |
-| `image_url` | `string` | No |  |
-| `legality` | `[]any` | No |  |
+| `imageUrl` | `string` | No |  |
+| `legalities` | `[]any` | No |  |
 | `loyalty` | `string` | No |  |
-| `mana_cost` | `string` | No |  |
+| `manaCost` | `string` | No |  |
 | `multiverseid` | `string` | No |  |
 | `name` | `string` | No |  |
 | `number` | `string` | No |  |
-| `original_text` | `string` | No |  |
-| `original_type` | `string` | No |  |
+| `originalText` | `string` | No |  |
+| `originalType` | `string` | No |  |
 | `power` | `string` | No |  |
-| `printing` | `[]any` | No |  |
+| `printings` | `[]any` | No |  |
 | `rarity` | `string` | No |  |
-| `ruling` | `[]any` | No |  |
+| `rulings` | `[]any` | No |  |
 | `set` | `string` | No |  |
-| `set_name` | `string` | No |  |
-| `subtype` | `[]any` | No |  |
-| `supertype` | `[]any` | No |  |
+| `setName` | `string` | No |  |
+| `subtypes` | `[]any` | No |  |
+| `supertypes` | `[]any` | No |  |
 | `text` | `string` | No |  |
 | `toughness` | `string` | No |  |
 | `type` | `string` | No |  |
+| `types` | `[]any` | No |  |
 
 ### Operations
 
@@ -196,8 +196,8 @@ fmt.Println(set.GetName()) // "set"
 | `border` | `string` | No |  |
 | `code` | `string` | No |  |
 | `name` | `string` | No |  |
-| `online_only` | `bool` | No |  |
-| `release_date` | `string` | No |  |
+| `onlineOnly` | `bool` | No |  |
+| `releaseDate` | `string` | No |  |
 | `type` | `string` | No |  |
 
 ### Operations

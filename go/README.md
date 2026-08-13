@@ -271,32 +271,32 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | Field | Description |
 | --- | --- |
 | `"artist"` |  |
-| `"card"` |  |
 | `"cmc"` |  |
-| `"color"` |  |
-| `"color_identity"` |  |
+| `"colorIdentity"` |  |
+| `"colors"` |  |
 | `"flavor"` |  |
 | `"id"` |  |
-| `"image_url"` |  |
-| `"legality"` |  |
+| `"imageUrl"` |  |
+| `"legalities"` |  |
 | `"loyalty"` |  |
-| `"mana_cost"` |  |
+| `"manaCost"` |  |
 | `"multiverseid"` |  |
 | `"name"` |  |
 | `"number"` |  |
-| `"original_text"` |  |
-| `"original_type"` |  |
+| `"originalText"` |  |
+| `"originalType"` |  |
 | `"power"` |  |
-| `"printing"` |  |
+| `"printings"` |  |
 | `"rarity"` |  |
-| `"ruling"` |  |
+| `"rulings"` |  |
 | `"set"` |  |
-| `"set_name"` |  |
-| `"subtype"` |  |
-| `"supertype"` |  |
+| `"setName"` |  |
+| `"subtypes"` |  |
+| `"supertypes"` |  |
 | `"text"` |  |
 | `"toughness"` |  |
 | `"type"` |  |
+| `"types"` |  |
 
 Operations: List, Load.
 
@@ -311,8 +311,8 @@ API path: `/cards`
 | `"border"` |  |
 | `"code"` |  |
 | `"name"` |  |
-| `"online_only"` |  |
-| `"release_date"` |  |
+| `"onlineOnly"` |  |
+| `"releaseDate"` |  |
 | `"type"` |  |
 
 Operations: List.
@@ -340,32 +340,32 @@ Create an instance: `card := client.Card(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `artist` | `string` |  |
-| `card` | `map[string]any` |  |
 | `cmc` | `float64` |  |
-| `color` | `[]any` |  |
-| `color_identity` | `[]any` |  |
+| `colorIdentity` | `[]any` |  |
+| `colors` | `[]any` |  |
 | `flavor` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `legality` | `[]any` |  |
+| `imageUrl` | `string` |  |
+| `legalities` | `[]any` |  |
 | `loyalty` | `string` |  |
-| `mana_cost` | `string` |  |
+| `manaCost` | `string` |  |
 | `multiverseid` | `string` |  |
 | `name` | `string` |  |
 | `number` | `string` |  |
-| `original_text` | `string` |  |
-| `original_type` | `string` |  |
+| `originalText` | `string` |  |
+| `originalType` | `string` |  |
 | `power` | `string` |  |
-| `printing` | `[]any` |  |
+| `printings` | `[]any` |  |
 | `rarity` | `string` |  |
-| `ruling` | `[]any` |  |
+| `rulings` | `[]any` |  |
 | `set` | `string` |  |
-| `set_name` | `string` |  |
-| `subtype` | `[]any` |  |
-| `supertype` | `[]any` |  |
+| `setName` | `string` |  |
+| `subtypes` | `[]any` |  |
+| `supertypes` | `[]any` |  |
 | `text` | `string` |  |
 | `toughness` | `string` |  |
 | `type` | `string` |  |
+| `types` | `[]any` |  |
 
 #### Example: Load
 
@@ -407,8 +407,8 @@ Create an instance: `set := client.Set(nil)`
 | `border` | `string` |  |
 | `code` | `string` |  |
 | `name` | `string` |  |
-| `online_only` | `bool` |  |
-| `release_date` | `string` |  |
+| `onlineOnly` | `bool` |  |
+| `releaseDate` | `string` |  |
 | `type` | `string` |  |
 
 #### Example: List

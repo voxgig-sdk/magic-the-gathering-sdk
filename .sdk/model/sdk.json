@@ -5,6 +5,10 @@
       "desc": ""
     },
     "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
       "config": {
         "docs_order": [
           "ts",
@@ -18,6 +22,7 @@
           "content-type": "application/json"
         }
       },
+      "contributor": {},
       "entity": {
         "card": {
           "active": true,
@@ -33,25 +38,19 @@
             },
             {
               "active": true,
-              "name": "card",
-              "req": false,
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
               "name": "cmc",
               "req": false,
               "type": "`$NUMBER`"
             },
             {
               "active": true,
-              "name": "color",
+              "name": "colorIdentity",
               "req": false,
               "type": "`$ARRAY`"
             },
             {
               "active": true,
-              "name": "color_identity",
+              "name": "colors",
               "req": false,
               "type": "`$ARRAY`"
             },
@@ -69,13 +68,13 @@
             },
             {
               "active": true,
-              "name": "image_url",
+              "name": "imageUrl",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "legality",
+              "name": "legalities",
               "req": false,
               "type": "`$ARRAY`"
             },
@@ -87,7 +86,7 @@
             },
             {
               "active": true,
-              "name": "mana_cost",
+              "name": "manaCost",
               "req": false,
               "type": "`$STRING`"
             },
@@ -111,13 +110,13 @@
             },
             {
               "active": true,
-              "name": "original_text",
+              "name": "originalText",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "original_type",
+              "name": "originalType",
               "req": false,
               "type": "`$STRING`"
             },
@@ -129,7 +128,7 @@
             },
             {
               "active": true,
-              "name": "printing",
+              "name": "printings",
               "req": false,
               "type": "`$ARRAY`"
             },
@@ -141,7 +140,7 @@
             },
             {
               "active": true,
-              "name": "ruling",
+              "name": "rulings",
               "req": false,
               "type": "`$ARRAY`"
             },
@@ -153,19 +152,19 @@
             },
             {
               "active": true,
-              "name": "set_name",
+              "name": "setName",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "subtype",
+              "name": "subtypes",
               "req": false,
               "type": "`$ARRAY`"
             },
             {
               "active": true,
-              "name": "supertype",
+              "name": "supertypes",
               "req": false,
               "type": "`$ARRAY`"
             },
@@ -186,6 +185,12 @@
               "name": "type",
               "req": false,
               "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "types",
+              "req": false,
+              "type": "`$ARRAY`"
             }
           ],
           "id": {
@@ -270,6 +275,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/cards",
                   "parts": [
@@ -289,7 +295,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.cards`"
                   }
                 }
               ]
@@ -312,6 +318,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/cards/{id}",
                   "parts": [
@@ -373,13 +380,13 @@
             },
             {
               "active": true,
-              "name": "online_only",
+              "name": "onlineOnly",
               "req": false,
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
-              "name": "release_date",
+              "name": "releaseDate",
               "req": false,
               "type": "`$STRING`"
             },
@@ -418,6 +425,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/sets",
                   "parts": [
@@ -431,7 +439,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.sets`"
                   }
                 }
               ]
@@ -630,18 +638,41 @@
         "website": "https://magicthegathering.io"
       },
       "option": {},
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
       "target": {
         "go": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [
+              "test/feature_test.go"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "magic-the-gathering"
+            "goversion": "",
+            "name": "magic-the-gathering",
+            "package": "",
+            "path": ""
           },
           "name": "go",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -663,22 +694,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Golang"
         },
         "go-cli": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "magic-the-gathering"
+            "goversion": "",
+            "name": "magic-the-gathering",
+            "package": "",
+            "path": ""
           },
           "name": "go-cli",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": false
@@ -717,21 +766,39 @@
                 "recipe": "github"
               },
               "via": "root"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "Go CLI"
         },
         "go-mcp": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "magic-the-gathering"
+            "goversion": "",
+            "name": "magic-the-gathering",
+            "package": "",
+            "path": ""
           },
           "name": "go-mcp",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": false
@@ -770,12 +837,17 @@
                 "recipe": "github"
               },
               "via": "root"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "Go MCP server"
         },
         "lua": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "--"
           },
@@ -787,10 +859,23 @@
             }
           },
           "ext": "lua",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "magic-the-gathering"
+            "goversion": "",
+            "name": "magic-the-gathering",
+            "package": "",
+            "path": ""
           },
           "name": "lua",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -812,22 +897,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Lua"
         },
         "php": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "php",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "magic-the-gathering"
+            "goversion": "",
+            "name": "magic-the-gathering",
+            "package": "",
+            "path": ""
           },
           "name": "php",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -849,13 +952,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "PHP"
         },
         "py": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
@@ -867,10 +975,23 @@
             }
           },
           "ext": "py",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "magic-the-gathering"
+            "goversion": "",
+            "name": "magic-the-gathering",
+            "package": "",
+            "path": ""
           },
           "name": "py",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -892,13 +1013,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Python"
         },
         "rb": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
@@ -915,10 +1041,23 @@
             }
           },
           "ext": "rb",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "magic-the-gathering"
+            "goversion": "",
+            "name": "magic-the-gathering",
+            "package": "",
+            "path": ""
           },
           "name": "rb",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -940,13 +1079,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Ruby"
         },
         "ts": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
@@ -969,10 +1113,23 @@
             }
           },
           "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "magic-the-gathering"
+            "goversion": "",
+            "name": "magic-the-gathering",
+            "package": "",
+            "path": ""
           },
           "name": "ts",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -994,9 +1151,17 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": false
         }
       }
     }

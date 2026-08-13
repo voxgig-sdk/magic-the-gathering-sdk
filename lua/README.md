@@ -243,32 +243,32 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | Field | Description |
 | --- | --- |
 | `artist` |  |
-| `card` |  |
 | `cmc` |  |
-| `color` |  |
-| `color_identity` |  |
+| `colorIdentity` |  |
+| `colors` |  |
 | `flavor` |  |
 | `id` |  |
-| `image_url` |  |
-| `legality` |  |
+| `imageUrl` |  |
+| `legalities` |  |
 | `loyalty` |  |
-| `mana_cost` |  |
+| `manaCost` |  |
 | `multiverseid` |  |
 | `name` |  |
 | `number` |  |
-| `original_text` |  |
-| `original_type` |  |
+| `originalText` |  |
+| `originalType` |  |
 | `power` |  |
-| `printing` |  |
+| `printings` |  |
 | `rarity` |  |
-| `ruling` |  |
+| `rulings` |  |
 | `set` |  |
-| `set_name` |  |
-| `subtype` |  |
-| `supertype` |  |
+| `setName` |  |
+| `subtypes` |  |
+| `supertypes` |  |
 | `text` |  |
 | `toughness` |  |
 | `type` |  |
+| `types` |  |
 
 Operations: List, Load.
 
@@ -283,8 +283,8 @@ API path: `/cards`
 | `border` |  |
 | `code` |  |
 | `name` |  |
-| `online_only` |  |
-| `release_date` |  |
+| `onlineOnly` |  |
+| `releaseDate` |  |
 | `type` |  |
 
 Operations: List.
@@ -312,32 +312,32 @@ Create an instance: `local card = client:Card(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `artist` | `string` |  |
-| `card` | `table` |  |
 | `cmc` | `number` |  |
-| `color` | `table` |  |
-| `color_identity` | `table` |  |
+| `colorIdentity` | `table` |  |
+| `colors` | `table` |  |
 | `flavor` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `legality` | `table` |  |
+| `imageUrl` | `string` |  |
+| `legalities` | `table` |  |
 | `loyalty` | `string` |  |
-| `mana_cost` | `string` |  |
+| `manaCost` | `string` |  |
 | `multiverseid` | `string` |  |
 | `name` | `string` |  |
 | `number` | `string` |  |
-| `original_text` | `string` |  |
-| `original_type` | `string` |  |
+| `originalText` | `string` |  |
+| `originalType` | `string` |  |
 | `power` | `string` |  |
-| `printing` | `table` |  |
+| `printings` | `table` |  |
 | `rarity` | `string` |  |
-| `ruling` | `table` |  |
+| `rulings` | `table` |  |
 | `set` | `string` |  |
-| `set_name` | `string` |  |
-| `subtype` | `table` |  |
-| `supertype` | `table` |  |
+| `setName` | `string` |  |
+| `subtypes` | `table` |  |
+| `supertypes` | `table` |  |
 | `text` | `string` |  |
 | `toughness` | `string` |  |
 | `type` | `string` |  |
+| `types` | `table` |  |
 
 #### Example: Load
 
@@ -371,8 +371,8 @@ Create an instance: `local set = client:Set(nil)`
 | `border` | `string` |  |
 | `code` | `string` |  |
 | `name` | `string` |  |
-| `online_only` | `boolean` |  |
-| `release_date` | `string` |  |
+| `onlineOnly` | `boolean` |  |
+| `releaseDate` | `string` |  |
 | `type` | `string` |  |
 
 #### Example: List

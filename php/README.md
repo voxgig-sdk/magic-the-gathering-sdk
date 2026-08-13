@@ -49,7 +49,7 @@ try {
 
 ```php
 try {
-    // load() returns the bare Card record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Card record (throws on error).
     $card = $client->Card()->load(["id" => "example_id"]);
     print_r($card);
 } catch (\Throwable $err) {
@@ -140,7 +140,8 @@ $client = MagicTheGatheringSDK::test([
     "entity" => ["card" => ["test01" => ["id" => "test01"]]],
 ]);
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $card = $client->Card()->list();
 print_r($card);
 ```
@@ -241,7 +242,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -264,32 +265,32 @@ On error, `ok` is `false` and `$err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `artist` |  |
-| `card` |  |
 | `cmc` |  |
-| `color` |  |
-| `color_identity` |  |
+| `colorIdentity` |  |
+| `colors` |  |
 | `flavor` |  |
 | `id` |  |
-| `image_url` |  |
-| `legality` |  |
+| `imageUrl` |  |
+| `legalities` |  |
 | `loyalty` |  |
-| `mana_cost` |  |
+| `manaCost` |  |
 | `multiverseid` |  |
 | `name` |  |
 | `number` |  |
-| `original_text` |  |
-| `original_type` |  |
+| `originalText` |  |
+| `originalType` |  |
 | `power` |  |
-| `printing` |  |
+| `printings` |  |
 | `rarity` |  |
-| `ruling` |  |
+| `rulings` |  |
 | `set` |  |
-| `set_name` |  |
-| `subtype` |  |
-| `supertype` |  |
+| `setName` |  |
+| `subtypes` |  |
+| `supertypes` |  |
 | `text` |  |
 | `toughness` |  |
 | `type` |  |
+| `types` |  |
 
 Operations: List, Load.
 
@@ -304,8 +305,8 @@ API path: `/cards`
 | `border` |  |
 | `code` |  |
 | `name` |  |
-| `online_only` |  |
-| `release_date` |  |
+| `onlineOnly` |  |
+| `releaseDate` |  |
 | `type` |  |
 
 Operations: List.
@@ -333,37 +334,37 @@ Create an instance: `$card = $client->Card();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `artist` | `string` |  |
-| `card` | `array` |  |
 | `cmc` | `float` |  |
-| `color` | `array` |  |
-| `color_identity` | `array` |  |
+| `colorIdentity` | `array` |  |
+| `colors` | `array` |  |
 | `flavor` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `legality` | `array` |  |
+| `imageUrl` | `string` |  |
+| `legalities` | `array` |  |
 | `loyalty` | `string` |  |
-| `mana_cost` | `string` |  |
+| `manaCost` | `string` |  |
 | `multiverseid` | `string` |  |
 | `name` | `string` |  |
 | `number` | `string` |  |
-| `original_text` | `string` |  |
-| `original_type` | `string` |  |
+| `originalText` | `string` |  |
+| `originalType` | `string` |  |
 | `power` | `string` |  |
-| `printing` | `array` |  |
+| `printings` | `array` |  |
 | `rarity` | `string` |  |
-| `ruling` | `array` |  |
+| `rulings` | `array` |  |
 | `set` | `string` |  |
-| `set_name` | `string` |  |
-| `subtype` | `array` |  |
-| `supertype` | `array` |  |
+| `setName` | `string` |  |
+| `subtypes` | `array` |  |
+| `supertypes` | `array` |  |
 | `text` | `string` |  |
 | `toughness` | `string` |  |
 | `type` | `string` |  |
+| `types` | `array` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare Card record (throws on error).
+// load() returns the ENTITY — call data_get() for the Card record (throws on error).
 $card = $client->Card()->load(["id" => "card_id"]);
 ```
 
@@ -394,8 +395,8 @@ Create an instance: `$set = $client->Set();`
 | `border` | `string` |  |
 | `code` | `string` |  |
 | `name` | `string` |  |
-| `online_only` | `bool` |  |
-| `release_date` | `string` |  |
+| `onlineOnly` | `bool` |  |
+| `releaseDate` | `string` |  |
 | `type` | `string` |  |
 
 #### Example: List

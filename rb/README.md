@@ -48,7 +48,7 @@ end
 
 ```ruby
 begin
-  # load returns the bare Card record (raises on error).
+  # load returns the ENTITY — call data_get for the Card record (raises on error).
   card = client.Card.load({ "id" => "example_id" })
   puts card
 rescue => err
@@ -134,7 +134,8 @@ client = MagicTheGatheringSDK.test({
   "entity" => { "card" => { "test01" => { "id" => "test01" } } },
 })
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 card = client.Card.list()
 puts card
 ```
@@ -254,32 +255,32 @@ returns a result `Hash` with these keys:
 | Field | Description |
 | --- | --- |
 | `artist` |  |
-| `card` |  |
 | `cmc` |  |
-| `color` |  |
-| `color_identity` |  |
+| `colorIdentity` |  |
+| `colors` |  |
 | `flavor` |  |
 | `id` |  |
-| `image_url` |  |
-| `legality` |  |
+| `imageUrl` |  |
+| `legalities` |  |
 | `loyalty` |  |
-| `mana_cost` |  |
+| `manaCost` |  |
 | `multiverseid` |  |
 | `name` |  |
 | `number` |  |
-| `original_text` |  |
-| `original_type` |  |
+| `originalText` |  |
+| `originalType` |  |
 | `power` |  |
-| `printing` |  |
+| `printings` |  |
 | `rarity` |  |
-| `ruling` |  |
+| `rulings` |  |
 | `set` |  |
-| `set_name` |  |
-| `subtype` |  |
-| `supertype` |  |
+| `setName` |  |
+| `subtypes` |  |
+| `supertypes` |  |
 | `text` |  |
 | `toughness` |  |
 | `type` |  |
+| `types` |  |
 
 Operations: List, Load.
 
@@ -294,8 +295,8 @@ API path: `/cards`
 | `border` |  |
 | `code` |  |
 | `name` |  |
-| `online_only` |  |
-| `release_date` |  |
+| `onlineOnly` |  |
+| `releaseDate` |  |
 | `type` |  |
 
 Operations: List.
@@ -323,37 +324,37 @@ Create an instance: `card = client.Card`
 | Field | Type | Description |
 | --- | --- | --- |
 | `artist` | `String` |  |
-| `card` | `Hash` |  |
 | `cmc` | `Float` |  |
-| `color` | `Array` |  |
-| `color_identity` | `Array` |  |
+| `colorIdentity` | `Array` |  |
+| `colors` | `Array` |  |
 | `flavor` | `String` |  |
 | `id` | `String` |  |
-| `image_url` | `String` |  |
-| `legality` | `Array` |  |
+| `imageUrl` | `String` |  |
+| `legalities` | `Array` |  |
 | `loyalty` | `String` |  |
-| `mana_cost` | `String` |  |
+| `manaCost` | `String` |  |
 | `multiverseid` | `String` |  |
 | `name` | `String` |  |
 | `number` | `String` |  |
-| `original_text` | `String` |  |
-| `original_type` | `String` |  |
+| `originalText` | `String` |  |
+| `originalType` | `String` |  |
 | `power` | `String` |  |
-| `printing` | `Array` |  |
+| `printings` | `Array` |  |
 | `rarity` | `String` |  |
-| `ruling` | `Array` |  |
+| `rulings` | `Array` |  |
 | `set` | `String` |  |
-| `set_name` | `String` |  |
-| `subtype` | `Array` |  |
-| `supertype` | `Array` |  |
+| `setName` | `String` |  |
+| `subtypes` | `Array` |  |
+| `supertypes` | `Array` |  |
 | `text` | `String` |  |
 | `toughness` | `String` |  |
 | `type` | `String` |  |
+| `types` | `Array` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Card record (raises on error).
+# load returns the ENTITY — call data_get for the Card record (raises on error).
 card = client.Card.load({ "id" => "card_id" })
 ```
 
@@ -384,8 +385,8 @@ Create an instance: `set = client.Set`
 | `border` | `String` |  |
 | `code` | `String` |  |
 | `name` | `String` |  |
-| `online_only` | `Boolean` |  |
-| `release_date` | `String` |  |
+| `onlineOnly` | `Boolean` |  |
+| `releaseDate` | `String` |  |
 | `type` | `String` |  |
 
 #### Example: List

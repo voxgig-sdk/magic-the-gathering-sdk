@@ -97,32 +97,32 @@ $card = $client->Card();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `artist` | `string` | No |  |
-| `card` | `array` | No |  |
 | `cmc` | `float` | No |  |
-| `color` | `array` | No |  |
-| `color_identity` | `array` | No |  |
+| `colorIdentity` | `array` | No |  |
+| `colors` | `array` | No |  |
 | `flavor` | `string` | No |  |
 | `id` | `string` | No |  |
-| `image_url` | `string` | No |  |
-| `legality` | `array` | No |  |
+| `imageUrl` | `string` | No |  |
+| `legalities` | `array` | No |  |
 | `loyalty` | `string` | No |  |
-| `mana_cost` | `string` | No |  |
+| `manaCost` | `string` | No |  |
 | `multiverseid` | `string` | No |  |
 | `name` | `string` | No |  |
 | `number` | `string` | No |  |
-| `original_text` | `string` | No |  |
-| `original_type` | `string` | No |  |
+| `originalText` | `string` | No |  |
+| `originalType` | `string` | No |  |
 | `power` | `string` | No |  |
-| `printing` | `array` | No |  |
+| `printings` | `array` | No |  |
 | `rarity` | `string` | No |  |
-| `ruling` | `array` | No |  |
+| `rulings` | `array` | No |  |
 | `set` | `string` | No |  |
-| `set_name` | `string` | No |  |
-| `subtype` | `array` | No |  |
-| `supertype` | `array` | No |  |
+| `setName` | `string` | No |  |
+| `subtypes` | `array` | No |  |
+| `supertypes` | `array` | No |  |
 | `text` | `string` | No |  |
 | `toughness` | `string` | No |  |
 | `type` | `string` | No |  |
+| `types` | `array` | No |  |
 
 ### Operations
 
@@ -187,8 +187,8 @@ $set = $client->Set();
 | `border` | `string` | No |  |
 | `code` | `string` | No |  |
 | `name` | `string` | No |  |
-| `online_only` | `bool` | No |  |
-| `release_date` | `string` | No |  |
+| `onlineOnly` | `bool` | No |  |
+| `releaseDate` | `string` | No |  |
 | `type` | `string` | No |  |
 
 ### Operations

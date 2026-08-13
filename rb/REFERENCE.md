@@ -98,32 +98,32 @@ card = client.Card
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `artist` | `String` | No |  |
-| `card` | `Hash` | No |  |
 | `cmc` | `Float` | No |  |
-| `color` | `Array` | No |  |
-| `color_identity` | `Array` | No |  |
+| `colorIdentity` | `Array` | No |  |
+| `colors` | `Array` | No |  |
 | `flavor` | `String` | No |  |
 | `id` | `String` | No |  |
-| `image_url` | `String` | No |  |
-| `legality` | `Array` | No |  |
+| `imageUrl` | `String` | No |  |
+| `legalities` | `Array` | No |  |
 | `loyalty` | `String` | No |  |
-| `mana_cost` | `String` | No |  |
+| `manaCost` | `String` | No |  |
 | `multiverseid` | `String` | No |  |
 | `name` | `String` | No |  |
 | `number` | `String` | No |  |
-| `original_text` | `String` | No |  |
-| `original_type` | `String` | No |  |
+| `originalText` | `String` | No |  |
+| `originalType` | `String` | No |  |
 | `power` | `String` | No |  |
-| `printing` | `Array` | No |  |
+| `printings` | `Array` | No |  |
 | `rarity` | `String` | No |  |
-| `ruling` | `Array` | No |  |
+| `rulings` | `Array` | No |  |
 | `set` | `String` | No |  |
-| `set_name` | `String` | No |  |
-| `subtype` | `Array` | No |  |
-| `supertype` | `Array` | No |  |
+| `setName` | `String` | No |  |
+| `subtypes` | `Array` | No |  |
+| `supertypes` | `Array` | No |  |
 | `text` | `String` | No |  |
 | `toughness` | `String` | No |  |
 | `type` | `String` | No |  |
+| `types` | `Array` | No |  |
 
 ### Operations
 
@@ -188,8 +188,8 @@ set = client.Set
 | `border` | `String` | No |  |
 | `code` | `String` | No |  |
 | `name` | `String` | No |  |
-| `online_only` | `Boolean` | No |  |
-| `release_date` | `String` | No |  |
+| `onlineOnly` | `Boolean` | No |  |
+| `releaseDate` | `String` | No |  |
 | `type` | `String` | No |  |
 
 ### Operations

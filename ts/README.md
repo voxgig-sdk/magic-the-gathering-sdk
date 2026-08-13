@@ -35,7 +35,9 @@ const client = new MagicTheGatheringSDK()
 
 ### 2. List card records
 
-`list()` resolves to an array of Card objects — iterate it directly:
+`list()` resolves to an array of Card ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const cards = await client.Card().list()
@@ -133,7 +135,8 @@ Create a mock client for unit testing — no server required:
 const client = MagicTheGatheringSDK.test()
 
 const card = await client.Card().list()
-// card is a bare entity populated with mock response data
+// card is the entity, populated with mock response data
+// — call card.data() for the record itself
 console.log(card)
 ```
 
@@ -301,32 +304,32 @@ The `prepare()` method returns:
 | Field | Description |
 | --- | --- |
 | `artist` |  |
-| `card` |  |
 | `cmc` |  |
-| `color` |  |
-| `color_identity` |  |
+| `colorIdentity` |  |
+| `colors` |  |
 | `flavor` |  |
 | `id` |  |
-| `image_url` |  |
-| `legality` |  |
+| `imageUrl` |  |
+| `legalities` |  |
 | `loyalty` |  |
-| `mana_cost` |  |
+| `manaCost` |  |
 | `multiverseid` |  |
 | `name` |  |
 | `number` |  |
-| `original_text` |  |
-| `original_type` |  |
+| `originalText` |  |
+| `originalType` |  |
 | `power` |  |
-| `printing` |  |
+| `printings` |  |
 | `rarity` |  |
-| `ruling` |  |
+| `rulings` |  |
 | `set` |  |
-| `set_name` |  |
-| `subtype` |  |
-| `supertype` |  |
+| `setName` |  |
+| `subtypes` |  |
+| `supertypes` |  |
 | `text` |  |
 | `toughness` |  |
 | `type` |  |
+| `types` |  |
 
 Operations: list, load.
 
@@ -341,8 +344,8 @@ API path: `/cards`
 | `border` |  |
 | `code` |  |
 | `name` |  |
-| `online_only` |  |
-| `release_date` |  |
+| `onlineOnly` |  |
+| `releaseDate` |  |
 | `type` |  |
 
 Operations: list.
@@ -370,32 +373,32 @@ Create an instance: `const card = client.Card()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `artist` | `string` |  |
-| `card` | `Record<string, any>` |  |
 | `cmc` | `number` |  |
-| `color` | `any[]` |  |
-| `color_identity` | `any[]` |  |
+| `colorIdentity` | `any[]` |  |
+| `colors` | `any[]` |  |
 | `flavor` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `legality` | `any[]` |  |
+| `imageUrl` | `string` |  |
+| `legalities` | `any[]` |  |
 | `loyalty` | `string` |  |
-| `mana_cost` | `string` |  |
+| `manaCost` | `string` |  |
 | `multiverseid` | `string` |  |
 | `name` | `string` |  |
 | `number` | `string` |  |
-| `original_text` | `string` |  |
-| `original_type` | `string` |  |
+| `originalText` | `string` |  |
+| `originalType` | `string` |  |
 | `power` | `string` |  |
-| `printing` | `any[]` |  |
+| `printings` | `any[]` |  |
 | `rarity` | `string` |  |
-| `ruling` | `any[]` |  |
+| `rulings` | `any[]` |  |
 | `set` | `string` |  |
-| `set_name` | `string` |  |
-| `subtype` | `any[]` |  |
-| `supertype` | `any[]` |  |
+| `setName` | `string` |  |
+| `subtypes` | `any[]` |  |
+| `supertypes` | `any[]` |  |
 | `text` | `string` |  |
 | `toughness` | `string` |  |
 | `type` | `string` |  |
+| `types` | `any[]` |  |
 
 #### Example: Load
 
@@ -429,8 +432,8 @@ Create an instance: `const set = client.Set()`
 | `border` | `string` |  |
 | `code` | `string` |  |
 | `name` | `string` |  |
-| `online_only` | `boolean` |  |
-| `release_date` | `string` |  |
+| `onlineOnly` | `boolean` |  |
+| `releaseDate` | `string` |  |
 | `type` | `string` |  |
 
 #### Example: List

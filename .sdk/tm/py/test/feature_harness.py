@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import MagicTheGatheringControl
-from core.error import MagicTheGatheringError
-from core.result import MagicTheGatheringResult
-from core.spec import MagicTheGatheringSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import MagicTheGatheringControl
+from projectname_sdk.core.error import MagicTheGatheringError
+from projectname_sdk.core.result import MagicTheGatheringResult
+from projectname_sdk.core.spec import MagicTheGatheringSpec
 
 
 # True when this SDK was generated with the named feature.
