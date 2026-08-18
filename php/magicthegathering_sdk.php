@@ -40,7 +40,7 @@ class MagicTheGatheringSDK
         $utility = new MagicTheGatheringUtility();
         $this->_utility = $utility;
 
-        $config = MagicTheGatheringConfig::make_config();
+        $config = MagicTheGatheringConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

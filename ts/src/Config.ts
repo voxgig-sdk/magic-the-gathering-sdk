@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://api.magicthegathering.io/v1',
+    base: "https://api.magicthegathering.io/v1",
 
     headers: {
       "content-type": "application/json"
@@ -58,193 +58,112 @@ class Config {
     "card": {
       "fields": [
         {
-          "active": true,
           "name": "artist",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "cmc",
-          "req": false,
-          "type": "`$NUMBER`",
-          "index$": 1
+          "type": "`$NUMBER`"
         },
         {
-          "active": true,
           "name": "colorIdentity",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 2
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "colors",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 3
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "flavor",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "id",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 5
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "imageUrl",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 6
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "legalities",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 7
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "loyalty",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 8
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "manaCost",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 9
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "multiverseid",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 10
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "name",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 11
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "number",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 12
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "originalText",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 13
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "originalType",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 14
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "power",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 15
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "printings",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 16
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "rarity",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 17
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "rulings",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 18
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "set",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 19
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "setName",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 20
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "subtypes",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 21
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "supertypes",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 22
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "text",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 23
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "toughness",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 24
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "type",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 25
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "types",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 26
+          "type": "`$ARRAY`"
         }
       ],
       "name": "card",
@@ -254,73 +173,56 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cmc",
                     "orig": "cmc",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "color",
                     "orig": "color",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "name",
                     "orig": "name",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": 1,
                     "kind": "query",
                     "name": "page",
                     "orig": "page",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": 100,
                     "kind": "query",
                     "name": "page_size",
                     "orig": "page_size",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "rarity",
                     "orig": "rarity",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "set",
                     "orig": "set",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "type",
                     "orig": "type",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -346,28 +248,23 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.cards`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "list"
+          ]
         },
         "load": {
           "input": "data",
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {
                 "params": [
                   {
-                    "active": true,
                     "kind": "param",
                     "name": "id",
                     "orig": "id",
                     "reqd": true,
-                    "type": "`$STRING`",
-                    "index$": 0
+                    "type": "`$STRING`"
                   }
                 ]
               },
@@ -386,11 +283,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.card`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {
@@ -400,60 +295,36 @@ class Config {
     "set": {
       "fields": [
         {
-          "active": true,
           "name": "block",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "booster",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 1
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "border",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "code",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "name",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "onlineOnly",
-          "req": false,
-          "type": "`$BOOLEAN`",
-          "index$": 5
+          "type": "`$BOOLEAN`"
         },
         {
-          "active": true,
           "name": "releaseDate",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 6
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "type",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 7
+          "type": "`$STRING`"
         }
       ],
       "name": "set",
@@ -463,23 +334,18 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "block",
                     "orig": "block",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "name",
                     "orig": "name",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -499,11 +365,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.sets`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "list"
+          ]
         }
       },
       "relations": {

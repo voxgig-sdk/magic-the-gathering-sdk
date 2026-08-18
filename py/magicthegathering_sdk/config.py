@@ -1,7 +1,30 @@
 # MagicTheGathering SDK configuration
 
 
+_shared_config = None
+
+
+def shared_config():
+    """Return the process-wide config, built once on first use.
+
+    The SDK reads the config on every request and never writes to it, so one
+    instance is shared by every client rather than rebuilt per client.
+
+    The returned dict is shared: treat it as read-only. Callers that need to
+    mutate should use make_config, which always returns a fresh copy.
+    """
+    global _shared_config
+    if _shared_config is None:
+        _shared_config = make_config()
+    return _shared_config
+
+
 def make_config():
+    """Build a fresh, fully materialised config dict.
+
+    Every call rebuilds the whole structure, so prefer shared_config unless
+    you need a private copy you intend to mutate.
+    """
     return {
         "main": {
             "name": "MagicTheGathering",
@@ -27,193 +50,112 @@ def make_config():
       "card": {
         "fields": [
           {
-            "active": True,
             "name": "artist",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "cmc",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "colorIdentity",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "colors",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "flavor",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "id",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 5,
           },
           {
-            "active": True,
             "name": "imageUrl",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 6,
           },
           {
-            "active": True,
             "name": "legalities",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 7,
           },
           {
-            "active": True,
             "name": "loyalty",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 8,
           },
           {
-            "active": True,
             "name": "manaCost",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 9,
           },
           {
-            "active": True,
             "name": "multiverseid",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 10,
           },
           {
-            "active": True,
             "name": "name",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 11,
           },
           {
-            "active": True,
             "name": "number",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 12,
           },
           {
-            "active": True,
             "name": "originalText",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 13,
           },
           {
-            "active": True,
             "name": "originalType",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 14,
           },
           {
-            "active": True,
             "name": "power",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 15,
           },
           {
-            "active": True,
             "name": "printings",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 16,
           },
           {
-            "active": True,
             "name": "rarity",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 17,
           },
           {
-            "active": True,
             "name": "rulings",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 18,
           },
           {
-            "active": True,
             "name": "set",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 19,
           },
           {
-            "active": True,
             "name": "setName",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 20,
           },
           {
-            "active": True,
             "name": "subtypes",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 21,
           },
           {
-            "active": True,
             "name": "supertypes",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 22,
           },
           {
-            "active": True,
             "name": "text",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 23,
           },
           {
-            "active": True,
             "name": "toughness",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 24,
           },
           {
-            "active": True,
             "name": "type",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 25,
           },
           {
-            "active": True,
             "name": "types",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 26,
           },
         ],
         "name": "card",
@@ -223,73 +165,56 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "active": True,
                 "args": {
                   "query": [
                     {
-                      "active": True,
                       "kind": "query",
                       "name": "cmc",
                       "orig": "cmc",
-                      "reqd": False,
                       "type": "`$INTEGER`",
                     },
                     {
-                      "active": True,
                       "kind": "query",
                       "name": "color",
                       "orig": "color",
-                      "reqd": False,
                       "type": "`$STRING`",
                     },
                     {
-                      "active": True,
                       "kind": "query",
                       "name": "name",
                       "orig": "name",
-                      "reqd": False,
                       "type": "`$STRING`",
                     },
                     {
-                      "active": True,
                       "example": 1,
                       "kind": "query",
                       "name": "page",
                       "orig": "page",
-                      "reqd": False,
                       "type": "`$INTEGER`",
                     },
                     {
-                      "active": True,
                       "example": 100,
                       "kind": "query",
                       "name": "page_size",
                       "orig": "page_size",
-                      "reqd": False,
                       "type": "`$INTEGER`",
                     },
                     {
-                      "active": True,
                       "kind": "query",
                       "name": "rarity",
                       "orig": "rarity",
-                      "reqd": False,
                       "type": "`$STRING`",
                     },
                     {
-                      "active": True,
                       "kind": "query",
                       "name": "set",
                       "orig": "set",
-                      "reqd": False,
                       "type": "`$STRING`",
                     },
                     {
-                      "active": True,
                       "kind": "query",
                       "name": "type",
                       "orig": "type",
-                      "reqd": False,
                       "type": "`$STRING`",
                     },
                   ],
@@ -316,27 +241,22 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.cards`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "list",
           },
           "load": {
             "input": "data",
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "kind": "param",
                       "name": "id",
                       "orig": "id",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -356,10 +276,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.card`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -369,60 +287,36 @@ def make_config():
       "set": {
         "fields": [
           {
-            "active": True,
             "name": "block",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "booster",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "border",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "code",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "name",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "onlineOnly",
-            "req": False,
             "type": "`$BOOLEAN`",
-            "index$": 5,
           },
           {
-            "active": True,
             "name": "releaseDate",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 6,
           },
           {
-            "active": True,
             "name": "type",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 7,
           },
         ],
         "name": "set",
@@ -432,23 +326,18 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "active": True,
                 "args": {
                   "query": [
                     {
-                      "active": True,
                       "kind": "query",
                       "name": "block",
                       "orig": "block",
-                      "reqd": False,
                       "type": "`$STRING`",
                     },
                     {
-                      "active": True,
                       "kind": "query",
                       "name": "name",
                       "orig": "name",
-                      "reqd": False,
                       "type": "`$STRING`",
                     },
                   ],
@@ -469,10 +358,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.sets`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "list",
           },
         },
         "relations": {

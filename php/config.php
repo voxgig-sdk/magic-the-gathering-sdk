@@ -5,6 +5,29 @@ declare(strict_types=1);
 
 class MagicTheGatheringConfig
 {
+    /** @var array<string,mixed>|null */
+    private static ?array $shared_config = null;
+
+    /**
+     * Return the process-wide config, built once on first use. The SDK reads
+     * the config on every request and never writes to it, so one instance is
+     * shared by every client rather than rebuilt per client.
+     *
+     * PHP arrays are copy-on-write, so callers that do mutate the result get
+     * their own copy and cannot disturb the shared one.
+     */
+    public static function shared_config(): array
+    {
+        if (self::$shared_config === null) {
+            self::$shared_config = self::make_config();
+        }
+        return self::$shared_config;
+    }
+
+    /**
+     * Build a fresh, fully materialised config array. Every call rebuilds the
+     * whole structure, so prefer shared_config unless you need a private copy.
+     */
     public static function make_config(): array
     {
         return [
@@ -32,193 +55,112 @@ class MagicTheGatheringConfig
         'card' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'artist',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'cmc',
-              'req' => false,
               'type' => '`$NUMBER`',
-              'index$' => 1,
             ],
             [
-              'active' => true,
               'name' => 'colorIdentity',
-              'req' => false,
               'type' => '`$ARRAY`',
-              'index$' => 2,
             ],
             [
-              'active' => true,
               'name' => 'colors',
-              'req' => false,
               'type' => '`$ARRAY`',
-              'index$' => 3,
             ],
             [
-              'active' => true,
               'name' => 'flavor',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 4,
             ],
             [
-              'active' => true,
               'name' => 'id',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 5,
             ],
             [
-              'active' => true,
               'name' => 'imageUrl',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 6,
             ],
             [
-              'active' => true,
               'name' => 'legalities',
-              'req' => false,
               'type' => '`$ARRAY`',
-              'index$' => 7,
             ],
             [
-              'active' => true,
               'name' => 'loyalty',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 8,
             ],
             [
-              'active' => true,
               'name' => 'manaCost',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 9,
             ],
             [
-              'active' => true,
               'name' => 'multiverseid',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 10,
             ],
             [
-              'active' => true,
               'name' => 'name',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 11,
             ],
             [
-              'active' => true,
               'name' => 'number',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 12,
             ],
             [
-              'active' => true,
               'name' => 'originalText',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 13,
             ],
             [
-              'active' => true,
               'name' => 'originalType',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 14,
             ],
             [
-              'active' => true,
               'name' => 'power',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 15,
             ],
             [
-              'active' => true,
               'name' => 'printings',
-              'req' => false,
               'type' => '`$ARRAY`',
-              'index$' => 16,
             ],
             [
-              'active' => true,
               'name' => 'rarity',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 17,
             ],
             [
-              'active' => true,
               'name' => 'rulings',
-              'req' => false,
               'type' => '`$ARRAY`',
-              'index$' => 18,
             ],
             [
-              'active' => true,
               'name' => 'set',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 19,
             ],
             [
-              'active' => true,
               'name' => 'setName',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 20,
             ],
             [
-              'active' => true,
               'name' => 'subtypes',
-              'req' => false,
               'type' => '`$ARRAY`',
-              'index$' => 21,
             ],
             [
-              'active' => true,
               'name' => 'supertypes',
-              'req' => false,
               'type' => '`$ARRAY`',
-              'index$' => 22,
             ],
             [
-              'active' => true,
               'name' => 'text',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 23,
             ],
             [
-              'active' => true,
               'name' => 'toughness',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 24,
             ],
             [
-              'active' => true,
               'name' => 'type',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 25,
             ],
             [
-              'active' => true,
               'name' => 'types',
-              'req' => false,
               'type' => '`$ARRAY`',
-              'index$' => 26,
             ],
           ],
           'name' => 'card',
@@ -228,73 +170,56 @@ class MagicTheGatheringConfig
               'name' => 'list',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cmc',
                         'orig' => 'cmc',
-                        'reqd' => false,
                         'type' => '`$INTEGER`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'color',
                         'orig' => 'color',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'name',
                         'orig' => 'name',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => 1,
                         'kind' => 'query',
                         'name' => 'page',
                         'orig' => 'page',
-                        'reqd' => false,
                         'type' => '`$INTEGER`',
                       ],
                       [
-                        'active' => true,
                         'example' => 100,
                         'kind' => 'query',
                         'name' => 'page_size',
                         'orig' => 'page_size',
-                        'reqd' => false,
                         'type' => '`$INTEGER`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'rarity',
                         'orig' => 'rarity',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'set',
                         'orig' => 'set',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'type',
                         'orig' => 'type',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -321,27 +246,22 @@ class MagicTheGatheringConfig
                     'req' => '`reqdata`',
                     'res' => '`body.cards`',
                   ],
-                  'index$' => 0,
                 ],
               ],
-              'key$' => 'list',
             ],
             'load' => [
               'input' => 'data',
               'name' => 'load',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [
                     'params' => [
                       [
-                        'active' => true,
                         'kind' => 'param',
                         'name' => 'id',
                         'orig' => 'id',
                         'reqd' => true,
                         'type' => '`$STRING`',
-                        'index$' => 0,
                       ],
                     ],
                   ],
@@ -361,10 +281,8 @@ class MagicTheGatheringConfig
                     'req' => '`reqdata`',
                     'res' => '`body.card`',
                   ],
-                  'index$' => 0,
                 ],
               ],
-              'key$' => 'load',
             ],
           ],
           'relations' => [
@@ -374,60 +292,36 @@ class MagicTheGatheringConfig
         'set' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'block',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'booster',
-              'req' => false,
               'type' => '`$ARRAY`',
-              'index$' => 1,
             ],
             [
-              'active' => true,
               'name' => 'border',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 2,
             ],
             [
-              'active' => true,
               'name' => 'code',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 3,
             ],
             [
-              'active' => true,
               'name' => 'name',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 4,
             ],
             [
-              'active' => true,
               'name' => 'onlineOnly',
-              'req' => false,
               'type' => '`$BOOLEAN`',
-              'index$' => 5,
             ],
             [
-              'active' => true,
               'name' => 'releaseDate',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 6,
             ],
             [
-              'active' => true,
               'name' => 'type',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 7,
             ],
           ],
           'name' => 'set',
@@ -437,23 +331,18 @@ class MagicTheGatheringConfig
               'name' => 'list',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'block',
                         'orig' => 'block',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'name',
                         'orig' => 'name',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -474,10 +363,8 @@ class MagicTheGatheringConfig
                     'req' => '`reqdata`',
                     'res' => '`body.sets`',
                   ],
-                  'index$' => 0,
                 ],
               ],
-              'key$' => 'list',
             ],
           ],
           'relations' => [

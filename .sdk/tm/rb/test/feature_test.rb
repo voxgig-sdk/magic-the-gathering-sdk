@@ -15,7 +15,7 @@ require_relative "../MagicTheGathering_sdk"
 module MagicTheGatheringFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = MagicTheGatheringConfig.make_config["feature"]
+    f = MagicTheGatheringConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 
