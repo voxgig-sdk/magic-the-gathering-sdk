@@ -8,136 +8,163 @@ main: kit: entity: card: {
     {
       name: "artist"
       req: false
+      short: "Artist who illustrated the card"
       type: "`$STRING`"
     }
     {
       name: "cmc"
       req: false
+      short: "Converted mana cost"
       type: "`$NUMBER`"
     }
     {
       name: "colorIdentity"
       req: false
+      short: "Color identity of the card"
       type: "`$ARRAY`"
     }
     {
       name: "colors"
       req: false
+      short: "Array of card colors"
       type: "`$ARRAY`"
     }
     {
       name: "flavor"
       req: false
+      short: "Flavor text of the card"
       type: "`$STRING`"
     }
     {
       name: "id"
       req: false
+      short: "Unique identifier for the card"
       type: "`$STRING`"
     }
     {
       name: "imageUrl"
       req: false
+      short: "URL to the card image"
       type: "`$STRING`"
     }
     {
       name: "legalities"
       req: false
+      short: "Legality status in various formats"
       type: "`$ARRAY`"
     }
     {
       name: "loyalty"
       req: false
+      short: "Loyalty of the card (for planeswalkers)"
       type: "`$STRING`"
     }
     {
       name: "manaCost"
       req: false
+      short: "Mana cost of the card"
       type: "`$STRING`"
     }
     {
       name: "multiverseid"
       req: false
+      short: "Multiverse ID of the card"
       type: "`$STRING`"
     }
     {
       name: "name"
       req: false
+      short: "Name of the card"
       type: "`$STRING`"
     }
     {
       name: "number"
       req: false
+      short: "Collector number of the card"
       type: "`$STRING`"
     }
     {
       name: "originalText"
       req: false
+      short: "Original text of the card"
       type: "`$STRING`"
     }
     {
       name: "originalType"
       req: false
+      short: "Original type of the card"
       type: "`$STRING`"
     }
     {
       name: "power"
       req: false
+      short: "Power of the card (for creatures)"
       type: "`$STRING`"
     }
     {
       name: "printings"
       req: false
+      short: "List of set codes where this card was printed"
       type: "`$ARRAY`"
     }
     {
       name: "rarity"
       req: false
+      short: "Rarity of the card"
       type: "`$STRING`"
     }
     {
       name: "rulings"
       req: false
+      short: "Official rulings for the card"
       type: "`$ARRAY`"
     }
     {
       name: "set"
       req: false
+      short: "Set code the card belongs to"
       type: "`$STRING`"
     }
     {
       name: "setName"
       req: false
+      short: "Name of the set"
       type: "`$STRING`"
     }
     {
       name: "subtypes"
       req: false
+      short: "Subtypes of the card"
       type: "`$ARRAY`"
     }
     {
       name: "supertypes"
       req: false
+      short: "Supertypes of the card"
       type: "`$ARRAY`"
     }
     {
       name: "text"
       req: false
+      short: "Rules text of the card"
       type: "`$STRING`"
     }
     {
       name: "toughness"
       req: false
+      short: "Toughness of the card (for creatures)"
       type: "`$STRING`"
     }
     {
       name: "type"
       req: false
+      short: "Type line of the card"
       type: "`$STRING`"
     }
     {
       name: "types"
       req: false
+      short: "Types of the card"
       type: "`$ARRAY`"
     }
   ]

@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "MagicTheGathering",
+			"slug": "magic-the-gathering",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -34,110 +37,137 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "artist",
+						"short": "Artist who illustrated the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cmc",
+						"short": "Converted mana cost",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "colorIdentity",
+						"short": "Color identity of the card",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "colors",
+						"short": "Array of card colors",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "flavor",
+						"short": "Flavor text of the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "imageUrl",
+						"short": "URL to the card image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "legalities",
+						"short": "Legality status in various formats",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "loyalty",
+						"short": "Loyalty of the card (for planeswalkers)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "manaCost",
+						"short": "Mana cost of the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "multiverseid",
+						"short": "Multiverse ID of the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "number",
+						"short": "Collector number of the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "originalText",
+						"short": "Original text of the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "originalType",
+						"short": "Original type of the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "power",
+						"short": "Power of the card (for creatures)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "printings",
+						"short": "List of set codes where this card was printed",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "rarity",
+						"short": "Rarity of the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "rulings",
+						"short": "Official rulings for the card",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "set",
+						"short": "Set code the card belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "setName",
+						"short": "Name of the set",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "subtypes",
+						"short": "Subtypes of the card",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "supertypes",
+						"short": "Supertypes of the card",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "text",
+						"short": "Rules text of the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "toughness",
+						"short": "Toughness of the card (for creatures)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "type",
+						"short": "Type line of the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "types",
+						"short": "Types of the card",
 						"type": "`$ARRAY`",
 					},
 				},
@@ -271,34 +301,42 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "block",
+						"short": "Block the set belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "booster",
+						"short": "Booster pack configuration",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "border",
+						"short": "Border style of cards in the set",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "code",
+						"short": "Unique set code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the set",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "onlineOnly",
+						"short": "Whether the set is online-only",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "releaseDate",
+						"short": "Release date of the set",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "type",
+						"short": "Type of the set (e.g., core, expansion)",
 						"type": "`$STRING`",
 					},
 				},

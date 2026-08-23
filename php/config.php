@@ -33,6 +33,9 @@ class MagicTheGatheringConfig
         return [
             "main" => [
                 "name" => "MagicTheGathering",
+                "slug" => "magic-the-gathering",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -56,110 +59,137 @@ class MagicTheGatheringConfig
           'fields' => [
             [
               'name' => 'artist',
+              'short' => 'Artist who illustrated the card',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'cmc',
+              'short' => 'Converted mana cost',
               'type' => '`$NUMBER`',
             ],
             [
               'name' => 'colorIdentity',
+              'short' => 'Color identity of the card',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'colors',
+              'short' => 'Array of card colors',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'flavor',
+              'short' => 'Flavor text of the card',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'id',
+              'short' => 'Unique identifier for the card',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'imageUrl',
+              'short' => 'URL to the card image',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'legalities',
+              'short' => 'Legality status in various formats',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'loyalty',
+              'short' => 'Loyalty of the card (for planeswalkers)',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'manaCost',
+              'short' => 'Mana cost of the card',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'multiverseid',
+              'short' => 'Multiverse ID of the card',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'name',
+              'short' => 'Name of the card',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'number',
+              'short' => 'Collector number of the card',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'originalText',
+              'short' => 'Original text of the card',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'originalType',
+              'short' => 'Original type of the card',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'power',
+              'short' => 'Power of the card (for creatures)',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'printings',
+              'short' => 'List of set codes where this card was printed',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'rarity',
+              'short' => 'Rarity of the card',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'rulings',
+              'short' => 'Official rulings for the card',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'set',
+              'short' => 'Set code the card belongs to',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'setName',
+              'short' => 'Name of the set',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'subtypes',
+              'short' => 'Subtypes of the card',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'supertypes',
+              'short' => 'Supertypes of the card',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'text',
+              'short' => 'Rules text of the card',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'toughness',
+              'short' => 'Toughness of the card (for creatures)',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'type',
+              'short' => 'Type line of the card',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'types',
+              'short' => 'Types of the card',
               'type' => '`$ARRAY`',
             ],
           ],
@@ -293,34 +323,42 @@ class MagicTheGatheringConfig
           'fields' => [
             [
               'name' => 'block',
+              'short' => 'Block the set belongs to',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'booster',
+              'short' => 'Booster pack configuration',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'border',
+              'short' => 'Border style of cards in the set',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'code',
+              'short' => 'Unique set code',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'name',
+              'short' => 'Name of the set',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'onlineOnly',
+              'short' => 'Whether the set is online-only',
               'type' => '`$BOOLEAN`',
             ],
             [
               'name' => 'releaseDate',
+              'short' => 'Release date of the set',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'type',
+              'short' => 'Type of the set (e.g., core, expansion)',
               'type' => '`$STRING`',
             ],
           ],

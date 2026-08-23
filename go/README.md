@@ -6,7 +6,7 @@ The Golang SDK for the MagicTheGathering API — an entity-oriented client using
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Card(nil)` — each with the same small set of operations (`List`, `Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -270,33 +270,33 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"artist"` |  |
-| `"cmc"` |  |
-| `"colorIdentity"` |  |
-| `"colors"` |  |
-| `"flavor"` |  |
-| `"id"` |  |
-| `"imageUrl"` |  |
-| `"legalities"` |  |
-| `"loyalty"` |  |
-| `"manaCost"` |  |
-| `"multiverseid"` |  |
-| `"name"` |  |
-| `"number"` |  |
-| `"originalText"` |  |
-| `"originalType"` |  |
-| `"power"` |  |
-| `"printings"` |  |
-| `"rarity"` |  |
-| `"rulings"` |  |
-| `"set"` |  |
-| `"setName"` |  |
-| `"subtypes"` |  |
-| `"supertypes"` |  |
-| `"text"` |  |
-| `"toughness"` |  |
-| `"type"` |  |
-| `"types"` |  |
+| `"artist"` | Artist who illustrated the card |
+| `"cmc"` | Converted mana cost |
+| `"colorIdentity"` | Color identity of the card |
+| `"colors"` | Array of card colors |
+| `"flavor"` | Flavor text of the card |
+| `"id"` | Unique identifier for the card |
+| `"imageUrl"` | URL to the card image |
+| `"legalities"` | Legality status in various formats |
+| `"loyalty"` | Loyalty of the card (for planeswalkers) |
+| `"manaCost"` | Mana cost of the card |
+| `"multiverseid"` | Multiverse ID of the card |
+| `"name"` | Name of the card |
+| `"number"` | Collector number of the card |
+| `"originalText"` | Original text of the card |
+| `"originalType"` | Original type of the card |
+| `"power"` | Power of the card (for creatures) |
+| `"printings"` | List of set codes where this card was printed |
+| `"rarity"` | Rarity of the card |
+| `"rulings"` | Official rulings for the card |
+| `"set"` | Set code the card belongs to |
+| `"setName"` | Name of the set |
+| `"subtypes"` | Subtypes of the card |
+| `"supertypes"` | Supertypes of the card |
+| `"text"` | Rules text of the card |
+| `"toughness"` | Toughness of the card (for creatures) |
+| `"type"` | Type line of the card |
+| `"types"` | Types of the card |
 
 Operations: List, Load.
 
@@ -306,14 +306,14 @@ API path: `/cards`
 
 | Field | Description |
 | --- | --- |
-| `"block"` |  |
-| `"booster"` |  |
-| `"border"` |  |
-| `"code"` |  |
-| `"name"` |  |
-| `"onlineOnly"` |  |
-| `"releaseDate"` |  |
-| `"type"` |  |
+| `"block"` | Block the set belongs to |
+| `"booster"` | Booster pack configuration |
+| `"border"` | Border style of cards in the set |
+| `"code"` | Unique set code |
+| `"name"` | Name of the set |
+| `"onlineOnly"` | Whether the set is online-only |
+| `"releaseDate"` | Release date of the set |
+| `"type"` | Type of the set (e.g., core, expansion) |
 
 Operations: List.
 
@@ -339,33 +339,33 @@ Create an instance: `card := client.Card(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `artist` | `string` |  |
-| `cmc` | `float64` |  |
-| `colorIdentity` | `[]any` |  |
-| `colors` | `[]any` |  |
-| `flavor` | `string` |  |
-| `id` | `string` |  |
-| `imageUrl` | `string` |  |
-| `legalities` | `[]any` |  |
-| `loyalty` | `string` |  |
-| `manaCost` | `string` |  |
-| `multiverseid` | `string` |  |
-| `name` | `string` |  |
-| `number` | `string` |  |
-| `originalText` | `string` |  |
-| `originalType` | `string` |  |
-| `power` | `string` |  |
-| `printings` | `[]any` |  |
-| `rarity` | `string` |  |
-| `rulings` | `[]any` |  |
-| `set` | `string` |  |
-| `setName` | `string` |  |
-| `subtypes` | `[]any` |  |
-| `supertypes` | `[]any` |  |
-| `text` | `string` |  |
-| `toughness` | `string` |  |
-| `type` | `string` |  |
-| `types` | `[]any` |  |
+| `artist` | `string` | Artist who illustrated the card |
+| `cmc` | `float64` | Converted mana cost |
+| `colorIdentity` | `[]any` | Color identity of the card |
+| `colors` | `[]any` | Array of card colors |
+| `flavor` | `string` | Flavor text of the card |
+| `id` | `string` | Unique identifier for the card |
+| `imageUrl` | `string` | URL to the card image |
+| `legalities` | `[]any` | Legality status in various formats |
+| `loyalty` | `string` | Loyalty of the card (for planeswalkers) |
+| `manaCost` | `string` | Mana cost of the card |
+| `multiverseid` | `string` | Multiverse ID of the card |
+| `name` | `string` | Name of the card |
+| `number` | `string` | Collector number of the card |
+| `originalText` | `string` | Original text of the card |
+| `originalType` | `string` | Original type of the card |
+| `power` | `string` | Power of the card (for creatures) |
+| `printings` | `[]any` | List of set codes where this card was printed |
+| `rarity` | `string` | Rarity of the card |
+| `rulings` | `[]any` | Official rulings for the card |
+| `set` | `string` | Set code the card belongs to |
+| `setName` | `string` | Name of the set |
+| `subtypes` | `[]any` | Subtypes of the card |
+| `supertypes` | `[]any` | Supertypes of the card |
+| `text` | `string` | Rules text of the card |
+| `toughness` | `string` | Toughness of the card (for creatures) |
+| `type` | `string` | Type line of the card |
+| `types` | `[]any` | Types of the card |
 
 #### Example: Load
 
@@ -402,14 +402,14 @@ Create an instance: `set := client.Set(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `block` | `string` |  |
-| `booster` | `[]any` |  |
-| `border` | `string` |  |
-| `code` | `string` |  |
-| `name` | `string` |  |
-| `onlineOnly` | `bool` |  |
-| `releaseDate` | `string` |  |
-| `type` | `string` |  |
+| `block` | `string` | Block the set belongs to |
+| `booster` | `[]any` | Booster pack configuration |
+| `border` | `string` | Border style of cards in the set |
+| `code` | `string` | Unique set code |
+| `name` | `string` | Name of the set |
+| `onlineOnly` | `bool` | Whether the set is online-only |
+| `releaseDate` | `string` | Release date of the set |
+| `type` | `string` | Type of the set (e.g., core, expansion) |
 
 #### Example: List
 

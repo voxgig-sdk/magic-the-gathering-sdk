@@ -8,41 +8,49 @@ main: kit: entity: set: {
     {
       name: "block"
       req: false
+      short: "Block the set belongs to"
       type: "`$STRING`"
     }
     {
       name: "booster"
       req: false
+      short: "Booster pack configuration"
       type: "`$ARRAY`"
     }
     {
       name: "border"
       req: false
+      short: "Border style of cards in the set"
       type: "`$STRING`"
     }
     {
       name: "code"
       req: false
+      short: "Unique set code"
       type: "`$STRING`"
     }
     {
       name: "name"
       req: false
+      short: "Name of the set"
       type: "`$STRING`"
     }
     {
       name: "onlineOnly"
       req: false
+      short: "Whether the set is online-only"
       type: "`$BOOLEAN`"
     }
     {
       name: "releaseDate"
       req: false
+      short: "Release date of the set"
       type: "`$STRING`"
     }
     {
       name: "type"
       req: false
+      short: "Type of the set (e.g., core, expansion)"
       type: "`$STRING`"
     }
   ]

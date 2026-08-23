@@ -242,33 +242,33 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `artist` |  |
-| `cmc` |  |
-| `colorIdentity` |  |
-| `colors` |  |
-| `flavor` |  |
-| `id` |  |
-| `imageUrl` |  |
-| `legalities` |  |
-| `loyalty` |  |
-| `manaCost` |  |
-| `multiverseid` |  |
-| `name` |  |
-| `number` |  |
-| `originalText` |  |
-| `originalType` |  |
-| `power` |  |
-| `printings` |  |
-| `rarity` |  |
-| `rulings` |  |
-| `set` |  |
-| `setName` |  |
-| `subtypes` |  |
-| `supertypes` |  |
-| `text` |  |
-| `toughness` |  |
-| `type` |  |
-| `types` |  |
+| `artist` | Artist who illustrated the card |
+| `cmc` | Converted mana cost |
+| `colorIdentity` | Color identity of the card |
+| `colors` | Array of card colors |
+| `flavor` | Flavor text of the card |
+| `id` | Unique identifier for the card |
+| `imageUrl` | URL to the card image |
+| `legalities` | Legality status in various formats |
+| `loyalty` | Loyalty of the card (for planeswalkers) |
+| `manaCost` | Mana cost of the card |
+| `multiverseid` | Multiverse ID of the card |
+| `name` | Name of the card |
+| `number` | Collector number of the card |
+| `originalText` | Original text of the card |
+| `originalType` | Original type of the card |
+| `power` | Power of the card (for creatures) |
+| `printings` | List of set codes where this card was printed |
+| `rarity` | Rarity of the card |
+| `rulings` | Official rulings for the card |
+| `set` | Set code the card belongs to |
+| `setName` | Name of the set |
+| `subtypes` | Subtypes of the card |
+| `supertypes` | Supertypes of the card |
+| `text` | Rules text of the card |
+| `toughness` | Toughness of the card (for creatures) |
+| `type` | Type line of the card |
+| `types` | Types of the card |
 
 Operations: List, Load.
 
@@ -278,14 +278,14 @@ API path: `/cards`
 
 | Field | Description |
 | --- | --- |
-| `block` |  |
-| `booster` |  |
-| `border` |  |
-| `code` |  |
-| `name` |  |
-| `onlineOnly` |  |
-| `releaseDate` |  |
-| `type` |  |
+| `block` | Block the set belongs to |
+| `booster` | Booster pack configuration |
+| `border` | Border style of cards in the set |
+| `code` | Unique set code |
+| `name` | Name of the set |
+| `onlineOnly` | Whether the set is online-only |
+| `releaseDate` | Release date of the set |
+| `type` | Type of the set (e.g., core, expansion) |
 
 Operations: List.
 
@@ -311,33 +311,33 @@ Create an instance: `local card = client:Card(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `artist` | `string` |  |
-| `cmc` | `number` |  |
-| `colorIdentity` | `table` |  |
-| `colors` | `table` |  |
-| `flavor` | `string` |  |
-| `id` | `string` |  |
-| `imageUrl` | `string` |  |
-| `legalities` | `table` |  |
-| `loyalty` | `string` |  |
-| `manaCost` | `string` |  |
-| `multiverseid` | `string` |  |
-| `name` | `string` |  |
-| `number` | `string` |  |
-| `originalText` | `string` |  |
-| `originalType` | `string` |  |
-| `power` | `string` |  |
-| `printings` | `table` |  |
-| `rarity` | `string` |  |
-| `rulings` | `table` |  |
-| `set` | `string` |  |
-| `setName` | `string` |  |
-| `subtypes` | `table` |  |
-| `supertypes` | `table` |  |
-| `text` | `string` |  |
-| `toughness` | `string` |  |
-| `type` | `string` |  |
-| `types` | `table` |  |
+| `artist` | `string` | Artist who illustrated the card |
+| `cmc` | `number` | Converted mana cost |
+| `colorIdentity` | `table` | Color identity of the card |
+| `colors` | `table` | Array of card colors |
+| `flavor` | `string` | Flavor text of the card |
+| `id` | `string` | Unique identifier for the card |
+| `imageUrl` | `string` | URL to the card image |
+| `legalities` | `table` | Legality status in various formats |
+| `loyalty` | `string` | Loyalty of the card (for planeswalkers) |
+| `manaCost` | `string` | Mana cost of the card |
+| `multiverseid` | `string` | Multiverse ID of the card |
+| `name` | `string` | Name of the card |
+| `number` | `string` | Collector number of the card |
+| `originalText` | `string` | Original text of the card |
+| `originalType` | `string` | Original type of the card |
+| `power` | `string` | Power of the card (for creatures) |
+| `printings` | `table` | List of set codes where this card was printed |
+| `rarity` | `string` | Rarity of the card |
+| `rulings` | `table` | Official rulings for the card |
+| `set` | `string` | Set code the card belongs to |
+| `setName` | `string` | Name of the set |
+| `subtypes` | `table` | Subtypes of the card |
+| `supertypes` | `table` | Supertypes of the card |
+| `text` | `string` | Rules text of the card |
+| `toughness` | `string` | Toughness of the card (for creatures) |
+| `type` | `string` | Type line of the card |
+| `types` | `table` | Types of the card |
 
 #### Example: Load
 
@@ -366,14 +366,14 @@ Create an instance: `local set = client:Set(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `block` | `string` |  |
-| `booster` | `table` |  |
-| `border` | `string` |  |
-| `code` | `string` |  |
-| `name` | `string` |  |
-| `onlineOnly` | `boolean` |  |
-| `releaseDate` | `string` |  |
-| `type` | `string` |  |
+| `block` | `string` | Block the set belongs to |
+| `booster` | `table` | Booster pack configuration |
+| `border` | `string` | Border style of cards in the set |
+| `code` | `string` | Unique set code |
+| `name` | `string` | Name of the set |
+| `onlineOnly` | `boolean` | Whether the set is online-only |
+| `releaseDate` | `string` | Release date of the set |
+| `type` | `string` | Type of the set (e.g., core, expansion) |
 
 #### Example: List
 

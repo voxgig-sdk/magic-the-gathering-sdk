@@ -69,7 +69,7 @@ export interface CardListMatch {
   types?: any[]
 }
 
-export interface Set {
+export interface SetType {
   block?: string
   booster?: any[]
   border?: string

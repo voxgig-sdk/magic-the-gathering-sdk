@@ -96,33 +96,33 @@ $card = $client->Card();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `artist` | `string` | No |  |
-| `cmc` | `float` | No |  |
-| `colorIdentity` | `array` | No |  |
-| `colors` | `array` | No |  |
-| `flavor` | `string` | No |  |
-| `id` | `string` | No |  |
-| `imageUrl` | `string` | No |  |
-| `legalities` | `array` | No |  |
-| `loyalty` | `string` | No |  |
-| `manaCost` | `string` | No |  |
-| `multiverseid` | `string` | No |  |
-| `name` | `string` | No |  |
-| `number` | `string` | No |  |
-| `originalText` | `string` | No |  |
-| `originalType` | `string` | No |  |
-| `power` | `string` | No |  |
-| `printings` | `array` | No |  |
-| `rarity` | `string` | No |  |
-| `rulings` | `array` | No |  |
-| `set` | `string` | No |  |
-| `setName` | `string` | No |  |
-| `subtypes` | `array` | No |  |
-| `supertypes` | `array` | No |  |
-| `text` | `string` | No |  |
-| `toughness` | `string` | No |  |
-| `type` | `string` | No |  |
-| `types` | `array` | No |  |
+| `artist` | `string` | No | Artist who illustrated the card |
+| `cmc` | `float` | No | Converted mana cost |
+| `colorIdentity` | `array` | No | Color identity of the card |
+| `colors` | `array` | No | Array of card colors |
+| `flavor` | `string` | No | Flavor text of the card |
+| `id` | `string` | No | Unique identifier for the card |
+| `imageUrl` | `string` | No | URL to the card image |
+| `legalities` | `array` | No | Legality status in various formats |
+| `loyalty` | `string` | No | Loyalty of the card (for planeswalkers) |
+| `manaCost` | `string` | No | Mana cost of the card |
+| `multiverseid` | `string` | No | Multiverse ID of the card |
+| `name` | `string` | No | Name of the card |
+| `number` | `string` | No | Collector number of the card |
+| `originalText` | `string` | No | Original text of the card |
+| `originalType` | `string` | No | Original type of the card |
+| `power` | `string` | No | Power of the card (for creatures) |
+| `printings` | `array` | No | List of set codes where this card was printed |
+| `rarity` | `string` | No | Rarity of the card |
+| `rulings` | `array` | No | Official rulings for the card |
+| `set` | `string` | No | Set code the card belongs to |
+| `setName` | `string` | No | Name of the set |
+| `subtypes` | `array` | No | Subtypes of the card |
+| `supertypes` | `array` | No | Supertypes of the card |
+| `text` | `string` | No | Rules text of the card |
+| `toughness` | `string` | No | Toughness of the card (for creatures) |
+| `type` | `string` | No | Type line of the card |
+| `types` | `array` | No | Types of the card |
 
 ### Operations
 
@@ -182,14 +182,14 @@ $set = $client->Set();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `block` | `string` | No |  |
-| `booster` | `array` | No |  |
-| `border` | `string` | No |  |
-| `code` | `string` | No |  |
-| `name` | `string` | No |  |
-| `onlineOnly` | `bool` | No |  |
-| `releaseDate` | `string` | No |  |
-| `type` | `string` | No |  |
+| `block` | `string` | No | Block the set belongs to |
+| `booster` | `array` | No | Booster pack configuration |
+| `border` | `string` | No | Border style of cards in the set |
+| `code` | `string` | No | Unique set code |
+| `name` | `string` | No | Name of the set |
+| `onlineOnly` | `bool` | No | Whether the set is online-only |
+| `releaseDate` | `string` | No | Release date of the set |
+| `type` | `string` | No | Type of the set (e.g., core, expansion) |
 
 ### Operations
 
