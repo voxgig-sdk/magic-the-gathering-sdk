@@ -40,33 +40,14 @@ export interface CardLoadMatch {
 }
 
 export interface CardListMatch {
-  artist?: string
   cmc?: number
-  colorIdentity?: any[]
-  colors?: any[]
-  flavor?: string
-  id?: string
-  imageUrl?: string
-  legalities?: any[]
-  loyalty?: string
-  manaCost?: string
-  multiverseid?: string
+  color?: string
   name?: string
-  number?: string
-  originalText?: string
-  originalType?: string
-  power?: string
-  printings?: any[]
+  page?: number
+  page_size?: number
   rarity?: string
-  rulings?: any[]
   set?: string
-  setName?: string
-  subtypes?: any[]
-  supertypes?: any[]
-  text?: string
-  toughness?: string
   type?: string
-  types?: any[]
 }
 
 export interface SetType {
@@ -82,12 +63,6 @@ export interface SetType {
 
 export interface SetListMatch {
   block?: string
-  booster?: any[]
-  border?: string
-  code?: string
   name?: string
-  onlineOnly?: boolean
-  releaseDate?: string
-  type?: string
 }
 

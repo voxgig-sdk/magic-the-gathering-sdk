@@ -51,33 +51,14 @@ class CardLoadMatch(TypedDict):
 
 
 class CardListMatch(TypedDict, total=False):
-    artist: str
-    cmc: float
-    colorIdentity: list
-    colors: list
-    flavor: str
-    id: str
-    imageUrl: str
-    legalities: list
-    loyalty: str
-    manaCost: str
-    multiverseid: str
+    cmc: int
+    color: str
     name: str
-    number: str
-    originalText: str
-    originalType: str
-    power: str
-    printings: list
+    page: int
+    page_size: int
     rarity: str
-    rulings: list
     set: str
-    setName: str
-    subtypes: list
-    supertypes: list
-    text: str
-    toughness: str
     type: str
-    types: list
 
 
 class Set(TypedDict, total=False):
@@ -93,10 +74,4 @@ class Set(TypedDict, total=False):
 
 class SetListMatch(TypedDict, total=False):
     block: str
-    booster: list
-    border: str
-    code: str
     name: str
-    onlineOnly: bool
-    releaseDate: str
-    type: str

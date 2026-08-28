@@ -50,33 +50,14 @@ type CardLoadMatch struct {
 
 // CardListMatch is the typed request payload for Card.ListTyped.
 type CardListMatch struct {
-	Artist *string `json:"artist,omitempty"`
-	Cmc *float64 `json:"cmc,omitempty"`
-	ColorIdentity *[]any `json:"colorIdentity,omitempty"`
-	Colors *[]any `json:"colors,omitempty"`
-	Flavor *string `json:"flavor,omitempty"`
-	Id *string `json:"id,omitempty"`
-	ImageUrl *string `json:"imageUrl,omitempty"`
-	Legalities *[]any `json:"legalities,omitempty"`
-	Loyalty *string `json:"loyalty,omitempty"`
-	ManaCost *string `json:"manaCost,omitempty"`
-	Multiverseid *string `json:"multiverseid,omitempty"`
+	Cmc *int `json:"cmc,omitempty"`
+	Color *string `json:"color,omitempty"`
 	Name *string `json:"name,omitempty"`
-	Number *string `json:"number,omitempty"`
-	OriginalText *string `json:"originalText,omitempty"`
-	OriginalType *string `json:"originalType,omitempty"`
-	Power *string `json:"power,omitempty"`
-	Printings *[]any `json:"printings,omitempty"`
+	Page *int `json:"page,omitempty"`
+	PageSize *int `json:"page_size,omitempty"`
 	Rarity *string `json:"rarity,omitempty"`
-	Rulings *[]any `json:"rulings,omitempty"`
 	Set *string `json:"set,omitempty"`
-	SetName *string `json:"setName,omitempty"`
-	Subtypes *[]any `json:"subtypes,omitempty"`
-	Supertypes *[]any `json:"supertypes,omitempty"`
-	Text *string `json:"text,omitempty"`
-	Toughness *string `json:"toughness,omitempty"`
 	Type *string `json:"type,omitempty"`
-	Types *[]any `json:"types,omitempty"`
 }
 
 // Set is the typed data model for the set entity.
@@ -94,13 +75,7 @@ type Set struct {
 // SetListMatch is the typed request payload for Set.ListTyped.
 type SetListMatch struct {
 	Block *string `json:"block,omitempty"`
-	Booster *[]any `json:"booster,omitempty"`
-	Border *string `json:"border,omitempty"`
-	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
-	OnlineOnly *bool `json:"onlineOnly,omitempty"`
-	ReleaseDate *string `json:"releaseDate,omitempty"`
-	Type *string `json:"type,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

@@ -53,33 +53,14 @@ class CardLoadMatch
 /** Request payload for Card#list. */
 class CardListMatch
 {
-    public ?string $artist = null;
-    public ?float $cmc = null;
-    public ?array $colorIdentity = null;
-    public ?array $colors = null;
-    public ?string $flavor = null;
-    public ?string $id = null;
-    public ?string $imageUrl = null;
-    public ?array $legalities = null;
-    public ?string $loyalty = null;
-    public ?string $manaCost = null;
-    public ?string $multiverseid = null;
+    public ?int $cmc = null;
+    public ?string $color = null;
     public ?string $name = null;
-    public ?string $number = null;
-    public ?string $originalText = null;
-    public ?string $originalType = null;
-    public ?string $power = null;
-    public ?array $printings = null;
+    public ?int $page = null;
+    public ?int $page_size = null;
     public ?string $rarity = null;
-    public ?array $rulings = null;
     public ?string $set = null;
-    public ?string $setName = null;
-    public ?array $subtypes = null;
-    public ?array $supertypes = null;
-    public ?string $text = null;
-    public ?string $toughness = null;
     public ?string $type = null;
-    public ?array $types = null;
 }
 
 /** Set entity data model. */
@@ -99,12 +80,6 @@ class Set
 class SetListMatch
 {
     public ?string $block = null;
-    public ?array $booster = null;
-    public ?string $border = null;
-    public ?string $code = null;
     public ?string $name = null;
-    public ?bool $onlineOnly = null;
-    public ?string $releaseDate = null;
-    public ?string $type = null;
 }
 

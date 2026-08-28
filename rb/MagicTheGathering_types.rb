@@ -132,114 +132,38 @@ CardLoadMatch = Struct.new(
 
 # Request payload for Card#list.
 #
-# @!attribute [rw] artist
-#   @return [String, nil]
-#
 # @!attribute [rw] cmc
-#   @return [Float, nil]
+#   @return [Integer, nil]
 #
-# @!attribute [rw] colorIdentity
-#   @return [Array, nil]
-#
-# @!attribute [rw] colors
-#   @return [Array, nil]
-#
-# @!attribute [rw] flavor
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] imageUrl
-#   @return [String, nil]
-#
-# @!attribute [rw] legalities
-#   @return [Array, nil]
-#
-# @!attribute [rw] loyalty
-#   @return [String, nil]
-#
-# @!attribute [rw] manaCost
-#   @return [String, nil]
-#
-# @!attribute [rw] multiverseid
+# @!attribute [rw] color
 #   @return [String, nil]
 #
 # @!attribute [rw] name
 #   @return [String, nil]
 #
-# @!attribute [rw] number
-#   @return [String, nil]
+# @!attribute [rw] page
+#   @return [Integer, nil]
 #
-# @!attribute [rw] originalText
-#   @return [String, nil]
-#
-# @!attribute [rw] originalType
-#   @return [String, nil]
-#
-# @!attribute [rw] power
-#   @return [String, nil]
-#
-# @!attribute [rw] printings
-#   @return [Array, nil]
+# @!attribute [rw] page_size
+#   @return [Integer, nil]
 #
 # @!attribute [rw] rarity
 #   @return [String, nil]
 #
-# @!attribute [rw] rulings
-#   @return [Array, nil]
-#
 # @!attribute [rw] set
-#   @return [String, nil]
-#
-# @!attribute [rw] setName
-#   @return [String, nil]
-#
-# @!attribute [rw] subtypes
-#   @return [Array, nil]
-#
-# @!attribute [rw] supertypes
-#   @return [Array, nil]
-#
-# @!attribute [rw] text
-#   @return [String, nil]
-#
-# @!attribute [rw] toughness
 #   @return [String, nil]
 #
 # @!attribute [rw] type
 #   @return [String, nil]
-#
-# @!attribute [rw] types
-#   @return [Array, nil]
 CardListMatch = Struct.new(
-  :artist,
   :cmc,
-  :colorIdentity,
-  :colors,
-  :flavor,
-  :id,
-  :imageUrl,
-  :legalities,
-  :loyalty,
-  :manaCost,
-  :multiverseid,
+  :color,
   :name,
-  :number,
-  :originalText,
-  :originalType,
-  :power,
-  :printings,
+  :page,
+  :page_size,
   :rarity,
-  :rulings,
   :set,
-  :setName,
-  :subtypes,
-  :supertypes,
-  :text,
-  :toughness,
   :type,
-  :types,
   keyword_init: true
 )
 
@@ -285,35 +209,11 @@ SetType = Struct.new(
 # @!attribute [rw] block
 #   @return [String, nil]
 #
-# @!attribute [rw] booster
-#   @return [Array, nil]
-#
-# @!attribute [rw] border
-#   @return [String, nil]
-#
-# @!attribute [rw] code
-#   @return [String, nil]
-#
 # @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] onlineOnly
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] releaseDate
-#   @return [String, nil]
-#
-# @!attribute [rw] type
 #   @return [String, nil]
 SetListMatch = Struct.new(
   :block,
-  :booster,
-  :border,
-  :code,
   :name,
-  :onlineOnly,
-  :releaseDate,
-  :type,
   keyword_init: true
 )
 
