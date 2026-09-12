@@ -42,6 +42,7 @@ main: kit: entity: card: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "imageUrl"
       req: false
       short: "URL to the card image"
@@ -244,8 +245,10 @@ main: kit: entity: card: {
           }
           method: "GET"
           orig: "/cards"
-          parts: [
-            "cards"
+          segments: [
+            {
+              lit: "cards"
+            }
           ]
           select: {
             exist: [
@@ -283,9 +286,13 @@ main: kit: entity: card: {
           }
           method: "GET"
           orig: "/cards/{id}"
-          parts: [
-            "cards"
-            "{id}"
+          segments: [
+            {
+              lit: "cards"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [

@@ -42,6 +42,7 @@ main: kit: entity: set: {
       type: "`$BOOLEAN`"
     }
     {
+      format: "date"
       name: "releaseDate"
       req: false
       short: "Release date of the set"
@@ -81,8 +82,10 @@ main: kit: entity: set: {
           }
           method: "GET"
           orig: "/sets"
-          parts: [
-            "sets"
+          segments: [
+            {
+              lit: "sets"
+            }
           ]
           select: {
             exist: [

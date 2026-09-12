@@ -89,6 +89,7 @@ class MagicTheGatheringConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'imageUrl',
               'short' => 'URL to the card image',
               'type' => '`$STRING`',
@@ -194,6 +195,10 @@ class MagicTheGatheringConfig
               'type' => '`$ARRAY`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'card',
           'op' => [
             'list' => [
@@ -258,8 +263,10 @@ class MagicTheGatheringConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cards',
-                  'parts' => [
-                    'cards',
+                  'segments' => [
+                    [
+                      'lit' => 'cards',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -276,6 +283,9 @@ class MagicTheGatheringConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.cards`',
+                  ],
+                  'parts' => [
+                    'cards',
                   ],
                 ],
               ],
@@ -299,9 +309,13 @@ class MagicTheGatheringConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cards/{id}',
-                  'parts' => [
-                    'cards',
-                    '{id}',
+                  'segments' => [
+                    [
+                      'lit' => 'cards',
+                    ],
+                    [
+                      'var' => 'id',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -311,6 +325,10 @@ class MagicTheGatheringConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.card`',
+                  ],
+                  'parts' => [
+                    'cards',
+                    '{id}',
                   ],
                 ],
               ],
@@ -353,6 +371,7 @@ class MagicTheGatheringConfig
               'type' => '`$BOOLEAN`',
             ],
             [
+              'format' => 'date',
               'name' => 'releaseDate',
               'short' => 'Release date of the set',
               'type' => '`$STRING`',
@@ -389,8 +408,10 @@ class MagicTheGatheringConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/sets',
-                  'parts' => [
-                    'sets',
+                  'segments' => [
+                    [
+                      'lit' => 'sets',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -401,6 +422,9 @@ class MagicTheGatheringConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.sets`',
+                  ],
+                  'parts' => [
+                    'sets',
                   ],
                 ],
               ],

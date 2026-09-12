@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -100,6 +111,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "imageUrl",
           "short": "URL to the card image",
           "type": "`$STRING`"
@@ -205,6 +217,10 @@ class Config {
           "type": "`$ARRAY`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "card",
       "op": {
         "list": {
@@ -269,8 +285,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/cards",
-              "parts": [
-                "cards"
+              "segments": [
+                {
+                  "lit": "cards"
+                }
               ],
               "select": {
                 "exist": [
@@ -287,7 +305,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.cards`"
-              }
+              },
+              "parts": [
+                "cards"
+              ]
             }
           ]
         },
@@ -310,9 +331,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/cards/{id}",
-              "parts": [
-                "cards",
-                "{id}"
+              "segments": [
+                {
+                  "lit": "cards"
+                },
+                {
+                  "var": "id"
+                }
               ],
               "select": {
                 "exist": [
@@ -322,7 +347,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.card`"
-              }
+              },
+              "parts": [
+                "cards",
+                "{id}"
+              ]
             }
           ]
         }
@@ -364,6 +393,7 @@ class Config {
           "type": "`$BOOLEAN`"
         },
         {
+          "format": "date",
           "name": "releaseDate",
           "short": "Release date of the set",
           "type": "`$STRING`"
@@ -400,8 +430,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/sets",
-              "parts": [
-                "sets"
+              "segments": [
+                {
+                  "lit": "sets"
+                }
               ],
               "select": {
                 "exist": [
@@ -412,7 +444,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.sets`"
-              }
+              },
+              "parts": [
+                "sets"
+              ]
             }
           ]
         }
@@ -428,6 +463,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

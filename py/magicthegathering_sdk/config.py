@@ -1,6 +1,14 @@
 # MagicTheGathering SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -84,6 +92,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "imageUrl",
             "short": "URL to the card image",
             "type": "`$STRING`",
@@ -189,6 +198,10 @@ def make_config():
             "type": "`$ARRAY`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "card",
         "op": {
           "list": {
@@ -253,8 +266,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/cards",
-                "parts": [
-                  "cards",
+                "segments": [
+                  {
+                    "lit": "cards",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -272,6 +287,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.cards`",
                 },
+                "parts": [
+                  "cards",
+                ],
               },
             ],
           },
@@ -294,9 +312,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/cards/{id}",
-                "parts": [
-                  "cards",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "cards",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -307,6 +329,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.card`",
                 },
+                "parts": [
+                  "cards",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -348,6 +374,7 @@ def make_config():
             "type": "`$BOOLEAN`",
           },
           {
+            "format": "date",
             "name": "releaseDate",
             "short": "Release date of the set",
             "type": "`$STRING`",
@@ -384,8 +411,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/sets",
-                "parts": [
-                  "sets",
+                "segments": [
+                  {
+                    "lit": "sets",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -397,6 +426,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.sets`",
                 },
+                "parts": [
+                  "sets",
+                ],
               },
             ],
           },

@@ -63,6 +63,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "imageUrl",
             ["short"] = "URL to the card image",
             ["type"] = "`$STRING`",
@@ -168,6 +169,10 @@ local function make_config()
             ["type"] = "`$ARRAY`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "card",
         ["op"] = {
           ["list"] = {
@@ -232,8 +237,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cards",
-                ["parts"] = {
-                  "cards",
+                ["segments"] = {
+                  {
+                    ["lit"] = "cards",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -250,6 +257,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.cards`",
+                },
+                ["parts"] = {
+                  "cards",
                 },
               },
             },
@@ -273,9 +283,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cards/{id}",
-                ["parts"] = {
-                  "cards",
-                  "{id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "cards",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -285,6 +299,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.card`",
+                },
+                ["parts"] = {
+                  "cards",
+                  "{id}",
                 },
               },
             },
@@ -327,6 +345,7 @@ local function make_config()
             ["type"] = "`$BOOLEAN`",
           },
           {
+            ["format"] = "date",
             ["name"] = "releaseDate",
             ["short"] = "Release date of the set",
             ["type"] = "`$STRING`",
@@ -363,8 +382,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/sets",
-                ["parts"] = {
-                  "sets",
+                ["segments"] = {
+                  {
+                    ["lit"] = "sets",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -375,6 +396,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.sets`",
+                },
+                ["parts"] = {
+                  "sets",
                 },
               },
             },
