@@ -105,7 +105,7 @@ local results, err = client:Card():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/magic-the-gathering` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/releases) |
+| TypeScript | `@voxgig-sdk/magic-the-gathering-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/releases) |
 | Python | `voxgig-sdk-magic-the-gathering` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/releases) |
 | PHP | `voxgig-sdk/magic-the-gathering` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/magic-the-gathering-sdk/go` | `go get github.com/voxgig-sdk/magic-the-gathering-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Card():list()
 ### TypeScript
 
 ```ts
-import { MagicTheGatheringSDK } from '@voxgig-sdk/magic-the-gathering'
+import { MagicTheGatheringSDK } from '@voxgig-sdk/magic-the-gathering-sdk'
 
 const client = new MagicTheGatheringSDK()
 

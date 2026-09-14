@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { MagicTheGatheringSDK } from '@voxgig-sdk/magic-the-gathering'
+import { MagicTheGatheringSDK } from '@voxgig-sdk/magic-the-gathering-sdk'
 
 const client = new MagicTheGatheringSDK()
 ```
@@ -525,7 +525,7 @@ magic-the-gathering/
 Import the SDK from the package root:
 
 ```ts
-import { MagicTheGatheringSDK } from '@voxgig-sdk/magic-the-gathering'
+import { MagicTheGatheringSDK } from '@voxgig-sdk/magic-the-gathering-sdk'
 ```
 
 ### Entity state
