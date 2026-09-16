@@ -46,5 +46,99 @@
         "type": "s147"
       }
     }
+  },
+  "requests": {
+    "GET /sets": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getSets",
+        "parameters": [
+          {
+            "description": "Filter sets by name",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter sets by block name",
+            "in": "query",
+            "name": "block",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "sets": {
+                      "items": {
+                        "properties": {
+                          "block": {
+                            "description": "Block the set belongs to",
+                            "type": "string"
+                          },
+                          "booster": {
+                            "description": "Booster pack configuration",
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "border": {
+                            "description": "Border style of cards in the set",
+                            "type": "string"
+                          },
+                          "code": {
+                            "description": "Unique set code",
+                            "type": "string"
+                          },
+                          "name": {
+                            "description": "Name of the set",
+                            "type": "string"
+                          },
+                          "onlineOnly": {
+                            "description": "Whether the set is online-only",
+                            "type": "boolean"
+                          },
+                          "releaseDate": {
+                            "description": "Release date of the set",
+                            "format": "date",
+                            "type": "string"
+                          },
+                          "type": {
+                            "description": "Type of the set (e.g., core, expansion)",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with list of sets"
+          },
+          "400": {
+            "description": "Bad request - invalid parameters"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }
