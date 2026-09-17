@@ -1,4 +1,4 @@
 # Flows
 
-@"BasicCardFlow.aon"
-@"BasicSetFlow.aon"
+@"./BasicCardFlow.aon"
+@"./BasicSetFlow.aon"

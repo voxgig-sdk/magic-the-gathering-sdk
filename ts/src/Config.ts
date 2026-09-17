@@ -127,12 +127,12 @@ class Config {
 
     entity: {
       
-      card: {
-      },
-
-      set: {
-      },
-
+        card: {
+        },
+  
+        set: {
+        },
+  
     }
   }
 

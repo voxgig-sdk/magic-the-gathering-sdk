@@ -1,4 +1,4 @@
 # Entity Models
 
-@"card.aon"
-@"set.aon"
+@"./card.aon"
+@"./set.aon"

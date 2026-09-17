@@ -105,12 +105,12 @@ local results, err = client:Card():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/magic-the-gathering-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/releases) |
-| Python | `voxgig-sdk-magic-the-gathering` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/releases) |
-| PHP | `voxgig-sdk/magic-the-gathering` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/releases) |
+| TypeScript | `@voxgig-sdk/magic-the-gathering-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/tags) |
+| Python | `voxgig-sdk-magic-the-gathering` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/tags) |
+| PHP | `voxgig-sdk/magic-the-gathering` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/magic-the-gathering-sdk/go` | `go get github.com/voxgig-sdk/magic-the-gathering-sdk/go@latest` |
-| Ruby | `voxgig-sdk-magic-the-gathering` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/releases) |
-| Lua | `voxgig-sdk-magic-the-gathering` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/releases) |
+| Ruby | `voxgig-sdk-magic-the-gathering` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/tags) |
+| Lua | `voxgig-sdk-magic-the-gathering` | publish pending — [install from git tag](https://github.com/voxgig-sdk/magic-the-gathering-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/magic-the-gathering-sdk/go-cli` | `go install github.com/voxgig-sdk/magic-the-gathering-sdk/go-cli/cmd/magic-the-gathering@latest` |
 | Go MCP server | `github.com/voxgig-sdk/magic-the-gathering-sdk/go-mcp` | `go get github.com/voxgig-sdk/magic-the-gathering-sdk/go-mcp@latest` |
 
