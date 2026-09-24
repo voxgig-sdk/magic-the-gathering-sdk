@@ -100,139 +100,166 @@ module MagicTheGatheringConfig
           "fields" => [
             {
               "name" => "artist",
-              "short" => "Artist who illustrated the card",
+              "title" => "Artist",
               "type" => "`$STRING`",
+              "short" => "Artist who illustrated the card",
             },
             {
               "name" => "cmc",
-              "short" => "Converted mana cost",
+              "title" => "Cmc",
               "type" => "`$NUMBER`",
+              "short" => "Converted mana cost",
             },
             {
               "name" => "colorIdentity",
-              "short" => "Color identity of the card",
+              "title" => "Color Identity",
               "type" => "`$ARRAY`",
+              "short" => "Color identity of the card",
             },
             {
               "name" => "colors",
-              "short" => "Array of card colors",
+              "title" => "Colors",
               "type" => "`$ARRAY`",
+              "short" => "Array of card colors",
             },
             {
               "name" => "flavor",
-              "short" => "Flavor text of the card",
+              "title" => "Flavor",
               "type" => "`$STRING`",
+              "short" => "Flavor text of the card",
             },
             {
               "name" => "id",
-              "short" => "Unique identifier for the card",
+              "title" => "Id",
               "type" => "`$STRING`",
+              "short" => "Unique identifier for the card",
             },
             {
-              "format" => "uri",
               "name" => "imageUrl",
-              "short" => "URL to the card image",
+              "title" => "Image Url",
               "type" => "`$STRING`",
+              "short" => "URL to the card image",
+              "format" => "uri",
             },
             {
               "name" => "legalities",
-              "short" => "Legality status in various formats",
+              "title" => "Legalities",
               "type" => "`$ARRAY`",
+              "short" => "Legality status in various formats",
             },
             {
               "name" => "loyalty",
-              "short" => "Loyalty of the card (for planeswalkers)",
+              "title" => "Loyalty",
               "type" => "`$STRING`",
+              "short" => "Loyalty of the card (for planeswalkers)",
             },
             {
               "name" => "manaCost",
-              "short" => "Mana cost of the card",
+              "title" => "Mana Cost",
               "type" => "`$STRING`",
+              "short" => "Mana cost of the card",
             },
             {
               "name" => "multiverseid",
-              "short" => "Multiverse ID of the card",
+              "title" => "Multiverseid",
               "type" => "`$STRING`",
+              "short" => "Multiverse ID of the card",
             },
             {
               "name" => "name",
-              "short" => "Name of the card",
+              "title" => "Name",
               "type" => "`$STRING`",
+              "short" => "Name of the card",
             },
             {
               "name" => "number",
-              "short" => "Collector number of the card",
+              "title" => "Number",
               "type" => "`$STRING`",
+              "short" => "Collector number of the card",
             },
             {
               "name" => "originalText",
-              "short" => "Original text of the card",
+              "title" => "Original Text",
               "type" => "`$STRING`",
+              "short" => "Original text of the card",
             },
             {
               "name" => "originalType",
-              "short" => "Original type of the card",
+              "title" => "Original Type",
               "type" => "`$STRING`",
+              "short" => "Original type of the card",
             },
             {
               "name" => "power",
-              "short" => "Power of the card (for creatures)",
+              "title" => "Power",
               "type" => "`$STRING`",
+              "short" => "Power of the card (for creatures)",
             },
             {
               "name" => "printings",
-              "short" => "List of set codes where this card was printed",
+              "title" => "Printings",
               "type" => "`$ARRAY`",
+              "short" => "List of set codes where this card was printed",
             },
             {
               "name" => "rarity",
-              "short" => "Rarity of the card",
+              "title" => "Rarity",
               "type" => "`$STRING`",
+              "short" => "Rarity of the card",
             },
             {
               "name" => "rulings",
-              "short" => "Official rulings for the card",
+              "title" => "Rulings",
               "type" => "`$ARRAY`",
+              "short" => "Official rulings for the card",
             },
             {
               "name" => "set",
-              "short" => "Set code the card belongs to",
+              "title" => "Set",
               "type" => "`$STRING`",
+              "short" => "Set code the card belongs to",
             },
             {
               "name" => "setName",
-              "short" => "Name of the set",
+              "title" => "Set Name",
               "type" => "`$STRING`",
+              "short" => "Name of the set",
             },
             {
               "name" => "subtypes",
-              "short" => "Subtypes of the card",
+              "title" => "Subtypes",
               "type" => "`$ARRAY`",
+              "short" => "Subtypes of the card",
             },
             {
               "name" => "supertypes",
-              "short" => "Supertypes of the card",
+              "title" => "Supertypes",
               "type" => "`$ARRAY`",
+              "short" => "Supertypes of the card",
             },
             {
               "name" => "text",
-              "short" => "Rules text of the card",
+              "title" => "Text",
               "type" => "`$STRING`",
+              "short" => "Rules text of the card",
             },
             {
               "name" => "toughness",
-              "short" => "Toughness of the card (for creatures)",
+              "title" => "Toughness",
               "type" => "`$STRING`",
+              "short" => "Toughness of the card (for creatures)",
             },
             {
               "name" => "type",
-              "short" => "Type line of the card",
+              "title" => "Type",
               "type" => "`$STRING`",
+              "short" => "Type line of the card",
             },
             {
               "name" => "types",
-              "short" => "Types of the card",
+              "title" => "Types",
               "type" => "`$ARRAY`",
+              "short" => "Types of the card",
             },
           ],
           "id" => {
@@ -246,60 +273,6 @@ module MagicTheGatheringConfig
               "name" => "list",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "kind" => "query",
-                        "name" => "cmc",
-                        "orig" => "cmc",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "color",
-                        "orig" => "color",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "name",
-                        "orig" => "name",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => 1,
-                        "kind" => "query",
-                        "name" => "page",
-                        "orig" => "page",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 100,
-                        "kind" => "query",
-                        "name" => "page_size",
-                        "orig" => "page_size",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "rarity",
-                        "orig" => "rarity",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "set",
-                        "orig" => "set",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "type",
-                        "orig" => "type",
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/cards",
@@ -308,6 +281,68 @@ module MagicTheGatheringConfig
                       "lit" => "cards",
                     },
                   ],
+                  "parts" => [
+                    "cards",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body.cards`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "cmc",
+                        "orig" => "cmc",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                      },
+                      {
+                        "name" => "color",
+                        "orig" => "color",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                      {
+                        "name" => "name",
+                        "orig" => "name",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                      {
+                        "name" => "page",
+                        "orig" => "page",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 1,
+                      },
+                      {
+                        "name" => "page_size",
+                        "orig" => "page_size",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 100,
+                      },
+                      {
+                        "name" => "rarity",
+                        "orig" => "rarity",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                      {
+                        "name" => "set",
+                        "orig" => "set",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                      {
+                        "name" => "type",
+                        "orig" => "type",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "cmc",
@@ -320,13 +355,6 @@ module MagicTheGatheringConfig
                       "type",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body.cards`",
-                  },
-                  "parts" => [
-                    "cards",
-                  ],
                 },
               ],
             },
@@ -335,17 +363,6 @@ module MagicTheGatheringConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "kind" => "param",
-                        "name" => "id",
-                        "orig" => "id",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/cards/{id}",
@@ -357,19 +374,31 @@ module MagicTheGatheringConfig
                       "var" => "id",
                     },
                   ],
+                  "parts" => [
+                    "cards",
+                    "{id}",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body.card`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "id",
+                        "orig" => "id",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "id",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body.card`",
-                  },
-                  "parts" => [
-                    "cards",
-                    "{id}",
-                  ],
                 },
               ],
             },
@@ -382,44 +411,52 @@ module MagicTheGatheringConfig
           "fields" => [
             {
               "name" => "block",
-              "short" => "Block the set belongs to",
+              "title" => "Block",
               "type" => "`$STRING`",
+              "short" => "Block the set belongs to",
             },
             {
               "name" => "booster",
-              "short" => "Booster pack configuration",
+              "title" => "Booster",
               "type" => "`$ARRAY`",
+              "short" => "Booster pack configuration",
             },
             {
               "name" => "border",
-              "short" => "Border style of cards in the set",
+              "title" => "Border",
               "type" => "`$STRING`",
+              "short" => "Border style of cards in the set",
             },
             {
               "name" => "code",
-              "short" => "Unique set code",
+              "title" => "Code",
               "type" => "`$STRING`",
+              "short" => "Unique set code",
             },
             {
               "name" => "name",
-              "short" => "Name of the set",
+              "title" => "Name",
               "type" => "`$STRING`",
+              "short" => "Name of the set",
             },
             {
               "name" => "onlineOnly",
-              "short" => "Whether the set is online-only",
+              "title" => "Online Only",
               "type" => "`$BOOLEAN`",
+              "short" => "Whether the set is online-only",
             },
             {
-              "format" => "date",
               "name" => "releaseDate",
-              "short" => "Release date of the set",
+              "title" => "Release Date",
               "type" => "`$STRING`",
+              "short" => "Release date of the set",
+              "format" => "date",
             },
             {
               "name" => "type",
-              "short" => "Type of the set (e.g., core, expansion)",
+              "title" => "Type",
               "type" => "`$STRING`",
+              "short" => "Type of the set (e.g., core, expansion)",
             },
           ],
           "name" => "set",
@@ -429,22 +466,6 @@ module MagicTheGatheringConfig
               "name" => "list",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "kind" => "query",
-                        "name" => "block",
-                        "orig" => "block",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "name",
-                        "orig" => "name",
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/sets",
@@ -453,19 +474,36 @@ module MagicTheGatheringConfig
                       "lit" => "sets",
                     },
                   ],
+                  "parts" => [
+                    "sets",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body.sets`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "block",
+                        "orig" => "block",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                      {
+                        "name" => "name",
+                        "orig" => "name",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "block",
                       "name",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body.sets`",
-                  },
-                  "parts" => [
-                    "sets",
-                  ],
                 },
               ],
             },

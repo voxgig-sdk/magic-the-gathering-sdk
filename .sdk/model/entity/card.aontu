@@ -1,0 +1,350 @@
+# Entity: card
+
+main: kit: entity: card: {
+
+  alias: field: {}
+
+  fields: {
+    artist: {
+      h: "Artist"
+      n: "artist"
+      r: false
+      sh: "Artist who illustrated the card"
+      t: "`$STRING`"
+    }
+    cmc: {
+      h: "Cmc"
+      n: "cmc"
+      r: false
+      sh: "Converted mana cost"
+      t: "`$NUMBER`"
+    }
+    colorIdentity: {
+      h: "Color Identity"
+      n: "colorIdentity"
+      r: false
+      sh: "Color identity of the card"
+      t: "`$ARRAY`"
+    }
+    colors: {
+      h: "Colors"
+      n: "colors"
+      r: false
+      sh: "Array of card colors"
+      t: "`$ARRAY`"
+    }
+    flavor: {
+      h: "Flavor"
+      n: "flavor"
+      r: false
+      sh: "Flavor text of the card"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Unique identifier for the card"
+      t: "`$STRING`"
+    }
+    imageUrl: {
+      fo: "uri"
+      h: "Image Url"
+      n: "imageUrl"
+      r: false
+      sh: "URL to the card image"
+      t: "`$STRING`"
+    }
+    legalities: {
+      h: "Legalities"
+      n: "legalities"
+      r: false
+      sh: "Legality status in various formats"
+      t: "`$ARRAY`"
+    }
+    loyalty: {
+      h: "Loyalty"
+      n: "loyalty"
+      r: false
+      sh: "Loyalty of the card (for planeswalkers)"
+      t: "`$STRING`"
+    }
+    manaCost: {
+      h: "Mana Cost"
+      n: "manaCost"
+      r: false
+      sh: "Mana cost of the card"
+      t: "`$STRING`"
+    }
+    multiverseid: {
+      h: "Multiverseid"
+      n: "multiverseid"
+      r: false
+      sh: "Multiverse ID of the card"
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Name of the card"
+      t: "`$STRING`"
+    }
+    number: {
+      h: "Number"
+      n: "number"
+      r: false
+      sh: "Collector number of the card"
+      t: "`$STRING`"
+    }
+    originalText: {
+      h: "Original Text"
+      n: "originalText"
+      r: false
+      sh: "Original text of the card"
+      t: "`$STRING`"
+    }
+    originalType: {
+      h: "Original Type"
+      n: "originalType"
+      r: false
+      sh: "Original type of the card"
+      t: "`$STRING`"
+    }
+    power: {
+      h: "Power"
+      n: "power"
+      r: false
+      sh: "Power of the card (for creatures)"
+      t: "`$STRING`"
+    }
+    printings: {
+      h: "Printings"
+      n: "printings"
+      r: false
+      sh: "List of set codes where this card was printed"
+      t: "`$ARRAY`"
+    }
+    rarity: {
+      h: "Rarity"
+      n: "rarity"
+      r: false
+      sh: "Rarity of the card"
+      t: "`$STRING`"
+    }
+    rulings: {
+      h: "Rulings"
+      n: "rulings"
+      r: false
+      sh: "Official rulings for the card"
+      t: "`$ARRAY`"
+    }
+    set: {
+      h: "Set"
+      n: "set"
+      r: false
+      sh: "Set code the card belongs to"
+      t: "`$STRING`"
+    }
+    setName: {
+      h: "Set Name"
+      n: "setName"
+      r: false
+      sh: "Name of the set"
+      t: "`$STRING`"
+    }
+    subtypes: {
+      h: "Subtypes"
+      n: "subtypes"
+      r: false
+      sh: "Subtypes of the card"
+      t: "`$ARRAY`"
+    }
+    supertypes: {
+      h: "Supertypes"
+      n: "supertypes"
+      r: false
+      sh: "Supertypes of the card"
+      t: "`$ARRAY`"
+    }
+    text: {
+      h: "Text"
+      n: "text"
+      r: false
+      sh: "Rules text of the card"
+      t: "`$STRING`"
+    }
+    toughness: {
+      h: "Toughness"
+      n: "toughness"
+      r: false
+      sh: "Toughness of the card (for creatures)"
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      sh: "Type line of the card"
+      t: "`$STRING`"
+    }
+    types: {
+      h: "Types"
+      n: "types"
+      r: false
+      sh: "Types of the card"
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "card"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /cards"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "cmc"
+                or: "cmc"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "color"
+                or: "color"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "name"
+                or: "name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 100
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "rarity"
+                or: "rarity"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "set"
+                or: "set"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/cards"
+          q: {
+            exist: [
+              "cmc"
+              "color"
+              "name"
+              "page"
+              "page_size"
+              "rarity"
+              "set"
+              "type"
+            ]
+          }
+          s: [
+            {
+              lit: "cards"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.cards`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /cards/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/cards/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "cards"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.card`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

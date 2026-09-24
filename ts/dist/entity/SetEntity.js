@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SetEntity = void 0;
 const MagicTheGatheringEntityBase_1 = require("../MagicTheGatheringEntityBase");
-// TODO: needs Entity superclass
 class SetEntity extends MagicTheGatheringEntityBase_1.MagicTheGatheringEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

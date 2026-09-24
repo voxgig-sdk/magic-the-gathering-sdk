@@ -24,204 +24,297 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "card": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "artist",
-              "req": false,
-              "short": "Artist who illustrated the card",
-              "type": "`$STRING`"
+          "fields": {
+            "artist": {
+              "a": true,
+              "h": "Artist",
+              "n": "artist",
+              "r": false,
+              "sh": "Artist who illustrated the card",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "cmc",
-              "req": false,
-              "short": "Converted mana cost",
-              "type": "`$NUMBER`"
+            "cmc": {
+              "a": true,
+              "h": "Cmc",
+              "n": "cmc",
+              "r": false,
+              "sh": "Converted mana cost",
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "colorIdentity",
-              "req": false,
-              "short": "Color identity of the card",
-              "type": "`$ARRAY`"
+            "colorIdentity": {
+              "a": true,
+              "h": "Color Identity",
+              "n": "colorIdentity",
+              "r": false,
+              "sh": "Color identity of the card",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "colors",
-              "req": false,
-              "short": "Array of card colors",
-              "type": "`$ARRAY`"
+            "colors": {
+              "a": true,
+              "h": "Colors",
+              "n": "colors",
+              "r": false,
+              "sh": "Array of card colors",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "flavor",
-              "req": false,
-              "short": "Flavor text of the card",
-              "type": "`$STRING`"
+            "flavor": {
+              "a": true,
+              "h": "Flavor",
+              "n": "flavor",
+              "r": false,
+              "sh": "Flavor text of the card",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "short": "Unique identifier for the card",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "sh": "Unique identifier for the card",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "imageUrl",
-              "req": false,
-              "short": "URL to the card image",
-              "type": "`$STRING`"
+            "imageUrl": {
+              "a": true,
+              "fo": "uri",
+              "h": "Image Url",
+              "n": "imageUrl",
+              "r": false,
+              "sh": "URL to the card image",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "legalities",
-              "req": false,
-              "short": "Legality status in various formats",
-              "type": "`$ARRAY`"
+            "legalities": {
+              "a": true,
+              "h": "Legalities",
+              "n": "legalities",
+              "r": false,
+              "sh": "Legality status in various formats",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "loyalty",
-              "req": false,
-              "short": "Loyalty of the card (for planeswalkers)",
-              "type": "`$STRING`"
+            "loyalty": {
+              "a": true,
+              "h": "Loyalty",
+              "n": "loyalty",
+              "r": false,
+              "sh": "Loyalty of the card (for planeswalkers)",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "manaCost",
-              "req": false,
-              "short": "Mana cost of the card",
-              "type": "`$STRING`"
+            "manaCost": {
+              "a": true,
+              "h": "Mana Cost",
+              "n": "manaCost",
+              "r": false,
+              "sh": "Mana cost of the card",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "multiverseid",
-              "req": false,
-              "short": "Multiverse ID of the card",
-              "type": "`$STRING`"
+            "multiverseid": {
+              "a": true,
+              "h": "Multiverseid",
+              "n": "multiverseid",
+              "r": false,
+              "sh": "Multiverse ID of the card",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "short": "Name of the card",
-              "type": "`$STRING`"
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": false,
+              "sh": "Name of the card",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "number",
-              "req": false,
-              "short": "Collector number of the card",
-              "type": "`$STRING`"
+            "number": {
+              "a": true,
+              "h": "Number",
+              "n": "number",
+              "r": false,
+              "sh": "Collector number of the card",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "originalText",
-              "req": false,
-              "short": "Original text of the card",
-              "type": "`$STRING`"
+            "originalText": {
+              "a": true,
+              "h": "Original Text",
+              "n": "originalText",
+              "r": false,
+              "sh": "Original text of the card",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "originalType",
-              "req": false,
-              "short": "Original type of the card",
-              "type": "`$STRING`"
+            "originalType": {
+              "a": true,
+              "h": "Original Type",
+              "n": "originalType",
+              "r": false,
+              "sh": "Original type of the card",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "power",
-              "req": false,
-              "short": "Power of the card (for creatures)",
-              "type": "`$STRING`"
+            "power": {
+              "a": true,
+              "h": "Power",
+              "n": "power",
+              "r": false,
+              "sh": "Power of the card (for creatures)",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "printings",
-              "req": false,
-              "short": "List of set codes where this card was printed",
-              "type": "`$ARRAY`"
+            "printings": {
+              "a": true,
+              "h": "Printings",
+              "n": "printings",
+              "r": false,
+              "sh": "List of set codes where this card was printed",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "rarity",
-              "req": false,
-              "short": "Rarity of the card",
-              "type": "`$STRING`"
+            "rarity": {
+              "a": true,
+              "h": "Rarity",
+              "n": "rarity",
+              "r": false,
+              "sh": "Rarity of the card",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "rulings",
-              "req": false,
-              "short": "Official rulings for the card",
-              "type": "`$ARRAY`"
+            "rulings": {
+              "a": true,
+              "h": "Rulings",
+              "n": "rulings",
+              "r": false,
+              "sh": "Official rulings for the card",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "set",
-              "req": false,
-              "short": "Set code the card belongs to",
-              "type": "`$STRING`"
+            "set": {
+              "a": true,
+              "h": "Set",
+              "n": "set",
+              "r": false,
+              "sh": "Set code the card belongs to",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "setName",
-              "req": false,
-              "short": "Name of the set",
-              "type": "`$STRING`"
+            "setName": {
+              "a": true,
+              "h": "Set Name",
+              "n": "setName",
+              "r": false,
+              "sh": "Name of the set",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "subtypes",
-              "req": false,
-              "short": "Subtypes of the card",
-              "type": "`$ARRAY`"
+            "subtypes": {
+              "a": true,
+              "h": "Subtypes",
+              "n": "subtypes",
+              "r": false,
+              "sh": "Subtypes of the card",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "supertypes",
-              "req": false,
-              "short": "Supertypes of the card",
-              "type": "`$ARRAY`"
+            "supertypes": {
+              "a": true,
+              "h": "Supertypes",
+              "n": "supertypes",
+              "r": false,
+              "sh": "Supertypes of the card",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "text",
-              "req": false,
-              "short": "Rules text of the card",
-              "type": "`$STRING`"
+            "text": {
+              "a": true,
+              "h": "Text",
+              "n": "text",
+              "r": false,
+              "sh": "Rules text of the card",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "toughness",
-              "req": false,
-              "short": "Toughness of the card (for creatures)",
-              "type": "`$STRING`"
+            "toughness": {
+              "a": true,
+              "h": "Toughness",
+              "n": "toughness",
+              "r": false,
+              "sh": "Toughness of the card (for creatures)",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "type",
-              "req": false,
-              "short": "Type line of the card",
-              "type": "`$STRING`"
+            "type": {
+              "a": true,
+              "h": "Type",
+              "n": "type",
+              "r": false,
+              "sh": "Type line of the card",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "types",
-              "req": false,
-              "short": "Types of the card",
-              "type": "`$ARRAY`"
+            "types": {
+              "a": true,
+              "h": "Types",
+              "n": "types",
+              "r": false,
+              "sh": "Types of the card",
+              "t": "`$ARRAY`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -233,92 +326,86 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cards",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cmc",
-                        "orig": "cmc",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cmc",
+                        "or": "cmc",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "color",
-                        "orig": "color",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "color",
+                        "or": "color",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "name",
-                        "orig": "name",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "name",
+                        "or": "name",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": 1,
-                        "kind": "query",
-                        "name": "page",
-                        "orig": "page",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 100,
-                        "kind": "query",
-                        "name": "page_size",
-                        "orig": "page_size",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 100,
+                        "k": "query",
+                        "n": "page_size",
+                        "or": "page_size",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "rarity",
-                        "orig": "rarity",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "rarity",
+                        "or": "rarity",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "set",
-                        "orig": "set",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "set",
+                        "or": "set",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "type",
-                        "orig": "type",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "type",
+                        "or": "type",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cards",
-                    "json": "{\"operationId\":\"getCards\",\"parameters\":[{\"description\":\"Filter cards by name\",\"in\":\"query\",\"name\":\"name\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Filter cards by set code\",\"in\":\"query\",\"name\":\"set\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Filter cards by color (e.g., red, blue, green, white, black)\",\"in\":\"query\",\"name\":\"colors\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Filter cards by converted mana cost\",\"in\":\"query\",\"name\":\"cmc\",\"required\":false,\"schema\":{\"type\":\"integer\"}},{\"description\":\"Filter cards by type (e.g., creature, instant, sorcery)\",\"in\":\"query\",\"name\":\"type\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Filter cards by rarity (e.g., common, uncommon, rare, mythic)\",\"in\":\"query\",\"name\":\"rarity\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Page number for pagination\",\"in\":\"query\",\"name\":\"page\",\"required\":false,\"schema\":{\"default\":1,\"type\":\"integer\"}},{\"description\":\"Number of results per page (max 100)\",\"in\":\"query\",\"name\":\"pageSize\",\"required\":false,\"schema\":{\"default\":100,\"maximum\":100,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cards\":{\"items\":{\"properties\":{\"artist\":{\"description\":\"Artist who illustrated the card\",\"type\":\"string\"},\"cmc\":{\"description\":\"Converted mana cost\",\"type\":\"number\"},\"colorIdentity\":{\"description\":\"Color identity of the card\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"colors\":{\"description\":\"Array of card colors\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"flavor\":{\"description\":\"Flavor text of the card\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the card\",\"type\":\"string\"},\"imageUrl\":{\"description\":\"URL to the card image\",\"format\":\"uri\",\"type\":\"string\"},\"legalities\":{\"description\":\"Legality status in various formats\",\"items\":{\"properties\":{\"format\":{\"type\":\"string\"},\"legality\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"loyalty\":{\"description\":\"Loyalty of the card (for planeswalkers)\",\"type\":\"string\"},\"manaCost\":{\"description\":\"Mana cost of the card\",\"type\":\"string\"},\"multiverseid\":{\"description\":\"Multiverse ID of the card\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the card\",\"type\":\"string\"},\"number\":{\"description\":\"Collector number of the card\",\"type\":\"string\"},\"originalText\":{\"description\":\"Original text of the card\",\"type\":\"string\"},\"originalType\":{\"description\":\"Original type of the card\",\"type\":\"string\"},\"power\":{\"description\":\"Power of the card (for creatures)\",\"type\":\"string\"},\"printings\":{\"description\":\"List of set codes where this card was printed\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"rarity\":{\"description\":\"Rarity of the card\",\"type\":\"string\"},\"rulings\":{\"description\":\"Official rulings for the card\",\"items\":{\"properties\":{\"date\":{\"format\":\"date\",\"type\":\"string\"},\"text\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"set\":{\"description\":\"Set code the card belongs to\",\"type\":\"string\"},\"setName\":{\"description\":\"Name of the set\",\"type\":\"string\"},\"subtypes\":{\"description\":\"Subtypes of the card\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"supertypes\":{\"description\":\"Supertypes of the card\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"text\":{\"description\":\"Rules text of the card\",\"type\":\"string\"},\"toughness\":{\"description\":\"Toughness of the card (for creatures)\",\"type\":\"string\"},\"type\":{\"description\":\"Type line of the card\",\"type\":\"string\"},\"types\":{\"description\":\"Types of the card\",\"items\":{\"type\":\"string\"},\"type\":\"array\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response with list of cards\"},\"400\":{\"description\":\"Bad request - invalid parameters\"},\"500\":{\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cards",
-                  "segments": [
-                    {
-                      "lit": "cards"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cards",
+                  "q": {
                     "exist": [
                       "cmc",
                       "color",
@@ -330,7 +417,13 @@
                       "type"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "cards"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.cards`"
                   }
@@ -342,29 +435,34 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cards/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "id",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cards/{id}",
-                    "json": "{\"operationId\":\"getCardById\",\"parameters\":[{\"description\":\"Unique identifier for the card\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"card\":{\"properties\":{\"artist\":{\"description\":\"Artist who illustrated the card\",\"type\":\"string\"},\"cmc\":{\"description\":\"Converted mana cost\",\"type\":\"number\"},\"colorIdentity\":{\"description\":\"Color identity of the card\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"colors\":{\"description\":\"Array of card colors\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"flavor\":{\"description\":\"Flavor text of the card\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the card\",\"type\":\"string\"},\"imageUrl\":{\"description\":\"URL to the card image\",\"format\":\"uri\",\"type\":\"string\"},\"legalities\":{\"description\":\"Legality status in various formats\",\"items\":{\"properties\":{\"format\":{\"type\":\"string\"},\"legality\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"loyalty\":{\"description\":\"Loyalty of the card (for planeswalkers)\",\"type\":\"string\"},\"manaCost\":{\"description\":\"Mana cost of the card\",\"type\":\"string\"},\"multiverseid\":{\"description\":\"Multiverse ID of the card\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the card\",\"type\":\"string\"},\"number\":{\"description\":\"Collector number of the card\",\"type\":\"string\"},\"originalText\":{\"description\":\"Original text of the card\",\"type\":\"string\"},\"originalType\":{\"description\":\"Original type of the card\",\"type\":\"string\"},\"power\":{\"description\":\"Power of the card (for creatures)\",\"type\":\"string\"},\"printings\":{\"description\":\"List of set codes where this card was printed\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"rarity\":{\"description\":\"Rarity of the card\",\"type\":\"string\"},\"rulings\":{\"description\":\"Official rulings for the card\",\"items\":{\"properties\":{\"date\":{\"format\":\"date\",\"type\":\"string\"},\"text\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"set\":{\"description\":\"Set code the card belongs to\",\"type\":\"string\"},\"setName\":{\"description\":\"Name of the set\",\"type\":\"string\"},\"subtypes\":{\"description\":\"Subtypes of the card\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"supertypes\":{\"description\":\"Supertypes of the card\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"text\":{\"description\":\"Rules text of the card\",\"type\":\"string\"},\"toughness\":{\"description\":\"Toughness of the card (for creatures)\",\"type\":\"string\"},\"type\":{\"description\":\"Type line of the card\",\"type\":\"string\"},\"types\":{\"description\":\"Types of the card\",\"items\":{\"type\":\"string\"},\"type\":\"array\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"Successful response with card details\"},\"404\":{\"description\":\"Card not found\"},\"500\":{\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cards/{id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cards/{id}",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cards"
                     },
@@ -372,12 +470,7 @@
                       "var": "id"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "id"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.card`"
                   }
@@ -394,65 +487,73 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "block",
-              "req": false,
-              "short": "Block the set belongs to",
-              "type": "`$STRING`"
+          "fields": {
+            "block": {
+              "a": true,
+              "h": "Block",
+              "n": "block",
+              "r": false,
+              "sh": "Block the set belongs to",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "booster",
-              "req": false,
-              "short": "Booster pack configuration",
-              "type": "`$ARRAY`"
+            "booster": {
+              "a": true,
+              "h": "Booster",
+              "n": "booster",
+              "r": false,
+              "sh": "Booster pack configuration",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "border",
-              "req": false,
-              "short": "Border style of cards in the set",
-              "type": "`$STRING`"
+            "border": {
+              "a": true,
+              "h": "Border",
+              "n": "border",
+              "r": false,
+              "sh": "Border style of cards in the set",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "code",
-              "req": false,
-              "short": "Unique set code",
-              "type": "`$STRING`"
+            "code": {
+              "a": true,
+              "h": "Code",
+              "n": "code",
+              "r": false,
+              "sh": "Unique set code",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "short": "Name of the set",
-              "type": "`$STRING`"
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": false,
+              "sh": "Name of the set",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "onlineOnly",
-              "req": false,
-              "short": "Whether the set is online-only",
-              "type": "`$BOOLEAN`"
+            "onlineOnly": {
+              "a": true,
+              "h": "Online Only",
+              "n": "onlineOnly",
+              "r": false,
+              "sh": "Whether the set is online-only",
+              "t": "`$BOOLEAN`"
             },
-            {
-              "active": true,
-              "format": "date",
-              "name": "releaseDate",
-              "req": false,
-              "short": "Release date of the set",
-              "type": "`$STRING`"
+            "releaseDate": {
+              "a": true,
+              "fo": "date",
+              "h": "Release Date",
+              "n": "releaseDate",
+              "r": false,
+              "sh": "Release date of the set",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "type",
-              "req": false,
-              "short": "Type of the set (e.g., core, expansion)",
-              "type": "`$STRING`"
+            "type": {
+              "a": true,
+              "h": "Type",
+              "n": "type",
+              "r": false,
+              "sh": "Type of the set (e.g., core, expansion)",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "set",
           "op": {
             "list": {
@@ -460,48 +561,48 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /sets",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "block",
-                        "orig": "block",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "block",
+                        "or": "block",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "name",
-                        "orig": "name",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "name",
+                        "or": "name",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /sets",
-                    "json": "{\"operationId\":\"getSets\",\"parameters\":[{\"description\":\"Filter sets by name\",\"in\":\"query\",\"name\":\"name\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Filter sets by block name\",\"in\":\"query\",\"name\":\"block\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"sets\":{\"items\":{\"properties\":{\"block\":{\"description\":\"Block the set belongs to\",\"type\":\"string\"},\"booster\":{\"description\":\"Booster pack configuration\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"border\":{\"description\":\"Border style of cards in the set\",\"type\":\"string\"},\"code\":{\"description\":\"Unique set code\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the set\",\"type\":\"string\"},\"onlineOnly\":{\"description\":\"Whether the set is online-only\",\"type\":\"boolean\"},\"releaseDate\":{\"description\":\"Release date of the set\",\"format\":\"date\",\"type\":\"string\"},\"type\":{\"description\":\"Type of the set (e.g., core, expansion)\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response with list of sets\"},\"400\":{\"description\":\"Bad request - invalid parameters\"},\"500\":{\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/sets",
-                  "segments": [
-                    {
-                      "lit": "sets"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/sets",
+                  "q": {
                     "exist": [
                       "block",
                       "name"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "sets"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.sets`"
                   }
@@ -930,13 +1031,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -946,19 +1047,19 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "card_ref01",
                 "srcdatavar": "card_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "card01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -978,13 +1079,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {

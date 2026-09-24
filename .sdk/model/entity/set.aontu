@@ -1,0 +1,120 @@
+# Entity: set
+
+main: kit: entity: set: {
+
+  alias: field: {}
+
+  fields: {
+    block: {
+      h: "Block"
+      n: "block"
+      r: false
+      sh: "Block the set belongs to"
+      t: "`$STRING`"
+    }
+    booster: {
+      h: "Booster"
+      n: "booster"
+      r: false
+      sh: "Booster pack configuration"
+      t: "`$ARRAY`"
+    }
+    border: {
+      h: "Border"
+      n: "border"
+      r: false
+      sh: "Border style of cards in the set"
+      t: "`$STRING`"
+    }
+    code: {
+      h: "Code"
+      n: "code"
+      r: false
+      sh: "Unique set code"
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Name of the set"
+      t: "`$STRING`"
+    }
+    onlineOnly: {
+      h: "Online Only"
+      n: "onlineOnly"
+      r: false
+      sh: "Whether the set is online-only"
+      t: "`$BOOLEAN`"
+    }
+    releaseDate: {
+      fo: "date"
+      h: "Release Date"
+      n: "releaseDate"
+      r: false
+      sh: "Release date of the set"
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      sh: "Type of the set (e.g., core, expansion)"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "set"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /sets"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "block"
+                or: "block"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "name"
+                or: "name"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/sets"
+          q: {
+            exist: [
+              "block"
+              "name"
+            ]
+          }
+          s: [
+            {
+              lit: "sets"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.sets`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

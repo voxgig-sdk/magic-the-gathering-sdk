@@ -1,7 +1,7 @@
 // Typed models for the MagicTheGathering SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,33 +14,6 @@ import (
 
 // Card is the typed data model for the card entity.
 type Card struct {
-	Artist *string `json:"artist,omitempty"`
-	Cmc *float64 `json:"cmc,omitempty"`
-	ColorIdentity *[]any `json:"colorIdentity,omitempty"`
-	Colors *[]any `json:"colors,omitempty"`
-	Flavor *string `json:"flavor,omitempty"`
-	Id *string `json:"id,omitempty"`
-	ImageUrl *string `json:"imageUrl,omitempty"`
-	Legalities *[]any `json:"legalities,omitempty"`
-	Loyalty *string `json:"loyalty,omitempty"`
-	ManaCost *string `json:"manaCost,omitempty"`
-	Multiverseid *string `json:"multiverseid,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Number *string `json:"number,omitempty"`
-	OriginalText *string `json:"originalText,omitempty"`
-	OriginalType *string `json:"originalType,omitempty"`
-	Power *string `json:"power,omitempty"`
-	Printings *[]any `json:"printings,omitempty"`
-	Rarity *string `json:"rarity,omitempty"`
-	Rulings *[]any `json:"rulings,omitempty"`
-	Set *string `json:"set,omitempty"`
-	SetName *string `json:"setName,omitempty"`
-	Subtypes *[]any `json:"subtypes,omitempty"`
-	Supertypes *[]any `json:"supertypes,omitempty"`
-	Text *string `json:"text,omitempty"`
-	Toughness *string `json:"toughness,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Types *[]any `json:"types,omitempty"`
 }
 
 // CardLoadMatch is the typed request payload for Card.LoadTyped.
@@ -62,14 +35,6 @@ type CardListMatch struct {
 
 // Set is the typed data model for the set entity.
 type Set struct {
-	Block *string `json:"block,omitempty"`
-	Booster *[]any `json:"booster,omitempty"`
-	Border *string `json:"border,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	OnlineOnly *bool `json:"onlineOnly,omitempty"`
-	ReleaseDate *string `json:"releaseDate,omitempty"`
-	Type *string `json:"type,omitempty"`
 }
 
 // SetListMatch is the typed request payload for Set.ListTyped.

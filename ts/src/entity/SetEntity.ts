@@ -19,7 +19,6 @@ import type {
   SetListMatch,
 } from '../MagicTheGatheringTypes'
 
-// TODO: needs Entity superclass
 class SetEntity extends MagicTheGatheringEntityBase<SetType> {
 
   constructor(client: MagicTheGatheringSDK, entopts: any) {

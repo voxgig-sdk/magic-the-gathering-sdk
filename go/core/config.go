@@ -92,139 +92,166 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "artist",
-						"short": "Artist who illustrated the card",
+						"title": "Artist",
 						"type": "`$STRING`",
+						"short": "Artist who illustrated the card",
 					},
 					map[string]any{
 						"name": "cmc",
-						"short": "Converted mana cost",
+						"title": "Cmc",
 						"type": "`$NUMBER`",
+						"short": "Converted mana cost",
 					},
 					map[string]any{
 						"name": "colorIdentity",
-						"short": "Color identity of the card",
+						"title": "Color Identity",
 						"type": "`$ARRAY`",
+						"short": "Color identity of the card",
 					},
 					map[string]any{
 						"name": "colors",
-						"short": "Array of card colors",
+						"title": "Colors",
 						"type": "`$ARRAY`",
+						"short": "Array of card colors",
 					},
 					map[string]any{
 						"name": "flavor",
-						"short": "Flavor text of the card",
+						"title": "Flavor",
 						"type": "`$STRING`",
+						"short": "Flavor text of the card",
 					},
 					map[string]any{
 						"name": "id",
-						"short": "Unique identifier for the card",
+						"title": "Id",
 						"type": "`$STRING`",
+						"short": "Unique identifier for the card",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "imageUrl",
-						"short": "URL to the card image",
+						"title": "Image Url",
 						"type": "`$STRING`",
+						"short": "URL to the card image",
+						"format": "uri",
 					},
 					map[string]any{
 						"name": "legalities",
-						"short": "Legality status in various formats",
+						"title": "Legalities",
 						"type": "`$ARRAY`",
+						"short": "Legality status in various formats",
 					},
 					map[string]any{
 						"name": "loyalty",
-						"short": "Loyalty of the card (for planeswalkers)",
+						"title": "Loyalty",
 						"type": "`$STRING`",
+						"short": "Loyalty of the card (for planeswalkers)",
 					},
 					map[string]any{
 						"name": "manaCost",
-						"short": "Mana cost of the card",
+						"title": "Mana Cost",
 						"type": "`$STRING`",
+						"short": "Mana cost of the card",
 					},
 					map[string]any{
 						"name": "multiverseid",
-						"short": "Multiverse ID of the card",
+						"title": "Multiverseid",
 						"type": "`$STRING`",
+						"short": "Multiverse ID of the card",
 					},
 					map[string]any{
 						"name": "name",
-						"short": "Name of the card",
+						"title": "Name",
 						"type": "`$STRING`",
+						"short": "Name of the card",
 					},
 					map[string]any{
 						"name": "number",
-						"short": "Collector number of the card",
+						"title": "Number",
 						"type": "`$STRING`",
+						"short": "Collector number of the card",
 					},
 					map[string]any{
 						"name": "originalText",
-						"short": "Original text of the card",
+						"title": "Original Text",
 						"type": "`$STRING`",
+						"short": "Original text of the card",
 					},
 					map[string]any{
 						"name": "originalType",
-						"short": "Original type of the card",
+						"title": "Original Type",
 						"type": "`$STRING`",
+						"short": "Original type of the card",
 					},
 					map[string]any{
 						"name": "power",
-						"short": "Power of the card (for creatures)",
+						"title": "Power",
 						"type": "`$STRING`",
+						"short": "Power of the card (for creatures)",
 					},
 					map[string]any{
 						"name": "printings",
-						"short": "List of set codes where this card was printed",
+						"title": "Printings",
 						"type": "`$ARRAY`",
+						"short": "List of set codes where this card was printed",
 					},
 					map[string]any{
 						"name": "rarity",
-						"short": "Rarity of the card",
+						"title": "Rarity",
 						"type": "`$STRING`",
+						"short": "Rarity of the card",
 					},
 					map[string]any{
 						"name": "rulings",
-						"short": "Official rulings for the card",
+						"title": "Rulings",
 						"type": "`$ARRAY`",
+						"short": "Official rulings for the card",
 					},
 					map[string]any{
 						"name": "set",
-						"short": "Set code the card belongs to",
+						"title": "Set",
 						"type": "`$STRING`",
+						"short": "Set code the card belongs to",
 					},
 					map[string]any{
 						"name": "setName",
-						"short": "Name of the set",
+						"title": "Set Name",
 						"type": "`$STRING`",
+						"short": "Name of the set",
 					},
 					map[string]any{
 						"name": "subtypes",
-						"short": "Subtypes of the card",
+						"title": "Subtypes",
 						"type": "`$ARRAY`",
+						"short": "Subtypes of the card",
 					},
 					map[string]any{
 						"name": "supertypes",
-						"short": "Supertypes of the card",
+						"title": "Supertypes",
 						"type": "`$ARRAY`",
+						"short": "Supertypes of the card",
 					},
 					map[string]any{
 						"name": "text",
-						"short": "Rules text of the card",
+						"title": "Text",
 						"type": "`$STRING`",
+						"short": "Rules text of the card",
 					},
 					map[string]any{
 						"name": "toughness",
-						"short": "Toughness of the card (for creatures)",
+						"title": "Toughness",
 						"type": "`$STRING`",
+						"short": "Toughness of the card (for creatures)",
 					},
 					map[string]any{
 						"name": "type",
-						"short": "Type line of the card",
+						"title": "Type",
 						"type": "`$STRING`",
+						"short": "Type line of the card",
 					},
 					map[string]any{
 						"name": "types",
-						"short": "Types of the card",
+						"title": "Types",
 						"type": "`$ARRAY`",
+						"short": "Types of the card",
 					},
 				},
 				"id": map[string]any{
@@ -238,66 +265,74 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cmc",
-											"orig": "cmc",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "color",
-											"orig": "color",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "name",
-											"orig": "name",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": 1,
-											"kind": "query",
-											"name": "page",
-											"orig": "page",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 100,
-											"kind": "query",
-											"name": "page_size",
-											"orig": "page_size",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "rarity",
-											"orig": "rarity",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "set",
-											"orig": "set",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "type",
-											"orig": "type",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cards",
 								"segments": []any{
 									map[string]any{
 										"lit": "cards",
+									},
+								},
+								"parts": []any{
+									"cards",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.cards`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cmc",
+											"orig": "cmc",
+											"type": "`$INTEGER`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "color",
+											"orig": "color",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "name",
+											"orig": "name",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "page",
+											"orig": "page",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 1,
+										},
+										map[string]any{
+											"name": "page_size",
+											"orig": "page_size",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 100,
+										},
+										map[string]any{
+											"name": "rarity",
+											"orig": "rarity",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "set",
+											"orig": "set",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "type",
+											"orig": "type",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
 									},
 								},
 								"select": map[string]any{
@@ -312,13 +347,6 @@ func MakeConfig() map[string]any {
 										"type",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.cards`",
-								},
-								"parts": []any{
-									"cards",
-								},
 							},
 						},
 					},
@@ -327,17 +355,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "id",
-											"orig": "id",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cards/{id}",
@@ -349,18 +366,30 @@ func MakeConfig() map[string]any {
 										"var": "id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"id",
-									},
+								"parts": []any{
+									"cards",
+									"{id}",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.card`",
 								},
-								"parts": []any{
-									"cards",
-									"{id}",
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "id",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"id",
+									},
 								},
 							},
 						},
@@ -374,44 +403,52 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "block",
-						"short": "Block the set belongs to",
+						"title": "Block",
 						"type": "`$STRING`",
+						"short": "Block the set belongs to",
 					},
 					map[string]any{
 						"name": "booster",
-						"short": "Booster pack configuration",
+						"title": "Booster",
 						"type": "`$ARRAY`",
+						"short": "Booster pack configuration",
 					},
 					map[string]any{
 						"name": "border",
-						"short": "Border style of cards in the set",
+						"title": "Border",
 						"type": "`$STRING`",
+						"short": "Border style of cards in the set",
 					},
 					map[string]any{
 						"name": "code",
-						"short": "Unique set code",
+						"title": "Code",
 						"type": "`$STRING`",
+						"short": "Unique set code",
 					},
 					map[string]any{
 						"name": "name",
-						"short": "Name of the set",
+						"title": "Name",
 						"type": "`$STRING`",
+						"short": "Name of the set",
 					},
 					map[string]any{
 						"name": "onlineOnly",
-						"short": "Whether the set is online-only",
+						"title": "Online Only",
 						"type": "`$BOOLEAN`",
+						"short": "Whether the set is online-only",
 					},
 					map[string]any{
-						"format": "date",
 						"name": "releaseDate",
-						"short": "Release date of the set",
+						"title": "Release Date",
 						"type": "`$STRING`",
+						"short": "Release date of the set",
+						"format": "date",
 					},
 					map[string]any{
 						"name": "type",
-						"short": "Type of the set (e.g., core, expansion)",
+						"title": "Type",
 						"type": "`$STRING`",
+						"short": "Type of the set (e.g., core, expansion)",
 					},
 				},
 				"name": "set",
@@ -421,22 +458,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "block",
-											"orig": "block",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "name",
-											"orig": "name",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/sets",
@@ -445,18 +466,35 @@ func MakeConfig() map[string]any {
 										"lit": "sets",
 									},
 								},
+								"parts": []any{
+									"sets",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.sets`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "block",
+											"orig": "block",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "name",
+											"orig": "name",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"block",
 										"name",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.sets`",
-								},
-								"parts": []any{
-									"sets",
 								},
 							},
 						},
