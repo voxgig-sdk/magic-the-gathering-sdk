@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 MagicTheGatheringUtility::setRegistrar(function (MagicTheGatheringUtility $u): void {
     $u->clean = [MagicTheGatheringClean::class, 'call'];
+    $u->clean_add = [MagicTheGatheringClean::class, 'add'];
+    $u->clean_explain = [MagicTheGatheringDone::class, 'clean_explain'];
     $u->done = [MagicTheGatheringDone::class, 'call'];
     $u->make_error = [MagicTheGatheringMakeError::class, 'call'];
     $u->feature_add = [MagicTheGatheringFeatureAdd::class, 'call'];

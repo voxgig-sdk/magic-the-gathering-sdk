@@ -316,7 +316,7 @@ def make_config():
                     },
                     {
                       "name": "color",
-                      "orig": "color",
+                      "orig": "colors",
                       "type": "`$STRING`",
                       "kind": "query",
                     },
@@ -335,7 +335,7 @@ def make_config():
                     },
                     {
                       "name": "page_size",
-                      "orig": "page_size",
+                      "orig": "pageSize",
                       "type": "`$INTEGER`",
                       "kind": "query",
                       "example": 100,

@@ -225,7 +225,7 @@ main: kit: entity: card: {
               {
                 k: "query"
                 n: "color"
-                or: "color"
+                or: "colors"
                 r: false
                 t: "`$STRING`"
               }
@@ -248,7 +248,7 @@ main: kit: entity: card: {
                 ex: 100
                 k: "query"
                 n: "page_size"
-                or: "page_size"
+                or: "pageSize"
                 r: false
                 t: "`$INTEGER`"
               }

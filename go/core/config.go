@@ -291,7 +291,7 @@ func MakeConfig() map[string]any {
 										},
 										map[string]any{
 											"name": "color",
-											"orig": "color",
+											"orig": "colors",
 											"type": "`$STRING`",
 											"kind": "query",
 										},
@@ -310,7 +310,7 @@ func MakeConfig() map[string]any {
 										},
 										map[string]any{
 											"name": "page_size",
-											"orig": "page_size",
+											"orig": "pageSize",
 											"type": "`$INTEGER`",
 											"kind": "query",
 											"example": 100,

@@ -334,7 +334,7 @@ class Config {
                   },
                   {
                     "name": "color",
-                    "orig": "color",
+                    "orig": "colors",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
@@ -353,7 +353,7 @@ class Config {
                   },
                   {
                     "name": "page_size",
-                    "orig": "page_size",
+                    "orig": "pageSize",
                     "type": "`$INTEGER`",
                     "kind": "query",
                     "example": 100

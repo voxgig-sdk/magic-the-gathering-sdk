@@ -12,9 +12,14 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `$
 
 ## Install
 This package is not yet published to Packagist. Install it from the
-GitHub release tag (`php/vX.Y.Z`):
+GitHub release tag (`php/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/magic-the-gathering-sdk/releases)), or
+from a clone as a Composer path repository:
 
-- Releases: [https://github.com/voxgig-sdk/magic-the-gathering-sdk/releases](https://github.com/voxgig-sdk/magic-the-gathering-sdk/releases)
+```bash
+git clone https://github.com/voxgig-sdk/magic-the-gathering-sdk
+composer config repositories.magic-the-gathering-sdk path ./magic-the-gathering-sdk/php
+composer require voxgig-sdk/magic-the-gathering-sdk:@dev
+```
 
 
 ## Tutorial: your first API call

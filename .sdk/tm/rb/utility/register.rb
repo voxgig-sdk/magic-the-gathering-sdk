@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 MagicTheGatheringUtility.registrar = ->(u) {
   u.clean = MagicTheGatheringUtilities::Clean
+  u.clean_add = MagicTheGatheringUtilities::CleanAdd
+  u.clean_explain = MagicTheGatheringUtilities::CleanExplain
   u.done = MagicTheGatheringUtilities::Done
   u.make_error = MagicTheGatheringUtilities::MakeError
   u.feature_add = MagicTheGatheringUtilities::FeatureAdd
