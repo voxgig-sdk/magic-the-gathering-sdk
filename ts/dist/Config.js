@@ -87,6 +87,7 @@ class Config {
             },
             "optspec": {
                 "clearTimer": "`$FUNCTION`",
+                "now": "`$FUNCTION`",
                 "setTimer": "`$FUNCTION`"
             },
             "strict": false,
@@ -303,7 +304,8 @@ class Config {
                                         "name": "cmc",
                                         "orig": "cmc",
                                         "type": "`$INTEGER`",
-                                        "kind": "query"
+                                        "kind": "query",
+                                        "field": true
                                     },
                                     {
                                         "name": "color",
@@ -315,7 +317,8 @@ class Config {
                                         "name": "name",
                                         "orig": "name",
                                         "type": "`$STRING`",
-                                        "kind": "query"
+                                        "kind": "query",
+                                        "field": true
                                     },
                                     {
                                         "name": "page",
@@ -335,33 +338,29 @@ class Config {
                                         "name": "rarity",
                                         "orig": "rarity",
                                         "type": "`$STRING`",
-                                        "kind": "query"
+                                        "kind": "query",
+                                        "field": true
                                     },
                                     {
                                         "name": "set",
                                         "orig": "set",
                                         "type": "`$STRING`",
-                                        "kind": "query"
+                                        "kind": "query",
+                                        "field": true
                                     },
                                     {
                                         "name": "type",
                                         "orig": "type",
                                         "type": "`$STRING`",
-                                        "kind": "query"
+                                        "kind": "query",
+                                        "field": true
                                     }
                                 ]
                             },
-                            "select": {
-                                "exist": [
-                                    "cmc",
-                                    "color",
-                                    "name",
-                                    "page",
-                                    "page_size",
-                                    "rarity",
-                                    "set",
-                                    "type"
-                                ]
+                            "select": {},
+                            "response": {
+                                "kind": "json",
+                                "media": "application/json"
                             }
                         }
                     ]
@@ -406,6 +405,10 @@ class Config {
                                 "exist": [
                                     "id"
                                 ]
+                            },
+                            "response": {
+                                "kind": "json",
+                                "media": "application/json"
                             }
                         }
                     ]
@@ -496,21 +499,22 @@ class Config {
                                         "name": "block",
                                         "orig": "block",
                                         "type": "`$STRING`",
-                                        "kind": "query"
+                                        "kind": "query",
+                                        "field": true
                                     },
                                     {
                                         "name": "name",
                                         "orig": "name",
                                         "type": "`$STRING`",
-                                        "kind": "query"
+                                        "kind": "query",
+                                        "field": true
                                     }
                                 ]
                             },
-                            "select": {
-                                "exist": [
-                                    "block",
-                                    "name"
-                                ]
+                            "select": {},
+                            "response": {
+                                "kind": "json",
+                                "media": "application/json"
                             }
                         }
                     ]

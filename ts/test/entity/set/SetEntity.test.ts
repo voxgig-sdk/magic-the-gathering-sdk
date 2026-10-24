@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { MagicTheGatheringSDK, BaseFeature, stdutil } from '../../..'
+import { MagicTheGatheringSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,64 @@ describe('SetEntity', async () => {
   })
 
 
+  class FailHook extends BaseFeature {
+    name = 'failhook'
+    version = '0.0.1'
+    active = true
+    unexpected = 0
+    init() { }
+    PreSpec() { throw new Error('set hook failed') }
+    PreUnexpected() { this.unexpected++ }
+  }
+
+  test('stream-error', async () => {
+    const offline = { net: { offline: true } }
+    await assert.rejects(async () => {
+      for await (const _item of MagicTheGatheringSDK.test(offline).Set().stream('list')) { }
+    }, /offline/)
+
+    for await (const _item of MagicTheGatheringSDK.test(offline).Set()
+      .stream('list', undefined, { ctrl: { throw: false } })) { }
+
+    if (null != (config as any).feature?.rbac) {
+      const denied = MagicTheGatheringSDK.test(undefined, { feature: { rbac: { active: true, deny: true } } })
+      await assert.rejects(async () => {
+        for await (const _item of denied.Set().stream('list')) { }
+      }, (err: any) => 'rbac_denied' === err.code)
+    }
+  })
+
+  test('stream-ctrl', async () => {
+    const explain: any = {}
+    const ctrl: any = { explain }
+    for await (const _item of MagicTheGatheringSDK.test().Set().stream('list', undefined, { ctrl })) { }
+    assert.deepStrictEqual(Object.keys(ctrl), ['explain'])
+    assert(explain === ctrl.explain && 0 < Object.keys(explain).length)
+  })
+
+  test('unexpected', async () => {
+    const hook = new FailHook()
+    const client = new MagicTheGatheringSDK({ feature: { test: { active: true } }, extend: [hook] })
+    await assert.rejects(client.Set().list(), /hook failed/)
+    assert(0 < hook.unexpected)
+
+    const fired = hook.unexpected
+    assert.strictEqual(await client.Set().list(undefined, { throw: false }), undefined)
+    assert(fired < hook.unexpected)
+  })
+
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = MagicTheGatheringSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.Set().list({"block":1} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.MAGIC_THE_GATHERING_TEST_LIVE
@@ -51,7 +109,7 @@ describe('SetEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"block":{"a":true,"h":"Block","n":"block","r":false,"sh":"Block the set belongs to","t":"`$STRING`","key$":"block","index$":0},"booster":{"a":true,"h":"Booster","n":"booster","r":false,"sh":"Booster pack configuration","t":"`$ARRAY`","key$":"booster","index$":1},"border":{"a":true,"h":"Border","n":"border","r":false,"sh":"Border style of cards in the set","t":"`$STRING`","key$":"border","index$":2},"code":{"a":true,"h":"Code","n":"code","r":false,"sh":"Unique set code","t":"`$STRING`","key$":"code","index$":3},"name":{"a":true,"h":"Name","n":"name","r":false,"sh":"Name of the set","t":"`$STRING`","key$":"name","index$":4},"onlineOnly":{"a":true,"h":"Online Only","n":"onlineOnly","r":false,"sh":"Whether the set is online-only","t":"`$BOOLEAN`","key$":"onlineOnly","index$":5},"releaseDate":{"a":true,"fo":"date","h":"Release Date","n":"releaseDate","r":false,"sh":"Release date of the set","t":"`$STRING`","key$":"releaseDate","index$":6},"type":{"a":true,"h":"Type","n":"type","r":false,"sh":"Type of the set (e.g., core, expansion)","t":"`$STRING`","key$":"type","index$":7}},"name":"set","op":{"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /sets","source":"openapi3","version":2},"g":{"query":[{"a":true,"k":"query","n":"block","or":"block","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"name","or":"name","r":false,"t":"`$STRING`","index$":1}]},"k":"http","m":"GET","o":"/sets","q":{"exist":["block","name"]},"r":{},"s":[{"lit":"sets"}],"t":{"req":"`reqdata`","res":"`body.sets`"},"index$":0}],"key$":"list"}},"relations":{"ancestors":[]},"key$":"set","name__orig":"set","Name":"Set","name_":"set","name-":"set","NAME":"SET","index$":1}, {"active":true,"entity":"set","key$":"BasicSetFlow","kind":"basic","name":"BasicSetFlow","param":{},"step":[{"a":true,"d":{},"i":{},"m":{},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"set_ref01"}}],"index$":0}]}, 'Set', {"GET /sets":{"protocol":"http","parameters":[{"name":"name","in":"query","description":"Filter sets by name","required":false,"schema":{"type":"string"},"index$":0},{"name":"block","in":"query","description":"Filter sets by block name","required":false,"schema":{"type":"string"},"index$":1}]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"block":{"a":true,"h":"Block","n":"block","r":false,"sh":"Block the set belongs to","t":"`$STRING`","key$":"block","index$":0},"booster":{"a":true,"h":"Booster","n":"booster","r":false,"sh":"Booster pack configuration","t":"`$ARRAY`","key$":"booster","index$":1},"border":{"a":true,"h":"Border","n":"border","r":false,"sh":"Border style of cards in the set","t":"`$STRING`","key$":"border","index$":2},"code":{"a":true,"h":"Code","n":"code","r":false,"sh":"Unique set code","t":"`$STRING`","key$":"code","index$":3},"name":{"a":true,"h":"Name","n":"name","r":false,"sh":"Name of the set","t":"`$STRING`","key$":"name","index$":4},"onlineOnly":{"a":true,"h":"Online Only","n":"onlineOnly","r":false,"sh":"Whether the set is online-only","t":"`$BOOLEAN`","key$":"onlineOnly","index$":5},"releaseDate":{"a":true,"fo":"date","h":"Release Date","n":"releaseDate","r":false,"sh":"Release date of the set","t":"`$STRING`","key$":"releaseDate","index$":6},"type":{"a":true,"h":"Type","n":"type","r":false,"sh":"Type of the set (e.g., core, expansion)","t":"`$STRING`","key$":"type","index$":7}},"name":"set","op":{"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /sets","source":"openapi3","version":2},"g":{"query":[{"a":true,"k":"query","n":"block","or":"block","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"name","or":"name","r":false,"t":"`$STRING`","index$":1}]},"k":"http","m":"GET","o":"/sets","q":{},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"sets"}],"t":{"req":"`reqdata`","res":"`body.sets`"},"index$":0}],"key$":"list"}},"relations":{"ancestors":[]},"key$":"set","name__orig":"set","Name":"Set","name_":"set","name-":"set","NAME":"SET","index$":1}, {"active":true,"entity":"set","key$":"BasicSetFlow","kind":"basic","name":"BasicSetFlow","param":{},"step":[{"a":true,"d":{},"i":{},"m":{},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"set_ref01"}}],"index$":0}]}, 'Set', {"GET /sets":{"protocol":"http","parameters":[{"name":"name","in":"query","description":"Filter sets by name","required":false,"schema":{"type":"string"},"index$":0},{"name":"block","in":"query","description":"Filter sets by block name","required":false,"schema":{"type":"string"},"index$":1}]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -72,6 +130,12 @@ describe('SetEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options

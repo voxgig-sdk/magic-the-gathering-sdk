@@ -3,11 +3,16 @@ declare(strict_types=1);
 
 // MagicTheGathering SDK utility: prepare_body
 
+require_once __DIR__ . '/Media.php';
+
 class MagicTheGatheringPrepareBody
 {
     public static function call(MagicTheGatheringContext $ctx): mixed
     {
         if ($ctx->op->input === 'data') {
+            if (MagicTheGatheringMedia::isRawRequest($ctx->point)) {
+                return MagicTheGatheringMedia::rawBody($ctx->reqdata);
+            }
             $body = ($ctx->utility->transform_request)($ctx);
             // PHP cannot tell an empty map from an empty list, and this
             // vendored struct answers [] where the canonical transform

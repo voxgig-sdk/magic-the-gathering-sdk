@@ -95,11 +95,9 @@ main: kit: entity: set: {
           }
           m: "GET"
           o: "/sets"
-          q: {
-            exist: [
-              "block"
-              "name"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

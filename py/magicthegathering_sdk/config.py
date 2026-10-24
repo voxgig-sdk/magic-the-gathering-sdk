@@ -96,6 +96,7 @@ def make_config():
         },
         "optspec": {
           "clearTimer": "`$FUNCTION`",
+          "now": "`$FUNCTION`",
           "setTimer": "`$FUNCTION`",
         },
         "strict": False,
@@ -313,6 +314,7 @@ def make_config():
                       "orig": "cmc",
                       "type": "`$INTEGER`",
                       "kind": "query",
+                      "field": True,
                     },
                     {
                       "name": "color",
@@ -325,6 +327,7 @@ def make_config():
                       "orig": "name",
                       "type": "`$STRING`",
                       "kind": "query",
+                      "field": True,
                     },
                     {
                       "name": "page",
@@ -345,32 +348,28 @@ def make_config():
                       "orig": "rarity",
                       "type": "`$STRING`",
                       "kind": "query",
+                      "field": True,
                     },
                     {
                       "name": "set",
                       "orig": "set",
                       "type": "`$STRING`",
                       "kind": "query",
+                      "field": True,
                     },
                     {
                       "name": "type",
                       "orig": "type",
                       "type": "`$STRING`",
                       "kind": "query",
+                      "field": True,
                     },
                   ],
                 },
-                "select": {
-                  "exist": [
-                    "cmc",
-                    "color",
-                    "name",
-                    "page",
-                    "page_size",
-                    "rarity",
-                    "set",
-                    "type",
-                  ],
+                "select": {},
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
             ],
@@ -415,6 +414,10 @@ def make_config():
                   "exist": [
                     "id",
                   ],
+                },
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
             ],
@@ -506,20 +509,21 @@ def make_config():
                       "orig": "block",
                       "type": "`$STRING`",
                       "kind": "query",
+                      "field": True,
                     },
                     {
                       "name": "name",
                       "orig": "name",
                       "type": "`$STRING`",
                       "kind": "query",
+                      "field": True,
                     },
                   ],
                 },
-                "select": {
-                  "exist": [
-                    "block",
-                    "name",
-                  ],
+                "select": {},
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
             ],

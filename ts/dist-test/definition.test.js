@@ -19,13 +19,17 @@ const PLAN = [
             "cmc": "v1",
             "color": "v1",
             "name": "v1",
-            "page": "v1",
-            "page_size": "v1",
+            "page": 1,
+            "page_size": 100,
             "rarity": "v1",
             "set": "v1",
             "type": "v1"
         },
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/json"
+        ],
         "query": [
             "name",
             "set",
@@ -36,59 +40,93 @@ const PLAN = [
             "page",
             "pageSize"
         ],
+        "queryArgs": [
+            {
+                "name": "cmc",
+                "wire": "cmc"
+            },
+            {
+                "name": "color",
+                "wire": "colors"
+            },
+            {
+                "name": "name",
+                "wire": "name"
+            },
+            {
+                "name": "page",
+                "wire": "page"
+            },
+            {
+                "name": "page_size",
+                "wire": "pageSize"
+            },
+            {
+                "name": "rarity",
+                "wire": "rarity"
+            },
+            {
+                "name": "set",
+                "wire": "set"
+            },
+            {
+                "name": "type",
+                "wire": "type"
+            }
+        ],
         "auth": null,
         "status": 200,
         "sample": {
             "cards": [
                 {
-                    "artist": "x",
+                    "id": "x",
+                    "name": "x",
+                    "manaCost": "x",
                     "cmc": 1,
-                    "colorIdentity": [
-                        "x"
-                    ],
                     "colors": [
                         "x"
                     ],
+                    "colorIdentity": [
+                        "x"
+                    ],
+                    "type": "x",
+                    "supertypes": [
+                        "x"
+                    ],
+                    "types": [
+                        "x"
+                    ],
+                    "subtypes": [
+                        "x"
+                    ],
+                    "rarity": "x",
+                    "set": "x",
+                    "setName": "x",
+                    "text": "x",
                     "flavor": "x",
-                    "id": "x",
+                    "artist": "x",
+                    "number": "x",
+                    "power": "x",
+                    "toughness": "x",
+                    "loyalty": "x",
                     "imageUrl": "x",
+                    "multiverseid": "x",
+                    "printings": [
+                        "x"
+                    ],
+                    "originalText": "x",
+                    "originalType": "x",
                     "legalities": [
                         {
                             "format": "x",
                             "legality": "x"
                         }
                     ],
-                    "loyalty": "x",
-                    "manaCost": "x",
-                    "multiverseid": "x",
-                    "name": "x",
-                    "number": "x",
-                    "originalText": "x",
-                    "originalType": "x",
-                    "power": "x",
-                    "printings": [
-                        "x"
-                    ],
-                    "rarity": "x",
                     "rulings": [
                         {
                             "date": "2026-01-01",
                             "text": "x"
                         }
-                    ],
-                    "set": "x",
-                    "setName": "x",
-                    "subtypes": [
-                        "x"
-                    ],
-                    "supertypes": [
-                        "x"
-                    ],
-                    "text": "x",
-                    "toughness": "x",
-                    "type": "x",
-                    "types": [
-                        "x"
                     ]
                 }
             ]
@@ -110,7 +148,12 @@ const PLAN = [
         ],
         "select": {},
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/json"
+        ],
         "query": [],
+        "queryArgs": [],
         "auth": null,
         "status": 200,
         "sample": {
@@ -180,25 +223,39 @@ const PLAN = [
             "name": "v1"
         },
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/json"
+        ],
         "query": [
             "name",
             "block"
+        ],
+        "queryArgs": [
+            {
+                "name": "block",
+                "wire": "block"
+            },
+            {
+                "name": "name",
+                "wire": "name"
+            }
         ],
         "auth": null,
         "status": 200,
         "sample": {
             "sets": [
                 {
-                    "block": "x",
-                    "booster": [
-                        "x"
-                    ],
-                    "border": "x",
                     "code": "x",
                     "name": "x",
-                    "onlineOnly": true,
+                    "type": "x",
+                    "border": "x",
                     "releaseDate": "2026-01-01",
-                    "type": "x"
+                    "block": "x",
+                    "onlineOnly": true,
+                    "booster": [
+                        "x"
+                    ]
                 }
             ]
         },

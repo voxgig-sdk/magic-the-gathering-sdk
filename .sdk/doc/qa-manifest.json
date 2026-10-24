@@ -3,5 +3,24 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Access Magic: The Gathering card and set information through HTTPS endpoints. SDKs available for easier consumption.",
+      "Array of card colors",
+      "Artist who illustrated the card",
+      "Block the set belongs to",
+      "Booster pack configuration",
+      "Border style of cards in the set",
+      "Color identity of the card",
+      "Converted mana cost",
+      "Flavor text of the card",
+      "Name of the set",
+      "Production API Server",
+      "Successful response with card details",
+      "Successful response with list of cards",
+      "Successful response with list of sets",
+      "Unique set code"
+    ]
+  }
 }

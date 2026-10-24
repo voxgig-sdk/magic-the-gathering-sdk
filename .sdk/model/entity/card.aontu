@@ -277,17 +277,9 @@ main: kit: entity: card: {
           }
           m: "GET"
           o: "/cards"
-          q: {
-            exist: [
-              "cmc"
-              "color"
-              "name"
-              "page"
-              "page_size"
-              "rarity"
-              "set"
-              "type"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -327,6 +319,10 @@ main: kit: entity: card: {
             exist: [
               "id"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

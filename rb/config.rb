@@ -79,6 +79,7 @@ module MagicTheGatheringConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -296,6 +297,7 @@ module MagicTheGatheringConfig
                         "orig" => "cmc",
                         "type" => "`$INTEGER`",
                         "kind" => "query",
+                        "field" => true,
                       },
                       {
                         "name" => "color",
@@ -308,6 +310,7 @@ module MagicTheGatheringConfig
                         "orig" => "name",
                         "type" => "`$STRING`",
                         "kind" => "query",
+                        "field" => true,
                       },
                       {
                         "name" => "page",
@@ -328,32 +331,28 @@ module MagicTheGatheringConfig
                         "orig" => "rarity",
                         "type" => "`$STRING`",
                         "kind" => "query",
+                        "field" => true,
                       },
                       {
                         "name" => "set",
                         "orig" => "set",
                         "type" => "`$STRING`",
                         "kind" => "query",
+                        "field" => true,
                       },
                       {
                         "name" => "type",
                         "orig" => "type",
                         "type" => "`$STRING`",
                         "kind" => "query",
+                        "field" => true,
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cmc",
-                      "color",
-                      "name",
-                      "page",
-                      "page_size",
-                      "rarity",
-                      "set",
-                      "type",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -398,6 +397,10 @@ module MagicTheGatheringConfig
                     "exist" => [
                       "id",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -489,20 +492,21 @@ module MagicTheGatheringConfig
                         "orig" => "block",
                         "type" => "`$STRING`",
                         "kind" => "query",
+                        "field" => true,
                       },
                       {
                         "name" => "name",
                         "orig" => "name",
                         "type" => "`$STRING`",
                         "kind" => "query",
+                        "field" => true,
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "block",
-                      "name",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],

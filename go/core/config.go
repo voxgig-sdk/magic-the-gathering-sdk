@@ -71,6 +71,7 @@ func MakeConfig() map[string]any {
 				},
 				"optspec": map[string]any{
 					"clearTimer": "`$FUNCTION`",
+					"now": "`$FUNCTION`",
 					"setTimer": "`$FUNCTION`",
 				},
 				"strict": false,
@@ -288,6 +289,7 @@ func MakeConfig() map[string]any {
 											"orig": "cmc",
 											"type": "`$INTEGER`",
 											"kind": "query",
+											"field": true,
 										},
 										map[string]any{
 											"name": "color",
@@ -300,6 +302,7 @@ func MakeConfig() map[string]any {
 											"orig": "name",
 											"type": "`$STRING`",
 											"kind": "query",
+											"field": true,
 										},
 										map[string]any{
 											"name": "page",
@@ -320,32 +323,28 @@ func MakeConfig() map[string]any {
 											"orig": "rarity",
 											"type": "`$STRING`",
 											"kind": "query",
+											"field": true,
 										},
 										map[string]any{
 											"name": "set",
 											"orig": "set",
 											"type": "`$STRING`",
 											"kind": "query",
+											"field": true,
 										},
 										map[string]any{
 											"name": "type",
 											"orig": "type",
 											"type": "`$STRING`",
 											"kind": "query",
+											"field": true,
 										},
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"cmc",
-										"color",
-										"name",
-										"page",
-										"page_size",
-										"rarity",
-										"set",
-										"type",
-									},
+								"select": map[string]any{},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -390,6 +389,10 @@ func MakeConfig() map[string]any {
 									"exist": []any{
 										"id",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -481,20 +484,21 @@ func MakeConfig() map[string]any {
 											"orig": "block",
 											"type": "`$STRING`",
 											"kind": "query",
+											"field": true,
 										},
 										map[string]any{
 											"name": "name",
 											"orig": "name",
 											"type": "`$STRING`",
 											"kind": "query",
+											"field": true,
 										},
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"block",
-										"name",
-									},
+								"select": map[string]any{},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
